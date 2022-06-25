@@ -61,7 +61,7 @@ public class MainController {
 		Date date = new Date();
 
 		long currTime = date.getYear()+date.getDay()+date.getMonth()+date.getTime();
-		File theDir = new File("/images");
+		File theDir = new File("images");
 		if (!theDir.exists()){
 			theDir.mkdir();
 		}
@@ -70,9 +70,14 @@ public class MainController {
 			byte[] bytes = largePohto.getBytes();
 			String rootPath = theDir.getAbsolutePath();
 			photoName = currTime+".jpg";
-			File dir = new File(rootPath + File.separator);
-			File serverFile = new File(dir.getAbsolutePath()+ File.separator +  photoName);
-			serverFile.createNewFile();
+			File serverFile = new File(rootPath+ File.separator +  photoName);
+			if(serverFile.exists()){
+				serverFile.createNewFile();
+				System.out.println("Создание файла");
+			}
+			if(serverFile.exists()){
+				System.out.println("Файл создан" +serverFile.getAbsolutePath());
+			}
 			BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
 			stream.write(bytes);
 			stream.close();
@@ -177,7 +182,7 @@ public class MainController {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void doSomethingAfterStartup() {
-		File theDir = new File("/images");
+		File theDir = new File("images");
 		if (!theDir.exists()){
 			theDir.mkdir();
 		}
