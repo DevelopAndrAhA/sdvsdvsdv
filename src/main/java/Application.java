@@ -65,8 +65,7 @@ public class Application {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        String host = System.getenv("OPENSHIFT_POSTGRESQL_DB_HOST");
-        dataSource.setUrl("jdbc:postgresql://"+host+":5432/aloha");
+        dataSource.setUrl("jdbc:postgresql://postgresql-1-qf9jh:5432/aloha");
         dataSource.setUsername("aloha");
         dataSource.setPassword("123");
         return dataSource;
