@@ -175,6 +175,12 @@ public class MainController {
 	@EventListener(ApplicationReadyEvent.class)
 	public void doSomethingAfterStartup() {
 		System.out.println("Working Directory = " + System.getProperty("user.dir"));
+		File f = new File("/");
+		File [] files = f.listFiles();
+		for(int i=0;i<files.length;i++){
+			System.out.println("file : " +files[0]);
+		}
+
 		fullFaceFeatures = service.getFullFeatures();
 	}
 
