@@ -65,10 +65,10 @@ public class Application {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://alohahostname:5432/aloha");
+        String host = System.getenv("OPENSHIFT_POSTGRESQL_DB_HOST");
+        dataSource.setUrl("jdbc:postgresql://"+host+":5432/aloha");
         dataSource.setUsername("aloha");
         dataSource.setPassword("123");
-
         return dataSource;
     }
     /*@Bean
