@@ -61,7 +61,7 @@ public class MainController {
 		Date date = new Date();
 
 		long currTime = date.getYear()+date.getDay()+date.getMonth()+date.getTime();
-		File theDir = new File("images");
+		File theDir = new File(File.separator+"images");
 		if (!theDir.exists()){
 			theDir.mkdir();
 		}
@@ -182,7 +182,7 @@ public class MainController {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void doSomethingAfterStartup() {
-		File theDir = new File("images");
+		File theDir = new File(File.separator+"images");
 		if (!theDir.exists()){
 			theDir.mkdir();
 		}
