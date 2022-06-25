@@ -183,8 +183,10 @@ public class MainController {
 
 		File f = new File(theDir.getAbsolutePath());
 		File [] files = f.listFiles();
-		for(int i=0;i<files.length;i++){
-			System.out.println("file : " +files[0]);
+		if(files!=null){
+			for(int i=0;i<files.length;i++){
+				System.out.println("file : " +files[0]);
+			}
 		}
 		fullFaceFeatures = service.getFullFeatures();
 	}
