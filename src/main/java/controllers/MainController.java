@@ -64,11 +64,12 @@ public class MainController {
 
 		try{
 			byte[] bytes = largePohto.getBytes();
-			String rootPath = "/";
+			String rootPath = "/images";
 			photoName = currTime+".jpg";
 			File dir = new File(rootPath + File.separator);
-			if (!dir.exists())
+			if (!dir.exists()) {
 				dir.mkdirs();
+			}
 			File serverFile = new File(dir.getAbsolutePath()+ File.separator +  photoName);
 			BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
 			stream.write(bytes);
