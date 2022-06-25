@@ -533,12 +533,12 @@
       <workItem from="1656133306339" duration="1678000" />
       <workItem from="1656135596211" duration="1205000" />
       <workItem from="1656169565010" duration="740000" />
-      <workItem from="1656170628866" duration="4229000" />
+      <workItem from="1656170628866" duration="4557000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28193000" />
+    <option name="totallyTimeSpent" value="28521000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -734,8 +734,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49195403" vertical-offset="456" max-vertical-offset="1530">
-          <caret line="69" column="35" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.45287356" vertical-offset="456" max-vertical-offset="1530">
+          <caret line="67" column="88" selection-start-line="67" selection-start-column="88" selection-end-line="67" selection-end-column="88" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#userDetailsService#0;class#Application#0" expanded="false" />
