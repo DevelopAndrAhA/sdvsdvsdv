@@ -9,17 +9,21 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.orm.jpa.EntityManagerHolder;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 
 
 @Service
-//@Repository
+@Transactional
 public class MyServiceClass {
 
     @Autowired
@@ -48,12 +52,12 @@ public class MyServiceClass {
         s.close();
         connection.close();
     }*/
+
     public void save(FullFaceFeatures fullFaceFeatures){
         session.getCurrentSession().save(fullFaceFeatures);
     }
 
 
-    @Transactional
     public List getFullFeatures(){
         Criteria criteria =  session.getCurrentSession().createCriteria(FullFaceFeatures.class);
         List<FullFaceFeatures> list = criteria.list();

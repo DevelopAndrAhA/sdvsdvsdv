@@ -174,6 +174,7 @@ public class MainController {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void doSomethingAfterStartup() {
+		System.out.println("Working Directory = " + System.getProperty("user.dir"));
 		fullFaceFeatures = service.getFullFeatures();
 	}
 

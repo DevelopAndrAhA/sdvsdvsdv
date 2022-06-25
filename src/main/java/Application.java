@@ -1,22 +1,13 @@
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.transaction.PlatformTransactionManager;
-
-import javax.sql.DataSource;
-import java.beans.PropertyVetoException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.Properties;
 
 
@@ -51,26 +42,39 @@ public class Application {
     }
 
     /*@Bean
-    public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/aloha");
-        dataSource.setUsername("postgres");
-        dataSource.setPassword("123");
+    public ComboPooledDataSource dataSource()  {
+        try{
+            String dbUrl = "jdbc:postgresql://localhost:5432/aloha";
 
-        return dataSource;
+            ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
+            basicDataSource.setJdbcUrl(dbUrl);
+            basicDataSource.setUser("postgres");
+            basicDataSource.setPassword("123");
+            basicDataSource.setMinPoolSize(0);
+            basicDataSource.setMaxPoolSize(5);
+            basicDataSource.setMaxIdleTime(30000);
+            return basicDataSource;
+        }catch (Exception e){e.printStackTrace();}
+        return null;
     }*/
+    @Bean //red hat
+    public ComboPooledDataSource dataSource()  {
+        try{
+            String dbUrl = "jdbc:postgresql://172.30.193.226:5432/aloha";
 
-    @Bean
-    public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://172.30.193.226:5432/aloha");
-        dataSource.setUsername("aloha");
-        dataSource.setPassword("123");
-        return dataSource;
+            ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
+            basicDataSource.setJdbcUrl(dbUrl);
+            basicDataSource.setUser("aloha");
+            basicDataSource.setPassword("123");
+            basicDataSource.setMinPoolSize(0);
+            basicDataSource.setMaxPoolSize(5);
+            basicDataSource.setMaxIdleTime(30000);
+            return basicDataSource;
+        }catch (Exception e){e.printStackTrace();}
+        return null;
     }
-    /*@Bean
+    /*
+    @Bean //heroku
     public ComboPooledDataSource dataSource()  {
         try{
             URI dbUri = new URI(System.getenv("DATABASE_URL"));
@@ -93,13 +97,6 @@ public class Application {
 
     }*/
 
-    @Bean
-    public PlatformTransactionManager hibernateTransactionManager() {
-        HibernateTransactionManager transactionManager
-                = new HibernateTransactionManager();
-        transactionManager.setSessionFactory(sessionFactory().getObject());
-        return transactionManager;
-    }
 
     private final Properties hibernateProperties() {
         Properties hibernateProperties = new Properties();
