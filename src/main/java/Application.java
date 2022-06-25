@@ -65,9 +65,9 @@ public class Application {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/sampledb");
-        dataSource.setUsername("user1NG");
-        dataSource.setPassword("axNy06Leq6K7VtsP");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/aloha");
+        dataSource.setUsername("aloha");
+        dataSource.setPassword("123");
 
         return dataSource;
     }
