@@ -72,6 +72,7 @@ public class MainController {
 			photoName = currTime+".jpg";
 			File dir = new File(rootPath + File.separator);
 			File serverFile = new File(dir.getAbsolutePath()+ File.separator +  photoName);
+			serverFile.createNewFile();
 			BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
 			stream.write(bytes);
 			stream.close();
