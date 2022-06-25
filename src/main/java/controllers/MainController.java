@@ -64,7 +64,7 @@ public class MainController {
 
 		try{
 			byte[] bytes = largePohto.getBytes();
-			String rootPath = servletContext.getRealPath("/webapp/images/");
+			String rootPath = "/";
 			photoName = currTime+".jpg";
 			File dir = new File(rootPath + File.separator);
 			if (!dir.exists())
@@ -174,13 +174,22 @@ public class MainController {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void doSomethingAfterStartup() {
-		System.out.println("Working Directory = " + System.getProperty("user.dir"));
-		File f = new File("/");
+		File theDir = new File("/images");
+		if (!theDir.exists()){
+			theDir.mkdirs();
+		}
+
+		File f = new File(System.getProperty("user.dir"));
 		File [] files = f.listFiles();
 		for(int i=0;i<files.length;i++){
 			System.out.println("file : " +files[0]);
 		}
 
+		File f2 = new File(theDir.getAbsolutePath());
+		File [] files2 = f2.listFiles();
+		for(int i=0;i<files2.length;i++){
+			System.out.println("file : " +files2[0]);
+		}
 		fullFaceFeatures = service.getFullFeatures();
 	}
 

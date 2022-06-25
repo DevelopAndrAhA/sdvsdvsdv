@@ -568,12 +568,12 @@
       <workItem from="1656135596211" duration="1205000" />
       <workItem from="1656169565010" duration="740000" />
       <workItem from="1656170628866" duration="9737000" />
-      <workItem from="1656184515837" duration="5177000" />
+      <workItem from="1656184515837" duration="5681000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38878000" />
+    <option name="totallyTimeSpent" value="39382000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -760,7 +760,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35517243" vertical-offset="354" max-vertical-offset="1377">
+        <state vertical-scroll-proportion="0.17931035" vertical-offset="507" max-vertical-offset="1377">
           <caret line="66" column="45" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
           <folding>
             <element signature="method#userDetailsService#0;class#Application#0" expanded="false" />
@@ -772,10 +772,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76551723" vertical-offset="354" max-vertical-offset="1292">
-          <caret line="180" column="39" selection-start-line="180" selection-start-column="39" selection-end-line="180" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.76551723" vertical-offset="1221" max-vertical-offset="2227">
+          <caret line="185" column="9" selection-start-line="185" selection-start-column="9" selection-end-line="185" selection-end-column="9" />
           <folding>
-            <element signature="method#add#0;class#MainController#0" expanded="false" />
             <element signature="method#search#0;class#MainController#0" expanded="false" />
             <element signature="method#getPhoto#0;class#MainController#0" expanded="false" />
             <element signature="method#getFirstData#0;class#MainController#0" expanded="false" />
