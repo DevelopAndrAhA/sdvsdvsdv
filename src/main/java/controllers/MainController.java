@@ -176,8 +176,9 @@ public class MainController {
 	public void doSomethingAfterStartup() {
 		File theDir = new File("/images");
 		if (!theDir.exists()){
-			theDir.mkdirs();
+			theDir.mkdir();
 		}
+		System.out.println(theDir.getAbsolutePath());
 
 		File f = new File(theDir.getAbsolutePath());
 		File [] files = f.listFiles();
