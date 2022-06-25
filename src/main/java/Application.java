@@ -65,7 +65,7 @@ public class Application {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://172.30.170.91:5432/aloha");
+        dataSource.setUrl("jdbc:postgresql://172.30.193.226:5432/aloha");
         dataSource.setUsername("aloha");
         dataSource.setPassword("123");
         return dataSource;
