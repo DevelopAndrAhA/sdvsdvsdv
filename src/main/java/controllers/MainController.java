@@ -71,11 +71,11 @@ public class MainController {
 			String rootPath = theDir.getAbsolutePath();
 			photoName = currTime+".jpg";
 			File serverFile = new File(rootPath+ File.separator +  photoName);
-			if(serverFile.exists()){
+			if(!serverFile.exists()){
 				serverFile.createNewFile();
 				System.out.println("Создание файла");
 			}
-			if(serverFile.exists()){
+			if(!serverFile.exists()){
 				System.out.println("Файл создан" +serverFile.getAbsolutePath());
 			}
 			BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
