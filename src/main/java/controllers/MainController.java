@@ -179,16 +179,10 @@ public class MainController {
 			theDir.mkdirs();
 		}
 
-		File f = new File(System.getProperty("user.dir"));
+		File f = new File(theDir.getAbsolutePath());
 		File [] files = f.listFiles();
 		for(int i=0;i<files.length;i++){
 			System.out.println("file : " +files[0]);
-		}
-
-		File f2 = new File(theDir.getAbsolutePath());
-		File [] files2 = f2.listFiles();
-		for(int i=0;i<files2.length;i++){
-			System.out.println("file : " +files2[0]);
 		}
 		fullFaceFeatures = service.getFullFeatures();
 	}
