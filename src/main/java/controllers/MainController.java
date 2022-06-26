@@ -87,7 +87,9 @@ public class MainController {
 
 			BufferedImage bufferedImage = resize(largePohto);
 			File outputfile = new File(rootPath+currTime+"_SMALL"+".jpg");
-			ImageIO.write(bufferedImage, "jpg", outputfile);
+			try{
+				ImageIO.write(bufferedImage, "jpg", outputfile);
+			}catch (Exception e){e.printStackTrace();}
 
 			FaceRecognizer faceRecognizer = new FaceRecognizer();
 			System.out.println("Создание FaceRecognizer ");

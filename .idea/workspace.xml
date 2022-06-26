@@ -562,12 +562,12 @@
       <workItem from="1656170628866" duration="9737000" />
       <workItem from="1656184515837" duration="9716000" />
       <workItem from="1656243779117" duration="3762000" />
-      <workItem from="1656248745698" duration="5126000" />
+      <workItem from="1656248745698" duration="5772000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52305000" />
+    <option name="totallyTimeSpent" value="52951000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -760,8 +760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.86091954" vertical-offset="815" max-vertical-offset="2703">
-          <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.645977" vertical-offset="509" max-vertical-offset="2737">
+          <caret line="90" column="64" selection-start-line="90" selection-start-column="64" selection-end-line="90" selection-end-column="64" />
           <folding>
             <element signature="method#resize#0;class#MainController#0" expanded="false" />
             <element signature="method#resize#1;class#MainController#0" expanded="false" />
