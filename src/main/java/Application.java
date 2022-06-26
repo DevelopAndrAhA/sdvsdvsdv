@@ -3,6 +3,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -58,6 +59,15 @@ public class Application {
         return null;
     }*/
     @Bean //red hat
+    public DriverManagerDataSource dataSource()  {
+        String dbUrl = "jdbc:postgresql://172.30.193.226:5432/aloha";
+        DriverManagerDataSource basicDataSource = new DriverManagerDataSource();
+        basicDataSource.setUrl(dbUrl);
+        basicDataSource.setUsername("aloha");
+        basicDataSource.setPassword("123");
+        return basicDataSource;
+    }
+    /*@Bean //red hat
     public ComboPooledDataSource dataSource()  {
         try{
             String dbUrl = "jdbc:postgresql://172.30.193.226:5432/aloha";
@@ -67,12 +77,12 @@ public class Application {
             basicDataSource.setUser("aloha");
             basicDataSource.setPassword("123");
             basicDataSource.setMinPoolSize(0);
-            basicDataSource.setMaxPoolSize(5);
+            basicDataSource.setMaxPoolSize(3);
             basicDataSource.setMaxIdleTime(30000);
             return basicDataSource;
         }catch (Exception e){e.printStackTrace();}
         return null;
-    }
+    }*/
     /*
     @Bean //heroku
     public ComboPooledDataSource dataSource()  {
