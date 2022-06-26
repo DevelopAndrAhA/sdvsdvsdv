@@ -44,7 +44,7 @@ public class Application {
         return sessionFactory;
     }
 
-    @Bean
+    /*@Bean
     public ComboPooledDataSource dataSource()  {
         try{
             String dbUrl = "jdbc:postgresql://localhost:5432/aloha";
@@ -59,16 +59,16 @@ public class Application {
             return basicDataSource;
         }catch (Exception e){e.printStackTrace();}
         return null;
-    }
-    /*@Bean
-    public DataSource dataSource() {
+    }*/
+    @Bean
+     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl("jdbc:postgresql://172.30.193.226:5432/aloha");
         dataSource.setUsername("aloha");
         dataSource.setPassword("123");
         return dataSource;
-    }*/
+    }
    /* @Bean //red hat
     public ComboPooledDataSource dataSource()  {
         try{
