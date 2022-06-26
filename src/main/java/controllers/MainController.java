@@ -61,7 +61,7 @@ public class MainController {
 		Date date = new Date();
 
 		long currTime = date.getYear()+date.getDay()+date.getMonth()+date.getTime();
-		File theDir = new File(File.separator+"images");
+		File theDir = new File(System.getProperty("user.dir")+File.separator+"images");
 		if (!theDir.exists()){
 			theDir.mkdir();
 		}
@@ -182,19 +182,6 @@ public class MainController {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void doSomethingAfterStartup() {
-		File theDir = new File(File.separator+"images");
-		if (!theDir.exists()){
-			theDir.mkdir();
-		}
-		System.out.println(theDir.getAbsolutePath());
-
-		File f = new File(theDir.getAbsolutePath());
-		File [] files = f.listFiles();
-		if(files!=null){
-			for(int i=0;i<files.length;i++){
-				System.out.println("file : " +files[0]);
-			}
-		}
 		fullFaceFeatures = service.getFullFeatures();
 	}
 
