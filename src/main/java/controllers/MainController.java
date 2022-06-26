@@ -57,12 +57,12 @@ public class MainController {
 			@RequestParam("username")String username,
 			@RequestParam("lng")String lng,
 			@RequestParam("lat")String lat) {
-		System.out.println(largePohto);
+		System.out.println("largePohto "+largePohto.getName());
 		String photoName = null;
 		Date date = new Date();
 
 		long currTime = date.getYear()+date.getDay()+date.getMonth()+date.getTime();
-		File theDir = new File(System.getProperty("user.dir")+File.separator+"images");
+		File theDir = new File(/*System.getProperty("user.dir")+File.separator+*/"uploadimages");
 		if (!theDir.exists()){
 			theDir.mkdir();
 		}
@@ -86,7 +86,7 @@ public class MainController {
 
 
 			BufferedImage bufferedImage = resize(largePohto);
-			File outputfile = new File(rootPath+currTime+"_SMALL"+".jpg");
+			File outputfile = new File(rootPath+File.separator+currTime+"_SMALL"+".jpg");
 			try{
 				ImageIO.write(bufferedImage, "jpg", outputfile);
 			}catch (Exception e){e.printStackTrace();}
@@ -148,7 +148,7 @@ public class MainController {
 	@RequestMapping(value = "image", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
 	public  byte[]  getPhoto(@RequestParam("imgname")String imgname){
 		try {
-			String rootPath = servletContext.getRealPath("/webapp/images/")+imgname;
+			String rootPath = "uploadimages"+File.separator+imgname;
 
 			InputStream in = null;
 			File f = new File(rootPath);
