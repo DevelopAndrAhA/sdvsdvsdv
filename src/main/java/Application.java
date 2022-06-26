@@ -1,4 +1,3 @@
-import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -9,6 +8,8 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+
+import javax.sql.DataSource;
 import java.util.Properties;
 
 
@@ -59,14 +60,13 @@ public class Application {
         return null;
     }*/
     @Bean //red hat
-    public DriverManagerDataSource dataSource()  {
-        String dbUrl = "jdbc:postgresql://172.30.193.226:5432/aloha";
-        DriverManagerDataSource basicDataSource = new DriverManagerDataSource();
-        basicDataSource.setDriverClassName("org.postgresql.Driver");
-        basicDataSource.setUrl(dbUrl);
-        basicDataSource.setUsername("aloha");
-        basicDataSource.setPassword("123");
-        return basicDataSource;
+    public DataSource dataSource()  {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setUrl("jdbc:postgresql://172.30.193.226:5432/aloha");
+        dataSource.setUsername("aloha");
+        dataSource.setPassword("123");
+        return dataSource;
     }
     /*@Bean //red hat
     public ComboPooledDataSource dataSource()  {
