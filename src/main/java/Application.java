@@ -1,3 +1,4 @@
+import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -59,7 +60,7 @@ public class Application {
         }catch (Exception e){e.printStackTrace();}
         return null;
     }*/
-    @Bean //red hat
+   /* @Bean //red hat
     public DataSource dataSource()  {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
@@ -67,13 +68,14 @@ public class Application {
         dataSource.setUsername("aloha");
         dataSource.setPassword("123");
         return dataSource;
-    }
-    /*@Bean //red hat
-    public ComboPooledDataSource dataSource()  {
+    }*/
+    @Bean //red hat
+    public DataSource dataSource()  {
         try{
             String dbUrl = "jdbc:postgresql://172.30.193.226:5432/aloha";
 
             ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
+            basicDataSource.setDriverClass("org.postgresql.Driver");
             basicDataSource.setJdbcUrl(dbUrl);
             basicDataSource.setUser("aloha");
             basicDataSource.setPassword("123");
@@ -83,7 +85,7 @@ public class Application {
             return basicDataSource;
         }catch (Exception e){e.printStackTrace();}
         return null;
-    }*/
+    }
     /*
     @Bean //heroku
     public ComboPooledDataSource dataSource()  {
