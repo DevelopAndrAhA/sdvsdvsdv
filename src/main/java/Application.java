@@ -62,6 +62,7 @@ public class Application {
     public DriverManagerDataSource dataSource()  {
         String dbUrl = "jdbc:postgresql://172.30.193.226:5432/aloha";
         DriverManagerDataSource basicDataSource = new DriverManagerDataSource();
+        basicDataSource.setDriverClassName("org.postgresql.Driver");
         basicDataSource.setUrl(dbUrl);
         basicDataSource.setUsername("aloha");
         basicDataSource.setPassword("123");
