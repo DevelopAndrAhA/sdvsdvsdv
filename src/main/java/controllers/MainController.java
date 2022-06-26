@@ -48,8 +48,6 @@ public class MainController {
 		return "hello";
 	}
 
-	///var/run/secrets/kubernetes.io/serviceaccount
-
 	@ResponseBody
 	@RequestMapping(value = "new_face",method = RequestMethod.POST)
 	public Object add(
@@ -65,12 +63,6 @@ public class MainController {
 		File theDir = new File(File.separator+"images");
 		if (!theDir.exists()){
 			theDir.mkdir();
-		}
-		File[] ff = theDir.listFiles();
-		if(ff!=null){
-			for(int i=0;i<ff.length;i++){
-				System.out.println(ff[i].getName());
-			}
 		}
 		try{
 			byte[] bytes = largePohto.getBytes();
@@ -115,7 +107,7 @@ public class MainController {
 
 
 
-		return "errror";
+		return "errrror";
 
 
 	}
@@ -143,7 +135,7 @@ public class MainController {
 	@RequestMapping(value = "image", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
 	public  byte[]  getPhoto(@RequestParam("imgname")String imgname){
 		try {
-			String rootPath = "uploadimages"+File.separator+imgname;
+			String rootPath = File.separator+"images"+File.separator+imgname;
 
 			InputStream in = null;
 			File f = new File(rootPath);
@@ -190,16 +182,6 @@ public class MainController {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void doSomethingAfterStartup() {
-		File theDir = new File(/*System.getProperty("user.dir")+File.separator+*/File.separator+"images");
-		if (!theDir.exists()){
-			theDir.mkdir();
-		}
-		File[] ff = theDir.listFiles();
-		if(ff!=null){
-			for(int i=0;i<ff.length;i++){
-				System.out.println(ff[i].getName());
-			}
-		}
 		fullFaceFeatures = service.getFullFeatures();
 	}
 
