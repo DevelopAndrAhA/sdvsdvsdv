@@ -51,9 +51,9 @@
         <option value="$PROJECT_DIR$/src/main/java/controllers/SecurityConfiguration.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/neural_network/models/FaceFeatures.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Application.java" />
       </list>
     </option>
   </component>
@@ -563,12 +563,12 @@
       <workItem from="1656170628866" duration="9737000" />
       <workItem from="1656184515837" duration="9716000" />
       <workItem from="1656243779117" duration="3762000" />
-      <workItem from="1656248745698" duration="15565000" />
+      <workItem from="1656248745698" duration="15656000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62744000" />
+    <option name="totallyTimeSpent" value="62835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -749,19 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3321839" vertical-offset="0" max-vertical-offset="1326">
-          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-          <folding>
-            <element signature="method#userDetailsService#0;class#Application#0" expanded="false" />
-            <element signature="method#sessionFactory#0;class#Application#0" expanded="false" />
-            <element signature="method#dataSource#0;class#Application#0" expanded="false" />
-            <element signature="method#hibernateProperties#0;class#Application#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deployment-teststorage.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3893">
@@ -782,6 +769,18 @@
             <element signature="method#resize#0;class#MainController#0" expanded="false" />
             <element signature="method#resize#1;class#MainController#0" expanded="false" />
             <element signature="method#doSomethingAfterStartup#0;class#MainController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8011494" vertical-offset="255" max-vertical-offset="1564">
+          <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+          <folding>
+            <element signature="method#userDetailsService#0;class#Application#0" expanded="false" />
+            <element signature="method#sessionFactory#0;class#Application#0" expanded="false" />
+            <element signature="method#hibernateProperties#0;class#Application#0" expanded="false" />
           </folding>
         </state>
       </provider>
