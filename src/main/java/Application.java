@@ -60,16 +60,7 @@ public class Application {
         }catch (Exception e){e.printStackTrace();}
         return null;
     }*/
-   /* @Bean //red hat
-    public DataSource dataSource()  {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://172.30.193.226:5432/aloha");
-        dataSource.setUsername("aloha");
-        dataSource.setPassword("123");
-        return dataSource;
-    }*/
-    @Bean //red hat //red hat
+    @Bean //red hat
     public ComboPooledDataSource dataSource()  {
         try{
             String dbUrl = "jdbc:postgresql://172.30.193.226:5432/aloha";
