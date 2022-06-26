@@ -79,15 +79,18 @@ public class MainController {
 			if(serverFile.exists()){
 				System.out.println("Файл создан" +serverFile.getAbsolutePath());
 			}
-			BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
+			FileOutputStream fileOutputStream = new FileOutputStream(serverFile);
+			BufferedOutputStream stream = new BufferedOutputStream(fileOutputStream);
+			fileOutputStream.close();
 			stream.write(bytes);
 			stream.close();
-
+			System.out.println("Закрытие");
 
 
 			BufferedImage bufferedImage = resize(largePohto);
 			File outputfile = new File(rootPath+currTime+"_SMALL"+".jpg");
 			ImageIO.write(bufferedImage, "jpg", outputfile);
+			System.out.println("Второе закрытие");
 		}catch (Exception e){e.printStackTrace();}
 
 

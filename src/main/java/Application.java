@@ -60,7 +60,7 @@ public class Application {
         }catch (Exception e){e.printStackTrace();}
         return null;
     }*/
-    @Bean
+    /*@Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
@@ -68,8 +68,8 @@ public class Application {
         dataSource.setUsername("aloha");
         dataSource.setPassword("123");
         return dataSource;
-    }
-   /* @Bean //red hat
+    }*/
+    @Bean //red hat
     public ComboPooledDataSource dataSource()  {
         try{
             String dbUrl = "jdbc:postgresql://172.30.193.226:5432/aloha";
@@ -84,7 +84,7 @@ public class Application {
             return basicDataSource;
         }catch (Exception e){e.printStackTrace();}
         return null;
-    }*/
+    }
     /*
     @Bean //heroku
     public ComboPooledDataSource dataSource()  {
@@ -121,3 +121,5 @@ public class Application {
     }
 
 }
+//Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+//Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
