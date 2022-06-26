@@ -126,7 +126,6 @@ public class MainController {
 	public Object search(@RequestParam("file") MultipartFile multipartFile,@RequestParam("percent")float percent,@RequestParam("inpDate")String inpDate) {
 		//inpDate type yyyy-mm-dd
 		java.sql.Date date = java.sql.Date.valueOf(inpDate);
-		FaceRecognizer faceRecognizer = new FaceRecognizer();
 		List<Prediction> prediction = faceRecognizer.searchFromPool(multipartFile,fullFaceFeatures,percent,date);
 		if(prediction!=null){
 			return prediction;

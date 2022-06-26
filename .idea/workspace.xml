@@ -52,8 +52,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/neural_network/models/FaceFeatures.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
       </list>
     </option>
   </component>
@@ -563,12 +563,12 @@
       <workItem from="1656170628866" duration="9737000" />
       <workItem from="1656184515837" duration="9716000" />
       <workItem from="1656243779117" duration="3762000" />
-      <workItem from="1656248745698" duration="15656000" />
+      <workItem from="1656248745698" duration="16200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62835000" />
+    <option name="totallyTimeSpent" value="63379000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -757,22 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25747126" vertical-offset="31" max-vertical-offset="2210">
-          <caret line="40" column="33" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="33" />
-          <folding>
-            <element signature="e#1269#1287#0" expanded="true" />
-            <element signature="method#search#0;class#MainController#0" expanded="false" />
-            <element signature="method#getPhoto#0;class#MainController#0" expanded="false" />
-            <element signature="method#getFirstData#0;class#MainController#0" expanded="false" />
-            <element signature="method#resize#0;class#MainController#0" expanded="false" />
-            <element signature="method#resize#1;class#MainController#0" expanded="false" />
-            <element signature="method#doSomethingAfterStartup#0;class#MainController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8011494" vertical-offset="255" max-vertical-offset="1564">
@@ -781,6 +765,23 @@
             <element signature="method#userDetailsService#0;class#Application#0" expanded="false" />
             <element signature="method#sessionFactory#0;class#Application#0" expanded="false" />
             <element signature="method#hibernateProperties#0;class#Application#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1137931" vertical-offset="0" max-vertical-offset="1173">
+          <caret line="191" column="42" selection-start-line="191" selection-start-column="42" selection-end-line="191" selection-end-column="42" />
+          <folding>
+            <element signature="e#1269#1287#0" expanded="true" />
+            <element signature="method#add#0;class#MainController#0" expanded="false" />
+            <element signature="method#search#0;class#MainController#0" expanded="false" />
+            <element signature="method#getPhoto#0;class#MainController#0" expanded="false" />
+            <element signature="method#getFirstData#0;class#MainController#0" expanded="false" />
+            <element signature="method#resize#0;class#MainController#0" expanded="false" />
+            <element signature="method#resize#1;class#MainController#0" expanded="false" />
+            <element signature="method#doSomethingAfterStartup#0;class#MainController#0" expanded="false" />
           </folding>
         </state>
       </provider>
