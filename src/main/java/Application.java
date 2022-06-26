@@ -70,17 +70,16 @@ public class Application {
         return dataSource;
     }*/
     @Bean //red hat
-    public DataSource dataSource()  {
+    public ComboPooledDataSource dataSource()  {
         try{
             String dbUrl = "jdbc:postgresql://172.30.193.226:5432/aloha";
 
             ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
-            basicDataSource.setDriverClass("org.postgresql.Driver");
             basicDataSource.setJdbcUrl(dbUrl);
             basicDataSource.setUser("aloha");
             basicDataSource.setPassword("123");
             basicDataSource.setMinPoolSize(0);
-            basicDataSource.setMaxPoolSize(3);
+            basicDataSource.setMaxPoolSize(5);
             basicDataSource.setMaxIdleTime(30000);
             return basicDataSource;
         }catch (Exception e){e.printStackTrace();}
