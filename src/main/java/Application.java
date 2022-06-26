@@ -69,7 +69,7 @@ public class Application {
         dataSource.setPassword("123");
         return dataSource;
     }*/
-    @Bean //red hat
+    @Bean //red hat //red hat
     public ComboPooledDataSource dataSource()  {
         try{
             String dbUrl = "jdbc:postgresql://172.30.193.226:5432/aloha";
