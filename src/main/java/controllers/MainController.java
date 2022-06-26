@@ -81,8 +81,9 @@ public class MainController {
 			}
 			FileOutputStream fileOutputStream = new FileOutputStream(serverFile);
 			BufferedOutputStream stream = new BufferedOutputStream(fileOutputStream);
-			fileOutputStream.close();
 			stream.write(bytes);
+			fileOutputStream.close();
+			stream.flush();
 			stream.close();
 			System.out.println("Закрытие");
 
