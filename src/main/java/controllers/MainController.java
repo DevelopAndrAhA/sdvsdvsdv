@@ -38,6 +38,7 @@ public class MainController {
 	ServletContext servletContext;
 
 	List<FullFaceFeatures> fullFaceFeatures = new ArrayList<FullFaceFeatures>();
+	FaceRecognizer faceRecognizer = new FaceRecognizer();
 
 
 
@@ -57,12 +58,11 @@ public class MainController {
 			@RequestParam("username")String username,
 			@RequestParam("lng")String lng,
 			@RequestParam("lat")String lat) {
-		System.out.println("largePohto "+largePohto.getName());
 		String photoName = null;
 		Date date = new Date();
 
 		long currTime = date.getYear()+date.getDay()+date.getMonth()+date.getTime();
-		File theDir = new File(/*System.getProperty("user.dir")+File.separator+*/File.separator+"images");
+		File theDir = new File(File.separator+"images");
 		if (!theDir.exists()){
 			theDir.mkdir();
 		}
@@ -91,14 +91,9 @@ public class MainController {
 				ImageIO.write(bufferedImage, "jpg", outputfile);
 			}catch (Exception e){e.printStackTrace();}
 
-			System.out.println("Создание FaceRecognizer ");
-			FaceRecognizer faceRecognizer = new FaceRecognizer();
-			System.out.println("FaceRecognizer создан ");
 
 			FaceFeatures faceFeatures = faceRecognizer.addNew(crop);
-			if(faceFeatures!=null){
-				System.out.println("Получение FaceFeatures [faceRecognizer.addNew(crop)]");
-			}
+
 			FullFaceFeatures features = new FullFaceFeatures(username);
 			features.setFaceFeatures(1,faceFeatures);
 			features.setIdentifier(new Date().getSeconds());
