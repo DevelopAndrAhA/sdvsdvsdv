@@ -62,7 +62,7 @@ public class MainController {
 		Date date = new Date();
 
 		long currTime = date.getYear()+date.getDay()+date.getMonth()+date.getTime();
-		File theDir = new File(/*System.getProperty("user.dir")+File.separator+*/"uploadimages");
+		File theDir = new File(/*System.getProperty("user.dir")+File.separator+*/File.separator+"images");
 		if (!theDir.exists()){
 			theDir.mkdir();
 		}
