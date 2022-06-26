@@ -66,38 +66,38 @@ public class MainController {
 		if (!theDir.exists()){
 			theDir.mkdir();
 		}
-
+		File[] ff = theDir.listFiles();
+		if(ff!=null){
+			for(int i=0;i<ff.length;i++){
+				System.out.println(ff[i].getName());
+			}
+		}
 		try{
 			byte[] bytes = largePohto.getBytes();
 			String rootPath = theDir.getAbsolutePath();
 			photoName = currTime+".jpg";
 			File serverFile = new File(rootPath+ File.separator +  photoName);
-			if(!serverFile.exists()){
-				serverFile.createNewFile();
-				System.out.println("Создание файла");
-			}
-			if(serverFile.exists()){
-				System.out.println("Файл создан" +serverFile.getAbsolutePath());
-			}
 			FileOutputStream fileOutputStream = new FileOutputStream(serverFile);
 			BufferedOutputStream stream = new BufferedOutputStream(fileOutputStream);
 			stream.write(bytes);
 			fileOutputStream.close();
 			stream.flush();
 			stream.close();
-			System.out.println("Закрытие");
 
 
 			BufferedImage bufferedImage = resize(largePohto);
 			File outputfile = new File(rootPath+currTime+"_SMALL"+".jpg");
 			ImageIO.write(bufferedImage, "jpg", outputfile);
-			System.out.println("Второе закрытие");
 		}catch (Exception e){e.printStackTrace();}
 
 
 		FaceRecognizer faceRecognizer = new FaceRecognizer();
+		System.out.println("Создание FaceRecognizer ");
 
 		FaceFeatures faceFeatures = faceRecognizer.addNew(crop);
+		if(faceFeatures!=null){
+			System.out.println("Получение FaceFeatures [faceRecognizer.addNew(crop)]");
+		}
 		FullFaceFeatures features = new FullFaceFeatures(username);
 		features.setFaceFeatures(1,faceFeatures);
 		features.setIdentifier(new Date().getSeconds());
@@ -107,7 +107,9 @@ public class MainController {
 		faceFeatures.setFullFaceFeatures(features);
 
 		fullFaceFeatures.add(features);
+		System.out.println("fullFaceFeatures.add(features)");
 		service.save(features);
+		System.out.println("service.save(features)");
 		ResultContainer resultContainer = new ResultContainer();
 		resultContainer.setStatus(200);
 		resultContainer.setDesc("success");
