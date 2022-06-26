@@ -91,8 +91,9 @@ public class MainController {
 				ImageIO.write(bufferedImage, "jpg", outputfile);
 			}catch (Exception e){e.printStackTrace();}
 
-			FaceRecognizer faceRecognizer = new FaceRecognizer();
 			System.out.println("Создание FaceRecognizer ");
+			FaceRecognizer faceRecognizer = new FaceRecognizer();
+			System.out.println("FaceRecognizer создан ");
 
 			FaceFeatures faceFeatures = faceRecognizer.addNew(crop);
 			if(faceFeatures!=null){
@@ -195,6 +196,16 @@ public class MainController {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void doSomethingAfterStartup() {
+		File theDir = new File(/*System.getProperty("user.dir")+File.separator+*/File.separator+"images");
+		if (!theDir.exists()){
+			theDir.mkdir();
+		}
+		File[] ff = theDir.listFiles();
+		if(ff!=null){
+			for(int i=0;i<ff.length;i++){
+				System.out.println(ff[i].getName());
+			}
+		}
 		fullFaceFeatures = service.getFullFeatures();
 	}
 
