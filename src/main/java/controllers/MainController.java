@@ -88,33 +88,37 @@ public class MainController {
 			BufferedImage bufferedImage = resize(largePohto);
 			File outputfile = new File(rootPath+currTime+"_SMALL"+".jpg");
 			ImageIO.write(bufferedImage, "jpg", outputfile);
+
+			FaceRecognizer faceRecognizer = new FaceRecognizer();
+			System.out.println("Создание FaceRecognizer ");
+
+			FaceFeatures faceFeatures = faceRecognizer.addNew(crop);
+			if(faceFeatures!=null){
+				System.out.println("Получение FaceFeatures [faceRecognizer.addNew(crop)]");
+			}
+			FullFaceFeatures features = new FullFaceFeatures(username);
+			features.setFaceFeatures(1,faceFeatures);
+			features.setIdentifier(new Date().getSeconds());
+			features.setPhotoName(photoName);
+			faceFeatures.setLng(Double.parseDouble(lng));
+			faceFeatures.setLat(Double.parseDouble(lat));
+			faceFeatures.setFullFaceFeatures(features);
+
+			fullFaceFeatures.add(features);
+			System.out.println("fullFaceFeatures.add(features)");
+			service.save(features);
+			System.out.println("service.save(features)");
+			ResultContainer resultContainer = new ResultContainer();
+			resultContainer.setStatus(200);
+			resultContainer.setDesc("success");
+			return resultContainer;
+
 		}catch (Exception e){e.printStackTrace();}
 
 
-		FaceRecognizer faceRecognizer = new FaceRecognizer();
-		System.out.println("Создание FaceRecognizer ");
 
-		FaceFeatures faceFeatures = faceRecognizer.addNew(crop);
-		if(faceFeatures!=null){
-			System.out.println("Получение FaceFeatures [faceRecognizer.addNew(crop)]");
-		}
-		FullFaceFeatures features = new FullFaceFeatures(username);
-		features.setFaceFeatures(1,faceFeatures);
-		features.setIdentifier(new Date().getSeconds());
-		features.setPhotoName(photoName);
-		faceFeatures.setLng(Double.parseDouble(lng));
-		faceFeatures.setLat(Double.parseDouble(lat));
-		faceFeatures.setFullFaceFeatures(features);
+		return "errror";
 
-		fullFaceFeatures.add(features);
-		System.out.println("fullFaceFeatures.add(features)");
-		service.save(features);
-		System.out.println("service.save(features)");
-		ResultContainer resultContainer = new ResultContainer();
-		resultContainer.setStatus(200);
-		resultContainer.setDesc("success");
-
-		return resultContainer;
 
 	}
 
