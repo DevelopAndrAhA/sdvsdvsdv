@@ -47,6 +47,7 @@ public class MainController {
 		return "hello";
 	}
 
+	///var/run/secrets/kubernetes.io/serviceaccount
 
 	@ResponseBody
 	@RequestMapping(value = "new_face",method = RequestMethod.POST)
