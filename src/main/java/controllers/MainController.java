@@ -86,7 +86,7 @@ public class MainController {
 			FullFaceFeatures features = new FullFaceFeatures(username);
 			features.setFaceFeatures(1,faceFeatures);
 			features.setIdentifier(new Date().getSeconds());
-			features.setPhotoName(photoName);
+			features.setPhotoName(currTime+"");
 			faceFeatures.setLng(Double.parseDouble(lng));
 			faceFeatures.setLat(Double.parseDouble(lat));
 			faceFeatures.setFullFaceFeatures(features);
