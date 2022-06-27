@@ -2,21 +2,13 @@ package service;
 
 
 import neural_network.models.FullFaceFeatures;
+import neural_network.models.ResponseModel;
 import org.hibernate.Criteria;
 import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-import org.springframework.orm.jpa.EntityManagerHolder;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,7 +60,7 @@ public class MyServiceClass {
     }
 
 
-    public List getFullFeatures(double lat,double lng){
+    public List<ResponseModel> getFullFeatures(double lat,double lng){
         double lat_temp = lat+0.001000;
         double lng_temp = lng+0.001000;
 
@@ -86,8 +78,8 @@ public class MyServiceClass {
                     "where f2.lat between "+lat+" and  " +lat_temp +
                     "or (f2.lng between "+lng+" and "+lng_temp+")";
 
-        SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql);
-        List list = sqlQuery.list();
+        SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql).addEntity(ResponseModel.class);
+        List<ResponseModel> list = sqlQuery.list();
         return list;
     }
 

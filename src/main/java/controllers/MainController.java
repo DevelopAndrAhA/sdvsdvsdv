@@ -2,10 +2,7 @@ package controllers;
 
 
 import neural_network.FaceRecognizer;
-import neural_network.models.FaceFeatures;
-import neural_network.models.FullFaceFeatures;
-import neural_network.models.Prediction;
-import neural_network.models.ResultContainer;
+import neural_network.models.*;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -95,9 +92,7 @@ public class MainController {
 			faceFeatures.setFullFaceFeatures(features);
 
 			fullFaceFeatures.add(features);
-			System.out.println("fullFaceFeatures.add(features)");
 			service.save(features);
-			System.out.println("service.save(features)");
 			ResultContainer resultContainer = new ResultContainer();
 			resultContainer.setStatus(200);
 			resultContainer.setDesc("success");
@@ -116,7 +111,6 @@ public class MainController {
 	@ResponseBody
 	@RequestMapping(value = "search",method = RequestMethod.POST)
 	public Object search(@RequestParam("file") MultipartFile multipartFile,@RequestParam("percent")float percent,@RequestParam("inpDate")String inpDate) {
-		//inpDate type yyyy-mm-dd
 		java.sql.Date date = java.sql.Date.valueOf(inpDate);
 		List<Prediction> prediction = faceRecognizer.searchFromPool(multipartFile,fullFaceFeatures,percent,date);
 		if(prediction!=null){
@@ -126,8 +120,6 @@ public class MainController {
 		resultContainer.setStatus(404);
 		resultContainer.setDesc("Нет данных");
 		return resultContainer;
-
-
 	}
 
 
@@ -151,7 +143,7 @@ public class MainController {
 	@ResponseBody
 	@RequestMapping(value = "getInitData",method = RequestMethod.GET)
 	public Object getFirstData(@RequestParam("lat")String lat,@RequestParam("lng")String lng){
-		List list = service.getFullFeatures(Double.parseDouble(lat),Double.parseDouble(lng));
+		List<ResponseModel>list = service.getFullFeatures(Double.parseDouble(lat),Double.parseDouble(lng));
 		return list;
 	}
 
@@ -184,6 +176,8 @@ public class MainController {
 	public void doSomethingAfterStartup() {
 		fullFaceFeatures = service.getFullFeatures();
 	}
+
+
 
 
 
