@@ -1,12 +1,11 @@
 package neural_network.models;
 
 
-import jdk.nashorn.internal.ir.annotations.Immutable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import org.hibernate.annotations.Immutable;
 
 @Entity
 @Immutable
