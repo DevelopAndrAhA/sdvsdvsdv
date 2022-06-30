@@ -1,13 +1,13 @@
 package controllers;
 
 
-import javafx.util.Pair;
+/*import javafx.util.Pair;
+import org.springframework.context.event.ContextRefreshedEvent;*/
 import neural_network.FaceRecognizer;
 import neural_network.models.*;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -147,7 +147,7 @@ public class MainController {
 		return list;
 	}
 
-	@ResponseBody
+	/*@ResponseBody
 	@RequestMapping(value = "perc",method = RequestMethod.GET)
 	public String perc(){
 		Init init = new Init();
@@ -168,8 +168,8 @@ public class MainController {
 
 
 
-		/*Pair p = l2_search(hashMap,nic1);
-		System.out.printf(p.getKey()+"");*/
+		*//*Pair p = l2_search(hashMap,nic1);
+		System.out.printf(p.getKey()+"");*//*
 
 		matchTwoFeatureArrays(eva1, eva1);
 		matchTwoFeatureArrays(eva1, eva2);
@@ -188,7 +188,7 @@ public class MainController {
 		matchTwoFeatureArrays(nic1, nic2);
 
 		return "string";
-	}
+	}*/
 
 	public BufferedImage resize(MultipartFile photo) {
 
@@ -220,7 +220,7 @@ public class MainController {
 
 
 
-	private void matchTwoFeatureArrays(double [] first, double[] second) {
+/*	private void matchTwoFeatureArrays(double [] first, double[] second) {
 		float distance = euclidDistance(first, second);
 		final float distanceThreshold = 0.6f;
 		float percentage = Math.min(100, 100 * distanceThreshold / distance);
@@ -261,6 +261,6 @@ public class MainController {
 			}
 		}
 		return ret;
-	}
+	}*/
 
 }
