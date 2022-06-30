@@ -1,6 +1,7 @@
 package controllers;
 
 
+import javafx.util.Pair;
 import neural_network.FaceRecognizer;
 import neural_network.models.*;
 import org.apache.commons.io.IOUtils;
@@ -21,8 +22,7 @@ import javax.servlet.ServletContext;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
 import java.util.List;
 
 
@@ -147,7 +147,48 @@ public class MainController {
 		return list;
 	}
 
+	@ResponseBody
+	@RequestMapping(value = "perc",method = RequestMethod.GET)
+	public String perc(){
+		Init init = new Init();
 
+		double eva1[] = init.getEva1();
+		double eva2[] = init.getEva2();
+		double eva3[] = init.getEva3();
+		double nic1[] = init.getNicole1();
+		double nic2[] = init.getNicole2();
+
+		HashMap hashMap = new HashMap();
+
+		hashMap.put("eva1",eva1);
+		hashMap.put("nic2",nic2);
+		hashMap.put("eva2",eva2);
+		hashMap.put("eva3",eva3);
+		hashMap.put("nic1",nic1);
+
+
+
+		/*Pair p = l2_search(hashMap,nic1);
+		System.out.printf(p.getKey()+"");*/
+
+		matchTwoFeatureArrays(eva1, eva1);
+		matchTwoFeatureArrays(eva1, eva2);
+		matchTwoFeatureArrays(eva1, eva3);
+
+
+		matchTwoFeatureArrays(eva2, eva1);
+		matchTwoFeatureArrays(eva2, eva2);
+		matchTwoFeatureArrays(eva2, eva3);
+
+
+		matchTwoFeatureArrays(eva3, eva1);
+		matchTwoFeatureArrays(eva3, eva2);
+		matchTwoFeatureArrays(eva3, eva3);
+
+		matchTwoFeatureArrays(nic1, nic2);
+
+		return "string";
+	}
 
 	public BufferedImage resize(MultipartFile photo) {
 
@@ -179,8 +220,47 @@ public class MainController {
 
 
 
+	private void matchTwoFeatureArrays(double [] first, double[] second) {
+		float distance = euclidDistance(first, second);
+		final float distanceThreshold = 0.6f;
+		float percentage = Math.min(100, 100 * distanceThreshold / distance);
+		final float percentageThreshold = 70.0f;
+
+		Prediction prediction = new Prediction(percentage, percentage >= percentageThreshold, "username", 0,"username");
 
 
+		System.out.println(prediction.toString());
+	}
 
+
+	private float euclidDistance(double[] first, double[] second) {
+		double sum = 0;
+		for (int i = 0; i < first.length; i++) {
+			sum += Math.abs(first[i] - second[i]);
+		}
+		return (float) Math.sqrt(sum);
+	}
+
+
+    public Pair l2_search(HashMap<String,double[]> hashMap,double [] search){
+		Pair<String,Double> ret=null;
+		double distance=0;
+		Set<String> keys = hashMap.keySet();
+		Iterator iterator = keys.iterator();
+		while(iterator.hasNext()){
+			String key = (String)iterator.next();
+			System.out.println(key);
+			double knownEmb[] = hashMap.get(key);
+			for (int i = 0; i < search.length; i++) {
+				double diff = search[i] - knownEmb[i];
+				distance += diff*diff;
+			}
+			distance = Math.sqrt(distance);
+			if (ret == null || distance < ret.getValue()) {
+				ret = new Pair(key, distance);
+			}
+		}
+		return ret;
+	}
 
 }

@@ -136,20 +136,24 @@ public class FaceRecognizer {
     }
 
     private Prediction matchTwoFeatureArrays(FaceFeatures first, FaceFeatures second,String username, int identifier,float percent,String photoName,java.sql.Date inpDate) {
-        float distance = euclidDistance(first.getFeatures(), second.getFeatures());
+        if(second.getInp_date().getTime()>=inpDate.getTime()){
+            float distance = euclidDistance(first.getFeatures(), second.getFeatures());
 
-        final float distanceThreshold = 0.6f;
-        final float percentageThreshold = 70.0f;
+            final float distanceThreshold = 0.6f;
+            final float percentageThreshold = 70.0f;
 
-        float percentage = Math.min(100, 100 * distanceThreshold / distance);
-        Prediction prediction = new Prediction(percentage, percentage >= percentageThreshold, username, identifier,photoName);
-        prediction.setInpDate(second.getInp_date().toString());
-        prediction.setLat(second.getLat());
-        prediction.setLng(second.getLng());
-        if(percentage>=percent && second.getInp_date().getTime()>=inpDate.getTime()){
-            prediction_list.add(prediction);
+            float percentage = Math.min(100, 100 * distanceThreshold / distance);
+            Prediction prediction = new Prediction(percentage, percentage >= percentageThreshold, username, identifier,photoName);
+            prediction.setInpDate(second.getInp_date().toString());
+            prediction.setLat(second.getLat());
+            prediction.setLng(second.getLng());
+            if(percentage>=percent){
+                prediction_list.add(prediction);
+            }
+            return prediction;
         }
-        return prediction;
+        return null;
+
     }
 
 

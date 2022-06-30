@@ -60,15 +60,6 @@ public class Application {
         }catch (Exception e){e.printStackTrace();}
         return null;
     }*/
-    /*@Bean
-     public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://172.30.193.226:5432/aloha");
-        dataSource.setUsername("aloha");
-        dataSource.setPassword("123");
-        return dataSource;
-    }*/
     @Bean //red hat
     public ComboPooledDataSource dataSource()  {
         try{
@@ -121,5 +112,13 @@ public class Application {
     }
 
 }
-//Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
-//Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+
+    /*@Bean
+     public DataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setUrl("jdbc:postgresql://172.30.193.226:5432/aloha");
+        dataSource.setUsername("aloha");
+        dataSource.setPassword("123");
+        return dataSource;
+    }*/

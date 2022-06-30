@@ -75,9 +75,8 @@ public class MyServiceClass {
                     " from FullFaceFeatures f " +
                     "inner join FaceFeatures f2 " +
                     "on f2.fullfacefeatures_id = f.fullFaceFeatures_id " +
-                    "where f2.lat between "+lat+" and  " +lat_temp +
-                    "or (f2.lng between "+lng+" and "+lng_temp+")";
-
+                    "where (f2.lat between "+lat+" and  " +lat_temp + "or (f2.lng between "+lng+" and "+lng_temp+")) "+
+                     "and to_char(f.inp_date,'dd.mm.yyyy')=to_char(CURRENT_DATE,'dd.mm.yyyy')";
         SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql).addEntity(ResponseModel.class);
         List<ResponseModel> list = sqlQuery.list();
         return list;
