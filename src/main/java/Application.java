@@ -64,7 +64,7 @@ public class Application {
     public ComboPooledDataSource dataSource()  {
         try{
             //String dbUrl = "jdbc:postgresql://172.30.193.226:5432/alohadb";
-            String dbUrl = "jdbc:postgresql://172.30.206.238:5432/alohadb";
+            String dbUrl = "jdbc:postgresql://172.30.156.104:5432/alohadb";
             ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
             basicDataSource.setJdbcUrl(dbUrl);
             basicDataSource.setUser("alohadb");
