@@ -63,11 +63,11 @@ public class Application {
     @Bean //red hat
     public ComboPooledDataSource dataSource()  {
         try{
-            String dbUrl = "jdbc:postgresql://172.30.193.226:5432/aloha";
-
+            //String dbUrl = "jdbc:postgresql://172.30.193.226:5432/alohadb";
+            String dbUrl = "jdbc:postgresql://172.30.206.238:5432/alohadb";
             ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
             basicDataSource.setJdbcUrl(dbUrl);
-            basicDataSource.setUser("aloha");
+            basicDataSource.setUser("alohadb");
             basicDataSource.setPassword("123");
             basicDataSource.setMinPoolSize(0);
             basicDataSource.setMaxPoolSize(5);
