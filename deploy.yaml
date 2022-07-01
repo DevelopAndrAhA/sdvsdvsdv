@@ -1,0 +1,25 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: newcluster
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: newcluster
+  template:
+    metadata:
+      labels:
+        app: newcluster
+    spec:
+      containers:
+        - name: newcluster
+          image: newcluster
+          ports:
+            - name: http
+              containerPort: 8088
+              protocol: TCP
+          resources:
+            limits:
+              memory: "1024Mi"
+              cpu: "500m"
