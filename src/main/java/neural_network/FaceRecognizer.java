@@ -135,6 +135,7 @@ public class FaceRecognizer {
         try{
             return Arrays.stream(predictions). max((first, second) -> (Float.compare(first.percentage, second.percentage))).orElse(null);
         }catch (Exception e){
+            e.printStackTrace();
             return null;
         }
     }
