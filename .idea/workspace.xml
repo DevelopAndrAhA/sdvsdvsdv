@@ -58,6 +58,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Application.java" />
         <option value="$PROJECT_DIR$/deployment-teststorage.yaml" />
         <option value="$PROJECT_DIR$/src/deploy.yaml" />
+        <option value="$PROJECT_DIR$/deploy.yaml" />
+        <option value="$PROJECT_DIR$/devfile.yaml" />
       </list>
     </option>
   </component>
@@ -139,20 +141,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SpringExam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="firstStart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringExam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -531,12 +519,12 @@
       <workItem from="1656673982626" duration="629000" />
       <workItem from="1656674926799" duration="517000" />
       <workItem from="1656678744072" duration="451000" />
-      <workItem from="1656680725327" duration="2024000" />
+      <workItem from="1656680725327" duration="2870000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83563000" />
+    <option name="totallyTimeSpent" value="84409000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -737,10 +725,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deploy.yaml">
+    <entry file="file://$PROJECT_DIR$/devfile.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37126437" vertical-offset="0" max-vertical-offset="870">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.23448277" vertical-offset="0" max-vertical-offset="870">
+          <caret line="12" column="84" selection-start-line="12" selection-start-column="84" selection-end-line="12" selection-end-column="84" />
           <folding />
         </state>
       </provider>
