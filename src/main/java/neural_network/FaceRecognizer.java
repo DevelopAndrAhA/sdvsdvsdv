@@ -132,7 +132,11 @@ public class FaceRecognizer {
             predictions[i] = matchTwoFeatureArrays(userToFind,fullFaceFeatures.getFaceFeatures(1),fullFaceFeatures.getFaceLabel(),fullFaceFeatures.getIdentifier(),percent,fullFaceFeatures.getPhotoName(),inpDate);
         }
 
-        return Arrays.stream(predictions). max((first, second) -> (Float.compare(first.percentage, second.percentage))).orElse(null);
+        try{
+            return Arrays.stream(predictions). max((first, second) -> (Float.compare(first.percentage, second.percentage))).orElse(null);
+        }catch (Exception e){
+            return null;
+        }
     }
 
     private Prediction matchTwoFeatureArrays(FaceFeatures first, FaceFeatures second,String username, int identifier,float percent,String photoName,java.sql.Date inpDate) {
