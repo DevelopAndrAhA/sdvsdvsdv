@@ -6,15 +6,15 @@ metadata:
     app.openshift.io/route-disabled: 'false'
     app.openshift.io/vcs-ref: ''
     app.openshift.io/vcs-uri: 'https://github.com/DevelopAndrAhA/sdvsdvsdv.git'
-    deployment.kubernetes.io/revision: '6'
+    deployment.kubernetes.io/revision: '7'
     image.openshift.io/triggers: >-
       [{"from":{"kind":"ImageStreamTag","name":"newcluster:latest","namespace":"4barashkis-dev"},"fieldPath":"spec.template.spec.containers[?(@.name==\"newcluster\")].image","pause":"false"}]
     openshift.io/generated-by: OpenShiftWebConsole
-  resourceVersion: '1278661122'
+  resourceVersion: '1278667319'
   name: newcluster
   uid: 2d27ee81-51b4-4a25-ace7-00a7cc7693d7
   creationTimestamp: '2022-07-01T10:23:10Z'
-  generation: 14
+  generation: 15
   managedFields:
     - manager: openshift-controller-manager
       operation: Update
@@ -109,7 +109,7 @@ metadata:
     - manager: kube-controller-manager
       operation: Update
       apiVersion: apps/v1
-      time: '2022-07-01T11:13:10Z'
+      time: '2022-07-01T11:15:53Z'
       fieldsType: FieldsV1
       fieldsV1:
         'f:metadata':
@@ -168,16 +168,16 @@ spec:
       containers:
         - name: newcluster
           image: >-
-            image-registry.openshift-image-registry.svc:5000/4barashkis-dev/newcluster@sha256:3e99780688af21db5854b1f57ba617b1a590c681d93be62f7b3ed72af3648ddc
+            image-registry.openshift-image-registry.svc:5000/4barashkis-dev/newcluster@sha256:0223bef789899862f0b8a75fe7cd4db0a4b92aa567c893aeb1bef6646f021466
           ports:
             - containerPort: 8080
               protocol: TCP
             - containerPort: 8443
               protocol: TCP
           resources:
-                  limits:
-                    memory: "1024Mi"
-                    cpu: "500m"
+                      limits:
+                        memory: "1024Mi"
+                        cpu: "500m"
           volumeMounts:
             - name: storagealoha
               mountPath: /images
@@ -189,31 +189,29 @@ spec:
       dnsPolicy: ClusterFirst
       securityContext: {}
       schedulerName: default-scheduler
-      imagePullSecrets: []
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 25%
       maxUnavailable: 25%
+      maxSurge: 25%
   revisionHistoryLimit: 10
   progressDeadlineSeconds: 600
-  paused: false
 status:
-  observedGeneration: 14
+  observedGeneration: 15
   replicas: 1
   updatedReplicas: 1
   readyReplicas: 1
   availableReplicas: 1
   conditions:
-    - type: Progressing
-      status: 'True'
-      lastUpdateTime: '2022-07-01T11:08:10Z'
-      lastTransitionTime: '2022-07-01T10:23:10Z'
-      reason: NewReplicaSetAvailable
-      message: ReplicaSet "newcluster-589f9c46cf" has successfully progressed.
     - type: Available
       status: 'True'
       lastUpdateTime: '2022-07-01T11:13:10Z'
       lastTransitionTime: '2022-07-01T11:13:10Z'
       reason: MinimumReplicasAvailable
       message: Deployment has minimum availability.
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2022-07-01T11:15:53Z'
+      lastTransitionTime: '2022-07-01T10:23:10Z'
+      reason: NewReplicaSetAvailable
+      message: ReplicaSet "newcluster-759448ff78" has successfully progressed.
