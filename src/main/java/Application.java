@@ -1,4 +1,5 @@
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -9,7 +10,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
+import javax.servlet.ServletContext;
 import javax.sql.DataSource;
 import java.util.Properties;
 
@@ -18,6 +21,8 @@ import java.util.Properties;
 @ComponentScan({"controllers","models","service"})
 public class Application {
 
+    @Autowired
+    ServletContext context;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -99,8 +104,12 @@ public class Application {
         return null;
 
     }*/
-
-
+    @Bean
+    public CommonsMultipartResolver fileUploader()  {
+        CommonsMultipartResolver basicDataSource = new CommonsMultipartResolver(context);
+        basicDataSource.setMaxUploadSize(10000000);
+        return basicDataSource;
+    }
     private final Properties hibernateProperties() {
         Properties hibernateProperties = new Properties();
         hibernateProperties.setProperty(

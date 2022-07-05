@@ -133,7 +133,7 @@ public class MainController {
 			File f = new File(rootPath);
 			in = new FileInputStream(f);
 			return IOUtils.toByteArray(in);
-		}catch (Exception e){e.printStackTrace();}
+		}catch (Exception e){}
 		return null;
 	}
 
