@@ -128,7 +128,7 @@
     </dependencies>
 
     <build>
-        <resources>
+        <!--<resources>
             <resource>
                 <directory>resources</directory>
                 <targetPath>${project.build.outputDirectory}</targetPath>
@@ -136,7 +136,7 @@
                     <include>application.properties</include>
                 </includes>
             </resource>
-        </resources>
+        </resources>-->
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
