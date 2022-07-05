@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,7 +12,8 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.servlet.ServletContext;
-import javax.sql.DataSource;
+//import javax.sql.DataSource;
+//import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import java.util.Properties;
 
 
@@ -106,9 +106,9 @@ public class Application {
     }*/
     @Bean
     public CommonsMultipartResolver fileUploader()  {
-        CommonsMultipartResolver basicDataSource = new CommonsMultipartResolver(context);
-        basicDataSource.setMaxUploadSize(10000000);
-        return basicDataSource;
+        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver(context);
+        commonsMultipartResolver.setMaxUploadSize(10000000);
+        return commonsMultipartResolver;
     }
     private final Properties hibernateProperties() {
         Properties hibernateProperties = new Properties();
