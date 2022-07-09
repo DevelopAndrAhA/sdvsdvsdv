@@ -18,9 +18,12 @@
             </snapshots>
         </repository>
     </repositories>
-    <!--<properties>
+   <!-- <properties>
         <start-class>Application</start-class>
     </properties>-->
+    <properties>
+        <main-class>Application</main-class>
+    </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>

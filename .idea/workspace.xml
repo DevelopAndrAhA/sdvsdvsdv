@@ -567,12 +567,12 @@
       <workItem from="1656680725327" duration="5137000" />
       <workItem from="1657035397875" duration="1296000" />
       <workItem from="1657037149142" duration="1372000" />
-      <workItem from="1657327468998" duration="989000" />
+      <workItem from="1657327468998" duration="1309000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90333000" />
+    <option name="totallyTimeSpent" value="90653000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -789,8 +789,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.762069" vertical-offset="1836" max-vertical-offset="2771">
-          <caret line="147" column="21" selection-start-line="147" selection-start-column="21" selection-end-line="147" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.46896553" vertical-offset="0" max-vertical-offset="2822">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
           <folding />
         </state>
       </provider>
