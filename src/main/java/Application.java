@@ -51,8 +51,8 @@ public class Application {
         return sessionFactory;
     }
 
-    /*@Bean
-    public ComboPooledDataSource dataSource()  {
+   /* @Bean
+     public ComboPooledDataSource dataSource()  {
         try{
             String dbUrl = "jdbc:postgresql://localhost:5432/aloha";
 
@@ -68,14 +68,14 @@ public class Application {
         return null;
     }*/
     @Bean //red hat
-    public ComboPooledDataSource dataSource()  {
+     public ComboPooledDataSource dataSource()  {
         try{
             //String dbUrl = "jdbc:postgresql://172.30.193.226:5432/alohadb";
-            String dbUrl = "jdbc:postgresql://172.30.156.104:5432/alohadb";
+            String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
             ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
             basicDataSource.setJdbcUrl(dbUrl);
-            basicDataSource.setUser("alohadb");
-            basicDataSource.setPassword("123");
+            basicDataSource.setUser("postgres");
+            basicDataSource.setPassword("ebanyibaran123");
             basicDataSource.setMinPoolSize(0);
             basicDataSource.setMaxPoolSize(5);
             basicDataSource.setMaxIdleTime(30000);
@@ -106,12 +106,6 @@ public class Application {
         return null;
 
     }*/
-    @Bean
-    public CommonsMultipartResolver fileUploader()  {
-        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver(context);
-        commonsMultipartResolver.setMaxUploadSize(10000000);
-        return commonsMultipartResolver;
-    }
     private final Properties hibernateProperties() {
         Properties hibernateProperties = new Properties();
         hibernateProperties.setProperty(
