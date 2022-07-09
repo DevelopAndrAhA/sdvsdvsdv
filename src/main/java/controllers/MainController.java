@@ -5,6 +5,7 @@ package controllers;
 import org.springframework.context.event.ContextRefreshedEvent;*/
 import neural_network.FaceRecognizer;
 import neural_network.models.*;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -57,7 +58,7 @@ public class MainController {
 		Date date = new Date();
 
 		long currTime = date.getYear()+date.getDay()+date.getMonth()+date.getTime();
-		File theDir = new File(File.separator+"images");
+		File theDir = new File(FileUtils.getUserDirectory()+File.separator+"images");
 		if (!theDir.exists()){
 			theDir.mkdir();
 		}
@@ -127,7 +128,7 @@ public class MainController {
 	@RequestMapping(value = "image", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
 	public  byte[]  getPhoto(@RequestParam("imgname")String imgname){
 		try {
-			String rootPath = File.separator+"images"+File.separator+imgname;
+			String rootPath = FileUtils.getUserDirectory()+File.separator+"images"+File.separator+imgname;
 
 			InputStream in = null;
 			File f = new File(rootPath);
