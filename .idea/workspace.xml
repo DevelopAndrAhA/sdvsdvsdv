@@ -31,7 +31,29 @@
     <favorites_list name="SpringExam" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.05862069" vertical-offset="0" max-vertical-offset="3451">
+              <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1192#1210#0" expanded="true" />
+                <element signature="method#getPhoto#0;class#MainController#0" expanded="false" />
+                <element signature="method#getFirstData#0;class#MainController#0" expanded="false" />
+                <element signature="method#perc#0;class#MainController#0" expanded="false" />
+                <element signature="e#5430#5442#0" expanded="true" />
+                <element signature="method#resize#0;class#MainController#0" expanded="false" />
+                <element signature="method#resize#1;class#MainController#0" expanded="false" />
+                <element signature="method#matchTwoFeatureArrays#0;class#MainController#0" expanded="false" />
+                <element signature="method#euclidDistance#0;class#MainController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -59,8 +81,8 @@
         <option value="$PROJECT_DIR$/src/main/java/neural_network/FaceRecognizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/neural_network/models/Prediction.java" />
         <option value="$PROJECT_DIR$/src/main/java/neural_network/models/FaceFeatures.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
       </list>
     </option>
   </component>
@@ -654,16 +676,16 @@
       <workItem from="1657414540866" duration="3431000" />
       <workItem from="1657418622879" duration="3925000" />
       <workItem from="1657465457022" duration="125000" />
-      <workItem from="1657469173018" duration="971000" />
+      <workItem from="1657469173018" duration="1422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102793000" />
+    <option name="totallyTimeSpent" value="103244000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -679,7 +701,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43875277" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15138593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15138593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -882,15 +904,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04367816" vertical-offset="965" max-vertical-offset="3451">
-          <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.05862069" vertical-offset="0" max-vertical-offset="3451">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1190#1208#0" expanded="true" />
+            <element signature="e#1192#1210#0" expanded="true" />
             <element signature="method#getPhoto#0;class#MainController#0" expanded="false" />
             <element signature="method#getFirstData#0;class#MainController#0" expanded="false" />
             <element signature="method#perc#0;class#MainController#0" expanded="false" />
-            <element signature="e#5428#5440#0" expanded="true" />
+            <element signature="e#5430#5442#0" expanded="true" />
             <element signature="method#resize#0;class#MainController#0" expanded="false" />
             <element signature="method#resize#1;class#MainController#0" expanded="false" />
             <element signature="method#matchTwoFeatureArrays#0;class#MainController#0" expanded="false" />
