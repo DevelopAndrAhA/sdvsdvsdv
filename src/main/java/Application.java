@@ -51,7 +51,7 @@ public class Application {
         return sessionFactory;
     }
 
-    @Bean
+    /*@Bean
      public ComboPooledDataSource dataSource()  {
         try{
             String dbUrl = "jdbc:postgresql://localhost:5432/aloha";
@@ -66,8 +66,8 @@ public class Application {
             return basicDataSource;
         }catch (Exception e){e.printStackTrace();}
         return null;
-    }
-   /* @Bean //red hat
+    }*/
+    @Bean //red hat || aws
      public ComboPooledDataSource dataSource()  {
         try{
             //String dbUrl = "jdbc:postgresql://172.30.193.226:5432/alohadb";
@@ -82,7 +82,7 @@ public class Application {
             return basicDataSource;
         }catch (Exception e){e.printStackTrace();}
         return null;
-    }*/
+    }
     /*
     @Bean //heroku
     public ComboPooledDataSource dataSource()  {

@@ -31,7 +31,7 @@ public class Prediction {
         this.inpDate = inpDate;
     }
 
-    public double getPercentage() {
+    public float getPercentage() {
         return percentage;
     }
 

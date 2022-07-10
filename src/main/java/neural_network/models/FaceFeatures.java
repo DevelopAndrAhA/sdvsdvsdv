@@ -23,7 +23,7 @@ public class FaceFeatures {
     private double lat;
 
     //128 features to characterize each face
-    private float[] features = new float[191];
+    private float[] features = new float[192];
     private int faceType = -1;
 
     @CreationTimestamp

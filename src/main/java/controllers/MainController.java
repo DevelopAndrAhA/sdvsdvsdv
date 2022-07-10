@@ -21,6 +21,7 @@ import javax.annotation.PostConstruct;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletContext;
 import java.awt.*;
+import java.awt.geom.Arc2D;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
@@ -36,9 +37,13 @@ public class MainController {
 	ServletContext servletContext;
 
 	List<FullFaceFeatures> fullFaceFeatures = new ArrayList<FullFaceFeatures>();
-	FaceRecognizer faceRecognizer = new FaceRecognizer();
+	//FaceRecognizer faceRecognizer = new FaceRecognizer();
 
 
+	/*@EventListener(ApplicationReadyEvent.class)
+	public void doSomethingAfterStartup() {
+		fullFaceFeatures = service.getFullFeatures();
+	}*/
 
 	@ResponseBody
 	@RequestMapping(method = RequestMethod.GET)
@@ -49,9 +54,10 @@ public class MainController {
 	@ResponseBody
 	@RequestMapping(value = "new_face",method = RequestMethod.POST)
 	public Object add(
-			@RequestParam("crop") MultipartFile crop,
+			/*@RequestParam("crop") MultipartFile crop,*/
 			@RequestParam("largePohto") MultipartFile largePohto,
 			@RequestParam("username")String username,
+			@RequestParam("crop")String crop,
 			@RequestParam("lng")String lng,
 			@RequestParam("lat")String lat) {
 		String photoName = null;
@@ -82,7 +88,18 @@ public class MainController {
 			}catch (Exception e){e.printStackTrace();}
 
 
-			FaceFeatures faceFeatures = faceRecognizer.addNew(crop);
+			float mas [] = new float[192];
+			String [] cropSplit = crop.split(",");
+			int k=0;
+			for(int i=0;i<cropSplit.length;i++){
+				mas[i] = Float.parseFloat(cropSplit[i]);
+				k=i;
+			}
+
+			System.out.println(k);
+
+			//FaceFeatures faceFeatures = faceRecognizer.addNew(crop);
+			FaceFeatures faceFeatures = new FaceFeatures(mas,1);
 
 			FullFaceFeatures features = new FullFaceFeatures(username);
 			features.setFaceFeatures(1,faceFeatures);
@@ -103,13 +120,13 @@ public class MainController {
 
 
 
-		return "errrror";
+		return "error";
 
 
 	}
 
 
-	@ResponseBody
+	/*@ResponseBody
 	@RequestMapping(value = "search",method = RequestMethod.POST)
 	public Object search(@RequestParam("file") MultipartFile multipartFile,@RequestParam("percent")float percent,@RequestParam("inpDate")String inpDate) {
 		java.sql.Date date = java.sql.Date.valueOf(inpDate);
@@ -121,7 +138,7 @@ public class MainController {
 		resultContainer.setStatus(404);
 		resultContainer.setDesc("Нет данных");
 		return resultContainer;
-	}
+	}*/
 
 
 	@ResponseBody
@@ -148,55 +165,35 @@ public class MainController {
 		return list;
 	}
 
+
+
 	@ResponseBody
-	@RequestMapping(value = "perc",method = RequestMethod.GET)
-	public String perc(){
-		Init init = new Init();
-
-		float eva1[] = init.getEva1();
-		float eva2[] = init.getEva2();
-		float eva3[] = init.getEva3();
-		float nic1[] = init.getNicole1();
-		float nic2[] = init.getNicole2();
-
-		/*HashMap hashMap = new HashMap();
-
-		hashMap.put("nic2",nic2);
-		hashMap.put("eva2",eva2);
-		hashMap.put("eva3",eva3);
-		hashMap.put("nic1",nic1);*/
-
-
-
-		/*Pair p = l2_search(hashMap,eva1);
-		System.out.printf(p.getKey()+"");*/
-
-		matchTwoFeatureArrays(eva1, eva1);
-		matchTwoFeatureArrays(eva1, eva2);
-		matchTwoFeatureArrays(eva1, eva3);
-		System.out.println("\n");
-
-		matchTwoFeatureArrays(eva2, eva1);
-		matchTwoFeatureArrays(eva2, eva2);
-		matchTwoFeatureArrays(eva2, eva3);
-		System.out.println("\n");
+	@RequestMapping(value = "search",method = RequestMethod.GET)
+	public Object perc(@RequestParam("crop")String crop,@RequestParam("percent")float percent,@RequestParam("inpDate")String inpDateP){
+		List<Prediction> predictions = new ArrayList<Prediction>();
+		java.sql.Date inpDate = java.sql.Date.valueOf(inpDateP);
+		float mas [] = new float[192];
+		String [] cropSplit = crop.split(",");
+		if(cropSplit.length!=192){
+			return "mas.length!=192";
+		}
+		for(int i=0;i<cropSplit.length;i++){
+			mas[i] = Float.parseFloat(cropSplit[i]);
+		}
+		for(int i=0;i<fullFaceFeatures.size();i++){
+			float saved_crop [] = fullFaceFeatures.get(i).getCenter().getFeatures();
+			if(fullFaceFeatures.get(i).getInp_date().getDay()==inpDate.getDay()){
+				Prediction prediction = matchTwoFeatureArrays(mas, saved_crop,percent,fullFaceFeatures.get(i).getPhotoName());
+				if(predictions!=null){
+					prediction.setInpDate(inpDateP);
+					predictions.add(prediction);
+				}
+			}
+		}
 
 
-		matchTwoFeatureArrays(eva3, eva1);
-		matchTwoFeatureArrays(eva3, eva2);
-		matchTwoFeatureArrays(eva3, eva3);
 
-		System.out.println("\n");
-		matchTwoFeatureArrays(nic2, nic1);
-		matchTwoFeatureArrays(nic2, eva1);
-		matchTwoFeatureArrays(nic2, eva2);
-		matchTwoFeatureArrays(nic1, eva3);
-
-		System.out.println("\n");
-		matchTwoFeatureArrays(eva1, nic2);
-		matchTwoFeatureArrays(eva1, nic1);
-
-		return "string";
+		return predictions;
 	}
 
 	public BufferedImage resize(MultipartFile photo) {
@@ -222,23 +219,21 @@ public class MainController {
 		return dimg;
 	}
 
-	@EventListener(ApplicationReadyEvent.class)
-	public void doSomethingAfterStartup() {
-		fullFaceFeatures = service.getFullFeatures();
-	}
 
 
 
-	private void matchTwoFeatureArrays(float [] first, float[] second) {
+	private Prediction matchTwoFeatureArrays(float [] first, float[] second,float percentage_p,String photoName) {
+
 		float distance = euclidDistance(first, second);
 		final float distanceThreshold = 0.6f;
 		float percentage = Math.min(100, 100 * distanceThreshold / distance);
 		final float percentageThreshold = 70.0f;
 
-		Prediction prediction = new Prediction(percentage, percentage >= percentageThreshold, "username", 0,"username");
-
-
-		System.out.println(prediction.toString());
+		Prediction prediction = new Prediction(percentage, percentage >= percentageThreshold, "0", 0,photoName);
+		if(prediction.getPercentage()>=percentage_p){
+			return prediction;
+		}
+		return null;
 	}
 
 
