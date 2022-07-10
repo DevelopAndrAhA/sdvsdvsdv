@@ -184,7 +184,7 @@ public class MainController {
 			float saved_crop [] = fullFaceFeatures.get(i).getCenter().getFeatures();
 			if(fullFaceFeatures.get(i).getInp_date().getDay()==inpDate.getDay()){
 				Prediction prediction = matchTwoFeatureArrays(mas, saved_crop,percent,fullFaceFeatures.get(i).getPhotoName());
-				if(predictions!=null){
+				if(prediction!=null){
 					prediction.setInpDate(inpDateP);
 					predictions.add(prediction);
 				}
