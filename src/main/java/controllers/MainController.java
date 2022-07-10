@@ -1,8 +1,8 @@
 package controllers;
 
 
-/*import javafx.util.Pair;
-import org.springframework.context.event.ContextRefreshedEvent;*/
+import javafx.util.Pair;
+/*import org.springframework.context.event.ContextRefreshedEvent;*/
 import neural_network.FaceRecognizer;
 import neural_network.models.*;
 import org.apache.commons.io.FileUtils;
@@ -148,48 +148,56 @@ public class MainController {
 		return list;
 	}
 
-	/*@ResponseBody
+	@ResponseBody
 	@RequestMapping(value = "perc",method = RequestMethod.GET)
 	public String perc(){
 		Init init = new Init();
 
-		double eva1[] = init.getEva1();
-		double eva2[] = init.getEva2();
-		double eva3[] = init.getEva3();
-		double nic1[] = init.getNicole1();
-		double nic2[] = init.getNicole2();
+		float eva1[] = init.getEva1();
+		float eva2[] = init.getEva2();
+		float eva3[] = init.getEva3();
+		float nic1[] = init.getNicole1();
+		float nic2[] = init.getNicole2();
 
-		HashMap hashMap = new HashMap();
+		/*HashMap hashMap = new HashMap();
 
-		hashMap.put("eva1",eva1);
 		hashMap.put("nic2",nic2);
 		hashMap.put("eva2",eva2);
 		hashMap.put("eva3",eva3);
-		hashMap.put("nic1",nic1);
+		hashMap.put("nic1",nic1);*/
 
 
 
-		*//*Pair p = l2_search(hashMap,nic1);
-		System.out.printf(p.getKey()+"");*//*
+		/*Pair p = l2_search(hashMap,eva1);
+		System.out.printf(p.getKey()+"");*/
 
 		matchTwoFeatureArrays(eva1, eva1);
 		matchTwoFeatureArrays(eva1, eva2);
 		matchTwoFeatureArrays(eva1, eva3);
-
+		System.out.println("\n");
 
 		matchTwoFeatureArrays(eva2, eva1);
 		matchTwoFeatureArrays(eva2, eva2);
 		matchTwoFeatureArrays(eva2, eva3);
+		System.out.println("\n");
 
 
 		matchTwoFeatureArrays(eva3, eva1);
 		matchTwoFeatureArrays(eva3, eva2);
 		matchTwoFeatureArrays(eva3, eva3);
 
-		matchTwoFeatureArrays(nic1, nic2);
+		System.out.println("\n");
+		matchTwoFeatureArrays(nic2, nic1);
+		matchTwoFeatureArrays(nic2, eva1);
+		matchTwoFeatureArrays(nic2, eva2);
+		matchTwoFeatureArrays(nic1, eva3);
+
+		System.out.println("\n");
+		matchTwoFeatureArrays(eva1, nic2);
+		matchTwoFeatureArrays(eva1, nic1);
 
 		return "string";
-	}*/
+	}
 
 	public BufferedImage resize(MultipartFile photo) {
 
@@ -221,7 +229,7 @@ public class MainController {
 
 
 
-/*	private void matchTwoFeatureArrays(double [] first, double[] second) {
+	private void matchTwoFeatureArrays(float [] first, float[] second) {
 		float distance = euclidDistance(first, second);
 		final float distanceThreshold = 0.6f;
 		float percentage = Math.min(100, 100 * distanceThreshold / distance);
@@ -234,8 +242,8 @@ public class MainController {
 	}
 
 
-	private float euclidDistance(double[] first, double[] second) {
-		double sum = 0;
+	private float euclidDistance(float[] first, float[] second) {
+		float sum = 0;
 		for (int i = 0; i < first.length; i++) {
 			sum += Math.abs(first[i] - second[i]);
 		}
@@ -243,25 +251,30 @@ public class MainController {
 	}
 
 
-    public Pair l2_search(HashMap<String,double[]> hashMap,double [] search){
-		Pair<String,Double> ret=null;
-		double distance=0;
-		Set<String> keys = hashMap.keySet();
-		Iterator iterator = keys.iterator();
-		while(iterator.hasNext()){
-			String key = (String)iterator.next();
-			System.out.println(key);
-			double knownEmb[] = hashMap.get(key);
-			for (int i = 0; i < search.length; i++) {
-				double diff = search[i] - knownEmb[i];
-				distance += diff*diff;
-			}
-			distance = Math.sqrt(distance);
-			if (ret == null || distance < ret.getValue()) {
-				ret = new Pair(key, distance);
-			}
+/*public Pair l2_search(HashMap<String,float[]> hashMap,float [] search){
+	Pair<String,Float> ret=null;
+	float distance=0;
+	Set<String> keys = hashMap.keySet();
+	Iterator iterator = keys.iterator();
+	while(iterator.hasNext()){
+		String key = (String)iterator.next();
+		float knownEmb[] = hashMap.get(key);
+		for (int i = 0; i < search.length; i++) {
+			float diff = search[i] - knownEmb[i];
+			distance += diff*diff;
 		}
-		return ret;
-	}*/
+		distance = (float) Math.sqrt(distance);
+		System.out.println(distance+" "+key+" ");
+		if (ret == null || distance > ret.getValue()) {
+			ret = new Pair(key, distance);
+		}
+	}
+	System.out.println("getValue "+ret.getValue());
+	return ret;
+}*/
+
+
+
+
 
 }
