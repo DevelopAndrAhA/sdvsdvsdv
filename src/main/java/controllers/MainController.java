@@ -40,10 +40,10 @@ public class MainController {
 	//FaceRecognizer faceRecognizer = new FaceRecognizer();
 
 
-	/*@EventListener(ApplicationReadyEvent.class)
+	@EventListener(ApplicationReadyEvent.class)
 	public void doSomethingAfterStartup() {
 		fullFaceFeatures = service.getFullFeatures();
-	}*/
+	}
 
 	@ResponseBody
 	@RequestMapping(method = RequestMethod.GET)
