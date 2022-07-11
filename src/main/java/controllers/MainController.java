@@ -1,10 +1,11 @@
 package controllers;
 
 
-/*import javafx.util.Pair;
+/*
 import org.springframework.context.event.ContextRefreshedEvent;
-import neural_network.FaceRecognizer;*/
-/*import javax.annotation.PostConstruct;*/
+import neural_network.FaceRecognizer;
+import javax.annotation.PostConstruct;*/
+import javafx.util.Pair;
 import neural_network.models.*;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -228,7 +229,29 @@ public class MainController {
 		service.deleteAdsStatus();
 		return "deleted";
 	}
+	@ResponseBody
+	@RequestMapping(value = "testPair",method = RequestMethod.GET)
+	public Object testPair(){
+		Init init = new Init();
+		float [] e1 = init.getEva1();
+		float [] e2 = init.getEva2();
+		float [] e3 = init.getEva3();
 
+		float [] n1 = init.getNicole1();
+		float [] n2 = init.getNicole2();
+
+		HashMap hashMap = new HashMap();
+		hashMap.put("e1",e1);
+		hashMap.put("e2",e2);
+		hashMap.put("e3",e3);
+
+		hashMap.put("n1",n1);
+		hashMap.put("n2",n2);
+
+		Pair p = l2_search(hashMap,e1);
+		System.out.println(p.getKey()+" "+p.getValue());
+		return "deleted";
+	}
 	public BufferedImage resize(MultipartFile photo) {
 
 
@@ -279,7 +302,9 @@ public class MainController {
 	}
 
 
-/*public Pair l2_search(HashMap<String,float[]> hashMap,float [] search){
+    public Pair l2_search(HashMap<String,float[]> hashMap,float [] search){
+	List list = new ArrayList<>();
+
 	Pair<String,Float> ret=null;
 	float distance=0;
 	Set<String> keys = hashMap.keySet();
@@ -292,14 +317,14 @@ public class MainController {
 			distance += diff*diff;
 		}
 		distance = (float) Math.sqrt(distance);
-		System.out.println(distance+" "+key+" ");
-		if (ret == null || distance > ret.getValue()) {
+		if (ret == null || distance < ret.getValue()) {
 			ret = new Pair(key, distance);
+
+			//list.add(knownEmb); искомый массив
 		}
 	}
-	System.out.println("getValue "+ret.getValue());
 	return ret;
-}*/
+}
 
 
 
