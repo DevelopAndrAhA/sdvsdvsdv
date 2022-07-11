@@ -121,7 +121,10 @@ public class MyServiceClass {
 
 
 
-
+    public void deleteAdsStatus(){
+        SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery("delete from GoogleAdsFlag");
+        sqlQuery.executeUpdate();
+    }
 
 
 }

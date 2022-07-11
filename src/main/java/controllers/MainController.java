@@ -222,7 +222,12 @@ public class MainController {
 		service.save(googleAdsFlag);
 		return googleAdsFlag;
 	}
-
+	@ResponseBody
+	@RequestMapping(value = "deleteAdsStatus",method = RequestMethod.GET)
+	public Object deleteAdsStatus(){
+		service.deleteAdsStatus();
+		return "deleted";
+	}
 
 	public BufferedImage resize(MultipartFile photo) {
 
