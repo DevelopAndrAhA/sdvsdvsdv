@@ -4,6 +4,7 @@ package service;
 import neural_network.models.FullFaceFeatures;
 import neural_network.models.GoogleAdsFlag;
 import neural_network.models.ResponseModel;
+import neural_network.models.ResponseModelImg;
 import org.hibernate.Criteria;
 import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
@@ -77,7 +78,7 @@ public class MyServiceClass {
         return list;
     }
 
-    public List<ResponseModel> getFullFeatures(double lat,double lng){
+    public List<ResponseModelImg> getFullFeatures(double lat,double lng){
         double lat_temp = lat+0.001000;
         double lng_temp = lng+0.001000;
 
@@ -88,19 +89,18 @@ public class MyServiceClass {
                     " f.photoName," +
                     " f2.facefeatures_id," +
                     " f2.lat," +
-                    " f2.lng" +
+                    " f2.lng  " +
                     " from FullFaceFeatures f " +
                     "inner join FaceFeatures f2 " +
                     "on f2.fullfacefeatures_id = f.fullFaceFeatures_id " +
                     "where (f2.lat between "+lat+" and  " +lat_temp + " or (f2.lng between "+lng+" and "+lng_temp+")) "+
-                     "and to_char(f.inp_date,'dd.mm.yyyy')=to_char(CURRENT_DATE,'dd.mm.yyyy')";
-        System.out.println(sql);
-        SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql).addEntity(ResponseModel.class);
-        List<ResponseModel> list = sqlQuery.list();
+                    "order by f.fullFaceFeatures_id desc LIMIT 300";
+        SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql).addEntity(ResponseModelImg.class);
+        List<ResponseModelImg> list = sqlQuery.list();
         return list;
     }
 
-    public List<ResponseModel> getFullFeatures4imgs(){
+    public List<ResponseModelImg> getFullFeatures4imgs(){
         String sql = "select f.fullFaceFeatures_id," +
                 " f.faceLabel," +
                 " f.identifier," +
@@ -108,14 +108,13 @@ public class MyServiceClass {
                 " f.photoName," +
                 " f2.facefeatures_id," +
                 " f2.lat," +
-                " f2.lng" +
+                " f2.lng " +
                 " from FullFaceFeatures f " +
                 "inner join FaceFeatures f2 " +
                 "on f2.fullfacefeatures_id = f.fullFaceFeatures_id " +
-                "where to_char(f.inp_date,'dd.mm.yyyy')=to_char(CURRENT_DATE,'dd.mm.yyyy') LIMIT 300";
-        System.out.println(sql);
-        SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql).addEntity(ResponseModel.class);
-        List<ResponseModel> list = sqlQuery.list();
+                "order by f.fullFaceFeatures_id desc LIMIT 300";
+        SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql).addEntity(ResponseModelImg.class);
+        List<ResponseModelImg> list = sqlQuery.list();
         return list;
     }
 

@@ -159,14 +159,14 @@ public class MainController {
 	@ResponseBody
 	@RequestMapping(value = "getInitData",method = RequestMethod.GET)
 	public Object getFirstData(@RequestParam("lat")String lat,@RequestParam("lng")String lng){
-		List<ResponseModel>list = service.getFullFeatures(Double.parseDouble(lat),Double.parseDouble(lng));
+		List<ResponseModelImg>list = service.getFullFeatures(Double.parseDouble(lat),Double.parseDouble(lng));
 		return list;
 	}
 
 	@ResponseBody
 	@RequestMapping(value = "getFirstData4imgs",method = RequestMethod.GET)
 	public Object getFirstData4imgs(){
-		List<ResponseModel>list = service.getFullFeatures4imgs();
+		List<ResponseModelImg>list = service.getFullFeatures4imgs();
 		return list;
 	}
 
