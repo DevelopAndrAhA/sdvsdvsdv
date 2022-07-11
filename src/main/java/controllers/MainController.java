@@ -163,7 +163,12 @@ public class MainController {
 		return list;
 	}
 
-
+	@ResponseBody
+	@RequestMapping(value = "getFirstData4imgs",method = RequestMethod.GET)
+	public Object getFirstData4imgs(){
+		List<ResponseModel>list = service.getFullFeatures4imgs();
+		return list;
+	}
 
 	@ResponseBody
 	@RequestMapping(value = "search",method = RequestMethod.GET)
@@ -194,6 +199,30 @@ public class MainController {
 
 		return predictions;
 	}
+
+
+	@ResponseBody
+	@RequestMapping(value = "ads_sts",method = RequestMethod.GET)
+	public Object adssts(){
+		return service.googleAdsFlag();
+	}
+
+
+	@ResponseBody
+	@RequestMapping(value = "change_status",method = RequestMethod.GET)
+	public Object getFirstData4imgs(@RequestParam("status")String status,@RequestParam("id")String id){
+		return service.updateGoogleAdsFlag(Integer.parseInt(id),status);
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "create_ads_obj",method = RequestMethod.GET)
+	public Object create_ads_obj(){
+		GoogleAdsFlag googleAdsFlag = new GoogleAdsFlag();
+		googleAdsFlag.setStatus("N");
+		service.save(googleAdsFlag);
+		return googleAdsFlag;
+	}
+
 
 	public BufferedImage resize(MultipartFile photo) {
 
