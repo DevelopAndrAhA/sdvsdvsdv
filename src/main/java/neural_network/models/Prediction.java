@@ -4,7 +4,7 @@ package neural_network.models;
 /**
  * Created by Altynbek on 19.06.2022.
  */
-public class Prediction {
+public class Prediction implements Comparable<Prediction> {
     public float percentage;
     private boolean identified;
     private String username;
@@ -70,6 +70,10 @@ public class Prediction {
         this.lng = lng;
     }
 
+    public void setPercentage(float percentage) {
+        this.percentage = percentage;
+    }
+
     @Override
     public String toString() {
         return "Prediction{" +
@@ -82,5 +86,10 @@ public class Prediction {
                 ", lng='" + lng + '\'' +
                 ", identifier=" + identifier +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Prediction p) {
+        return Float.compare(p.percentage,this.percentage);
     }
 }

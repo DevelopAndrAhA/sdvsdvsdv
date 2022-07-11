@@ -1,9 +1,10 @@
 package controllers;
 
 
-//import javafx.util.Pair;
-/*import org.springframework.context.event.ContextRefreshedEvent;*/
-import neural_network.FaceRecognizer;
+/*import javafx.util.Pair;
+import org.springframework.context.event.ContextRefreshedEvent;
+import neural_network.FaceRecognizer;*/
+/*import javax.annotation.PostConstruct;*/
 import neural_network.models.*;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -16,12 +17,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import service.MyServiceClass;
 
-/*import javax.annotation.PostConstruct;*/
-import javax.annotation.PostConstruct;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletContext;
 import java.awt.*;
-import java.awt.geom.Arc2D;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
@@ -36,14 +34,14 @@ public class MainController {
 	@Autowired
 	ServletContext servletContext;
 
-	List<FullFaceFeatures> fullFaceFeatures = new ArrayList<FullFaceFeatures>();
+	//List<FullFaceFeatures> fullFaceFeatures = new ArrayList<FullFaceFeatures>();
 	//FaceRecognizer faceRecognizer = new FaceRecognizer();
 
 
-	@EventListener(ApplicationReadyEvent.class)
+	/*@EventListener(ApplicationReadyEvent.class)
 	public void doSomethingAfterStartup() {
 		fullFaceFeatures = service.getFullFeatures();
-	}
+	}*/
 
 	@ResponseBody
 	@RequestMapping(method = RequestMethod.GET)
@@ -109,7 +107,7 @@ public class MainController {
 			faceFeatures.setLat(Double.parseDouble(lat));
 			faceFeatures.setFullFaceFeatures(features);
 
-			fullFaceFeatures.add(features);
+			//fullFaceFeatures.add(features);
 			service.save(features);
 			ResultContainer resultContainer = new ResultContainer();
 			resultContainer.setStatus(200);
@@ -169,9 +167,10 @@ public class MainController {
 
 	@ResponseBody
 	@RequestMapping(value = "search",method = RequestMethod.GET)
-	public Object perc(@RequestParam("crop")String crop,@RequestParam("percent")float percent,@RequestParam("inpDate")String inpDateP){
+	public Object perc(@RequestParam("crop")String crop,@RequestParam("percent")float percent,@RequestParam("inpDate")String inpDateP,@RequestParam("inpDate")String lat,@RequestParam("inpDate")String lng){
+
 		List<Prediction> predictions = new ArrayList<Prediction>();
-		java.sql.Date inpDate = java.sql.Date.valueOf(inpDateP);
+		List<ResponseModel> fullFaceFeatures = service.getFullFeatures(inpDateP);
 		float mas [] = new float[192];
 		String [] cropSplit = crop.split(",");
 		if(cropSplit.length!=192){
@@ -180,18 +179,18 @@ public class MainController {
 		for(int i=0;i<cropSplit.length;i++){
 			mas[i] = Float.parseFloat(cropSplit[i]);
 		}
+
 		for(int i=0;i<fullFaceFeatures.size();i++){
-			float saved_crop [] = fullFaceFeatures.get(i).getCenter().getFeatures();
-			if(fullFaceFeatures.get(i).getInp_date().getDay()==inpDate.getDay()){
-				Prediction prediction = matchTwoFeatureArrays(mas, saved_crop,percent,fullFaceFeatures.get(i).getPhotoName());
-				if(prediction!=null){
-					prediction.setInpDate(inpDateP);
-					predictions.add(prediction);
-				}
+			float saved_crop [] = fullFaceFeatures.get(i).getFeatures();
+			percent /= 4;
+			Prediction prediction = matchTwoFeatureArrays(mas, saved_crop,percent,fullFaceFeatures.get(i).getPhotoName());
+			if(prediction!=null){
+				prediction.setInpDate(inpDateP);
+				if(prediction.getPercentage()!=100)prediction.setPercentage(prediction.getPercentage()*4);
+				predictions.add(prediction);
 			}
 		}
-
-
+		Collections.sort(predictions);
 
 		return predictions;
 	}

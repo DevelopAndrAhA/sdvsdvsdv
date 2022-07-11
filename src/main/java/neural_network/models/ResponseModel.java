@@ -21,6 +21,7 @@ public class ResponseModel {
     private int facefeatures_id;
     private double lat;
     private double lng;
+    private float [] features;
 
     public int getFullFaceFeatures_id() {
         return fullFaceFeatures_id;
@@ -84,5 +85,13 @@ public class ResponseModel {
 
     public void setLng(double lng) {
         this.lng = lng;
+    }
+
+    public float[] getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(float[] features) {
+        this.features = features;
     }
 }
