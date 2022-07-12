@@ -172,7 +172,7 @@ public class MainController {
 
 	@ResponseBody
 	@RequestMapping(value = "search",method = RequestMethod.GET)
-	public Object perc(@RequestParam("crop")String crop,@RequestParam("inpDate")String inpDateP,@RequestParam("inpDate")String lat,@RequestParam("inpDate")String lng){
+	public Object perc(@RequestParam("crop")String crop,@RequestParam("inpDate")String inpDateP,@RequestParam("lat")String lat,@RequestParam("lng")String lng){
 
 		List<Prediction> predictions = new ArrayList<Prediction>();
 		List<ResponseModel> fullFaceFeatures = service.getFullFeatures(inpDateP);
