@@ -6,7 +6,6 @@ package neural_network.models;
  */
 public class Prediction implements Comparable<Prediction> {
     public float percentage;
-    private boolean identified;
     private String username;
     private String photoName;
     private String inpDate;
@@ -15,9 +14,8 @@ public class Prediction implements Comparable<Prediction> {
     private int identifier;
 
 
-    public Prediction(float percentage, boolean identified, String username, int identifier,String photoName) {
+    public Prediction(float percentage, String username, int identifier,String photoName) {
         this.percentage = percentage;
-        this.identified = identified;
         this.username = username;
         this.photoName = photoName;
         this.identifier = identifier;
@@ -35,16 +33,9 @@ public class Prediction implements Comparable<Prediction> {
         return percentage;
     }
 
-
-    public boolean isIdentified() {
-        return identified;
-    }
-
-
     public String getUsername() {
         return username;
     }
-
 
     public int getIdentifier() {
         return identifier;
@@ -74,11 +65,11 @@ public class Prediction implements Comparable<Prediction> {
         this.percentage = percentage;
     }
 
+
     @Override
     public String toString() {
         return "Prediction{" +
                 "percentage=" + percentage +
-                ", identified=" + identified +
                 ", username='" + username + '\'' +
                 ", photoName='" + photoName + '\'' +
                 ", inpDate='" + inpDate + '\'' +
@@ -90,6 +81,6 @@ public class Prediction implements Comparable<Prediction> {
 
     @Override
     public int compareTo(Prediction p) {
-        return Float.compare(p.percentage,this.percentage);
+        return Float.compare(this.percentage,p.percentage);
     }
 }

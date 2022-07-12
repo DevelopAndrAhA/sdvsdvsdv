@@ -5,7 +5,6 @@ package controllers;
 import org.springframework.context.event.ContextRefreshedEvent;
 import neural_network.FaceRecognizer;
 import javax.annotation.PostConstruct;*/
-import javafx.util.Pair;
 import neural_network.models.*;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -173,7 +172,7 @@ public class MainController {
 
 	@ResponseBody
 	@RequestMapping(value = "search",method = RequestMethod.GET)
-	public Object perc(@RequestParam("crop")String crop,@RequestParam("percent")float percent,@RequestParam("inpDate")String inpDateP,@RequestParam("inpDate")String lat,@RequestParam("inpDate")String lng){
+	public Object perc(@RequestParam("crop")String crop,@RequestParam("inpDate")String inpDateP,@RequestParam("inpDate")String lat,@RequestParam("inpDate")String lng){
 
 		List<Prediction> predictions = new ArrayList<Prediction>();
 		List<ResponseModel> fullFaceFeatures = service.getFullFeatures(inpDateP);
@@ -185,19 +184,15 @@ public class MainController {
 		for(int i=0;i<cropSplit.length;i++){
 			mas[i] = Float.parseFloat(cropSplit[i]);
 		}
-
 		for(int i=0;i<fullFaceFeatures.size();i++){
 			float saved_crop [] = fullFaceFeatures.get(i).getFeatures();
-			percent /= 4;
-			Prediction prediction = matchTwoFeatureArrays(mas, saved_crop,percent,fullFaceFeatures.get(i).getPhotoName());
+			Prediction prediction = searchSim(saved_crop,mas,fullFaceFeatures.get(i).getFaceLabel(),fullFaceFeatures.get(i).getPhotoName());
 			if(prediction!=null){
 				prediction.setInpDate(inpDateP);
-				if(prediction.getPercentage()!=100)prediction.setPercentage(prediction.getPercentage()*4);
 				predictions.add(prediction);
 			}
 		}
 		Collections.sort(predictions);
-
 		return predictions;
 	}
 
@@ -229,29 +224,6 @@ public class MainController {
 		service.deleteAdsStatus();
 		return "deleted";
 	}
-	@ResponseBody
-	@RequestMapping(value = "testPair",method = RequestMethod.GET)
-	public Object testPair(){
-		Init init = new Init();
-		float [] e1 = init.getEva1();
-		float [] e2 = init.getEva2();
-		float [] e3 = init.getEva3();
-
-		float [] n1 = init.getNicole1();
-		float [] n2 = init.getNicole2();
-
-		HashMap hashMap = new HashMap();
-		hashMap.put("e1",e1);
-		hashMap.put("e2",e2);
-		hashMap.put("e3",e3);
-
-		hashMap.put("n1",n1);
-		hashMap.put("n2",n2);
-
-		Pair p = l2_search(hashMap,e1);
-		System.out.println(p.getKey()+" "+p.getValue());
-		return "deleted";
-	}
 	public BufferedImage resize(MultipartFile photo) {
 
 
@@ -277,8 +249,35 @@ public class MainController {
 
 
 
+	public Prediction searchSim(float [] knownEmb,float [] search,String key,String photoName){
+		Prediction prediction = null;
+		float distance=0;
+		for (int i = 0; i < search.length; i++) {
+			float diff = search[i] - knownEmb[i];
+			distance += diff*diff;
+		}
+		distance = (float) Math.sqrt(distance);
+		if(distance<=1.1f){
+			prediction = new Prediction(distance, key, 0,photoName);
+			return prediction;
+		}
+		return null;
+	}
 
-	private Prediction matchTwoFeatureArrays(float [] first, float[] second,float percentage_p,String photoName) {
+	/*private Prediction matchTwoFeatureArrays(float [] first, float[] second,float percentage_p,String photoName) {
+
+		float distance = euclidDistance(first, second);
+		final float distanceThreshold = 0.6f;
+		float percentage = Math.min(100, 100 * distanceThreshold / distance);
+		final float percentageThreshold = 70.0f;
+
+		Prediction prediction = new Prediction(percentage, percentage >= percentageThreshold, "0", 0,photoName);
+		if(prediction.getPercentage()>=percentage_p){
+			return prediction;
+		}
+		return null;
+	}*/
+	/*private Prediction matchTwoFeatureArrays(float [] first, float[] second,float percentage_p,String photoName) {
 
 		float distance = euclidDistance(first, second);
 		final float distanceThreshold = 0.6f;
@@ -300,32 +299,7 @@ public class MainController {
 		}
 		return (float) Math.sqrt(sum);
 	}
-
-
-    public Pair l2_search(HashMap<String,float[]> hashMap,float [] search){
-	List list = new ArrayList<>();
-
-	Pair<String,Float> ret=null;
-	float distance=0;
-	Set<String> keys = hashMap.keySet();
-	Iterator iterator = keys.iterator();
-	while(iterator.hasNext()){
-		String key = (String)iterator.next();
-		float knownEmb[] = hashMap.get(key);
-		for (int i = 0; i < search.length; i++) {
-			float diff = search[i] - knownEmb[i];
-			distance += diff*diff;
-		}
-		distance = (float) Math.sqrt(distance);
-		if (ret == null || distance < ret.getValue()) {
-			ret = new Pair(key, distance);
-
-			//list.add(knownEmb); искомый массив
-		}
-	}
-	return ret;
-}
-
+*/
 
 
 

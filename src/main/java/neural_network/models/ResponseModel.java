@@ -9,7 +9,7 @@ import org.hibernate.annotations.Immutable;
 
 @Entity
 @Immutable
-public class ResponseModel {
+public class ResponseModel{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -94,4 +94,5 @@ public class ResponseModel {
     public void setFeatures(float[] features) {
         this.features = features;
     }
+
 }

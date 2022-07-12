@@ -72,7 +72,7 @@ public class MyServiceClass {
     public List<ResponseModel> getFullFeatures(String inp_date){
         String sql = "select f.fullFaceFeatures_id, f.faceLabel, f.identifier, f.inp_date, f.photoName, f2.facefeatures_id, f2.lat, f2.lng ,f2.features " +
                 "from FullFaceFeatures f inner join FaceFeatures f2 on f2.fullfacefeatures_id = f.fullFaceFeatures_id " +
-                "where to_char(f.inp_date,'yyyy-mm-dd')='"+inp_date+"'  limit 300";
+                "where to_char(f.inp_date,'yyyy-mm-dd')='"+inp_date+"'  limit 1000";
         SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql).addEntity(ResponseModel.class);
         List<ResponseModel> list = sqlQuery.list();
         return list;

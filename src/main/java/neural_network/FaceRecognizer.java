@@ -140,7 +140,7 @@ public class FaceRecognizer {
     }
 
     private Prediction matchTwoFeatureArrays(FaceFeatures first, FaceFeatures second,String username, int identifier,float percent,String photoName,java.sql.Date inpDate) {
-        if(second.getInp_date().getTime()>=inpDate.getTime()){
+        /*if(second.getInp_date().getTime()>=inpDate.getTime()){
             float distance = euclidDistance(first.getFeatures(), second.getFeatures());
 
             final float distanceThreshold = 0.6f;
@@ -155,7 +155,7 @@ public class FaceRecognizer {
                 prediction_list.add(prediction);
             }
             return prediction;
-        }
+        }*/
         return null;
 
     }
