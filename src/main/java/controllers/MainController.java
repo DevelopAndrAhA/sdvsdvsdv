@@ -234,7 +234,7 @@ public class MainController {
 			bufferedImage = ImageIO.read(is);
 		}catch (Exception e){}
 
-		bufferedImage = resize(bufferedImage,bufferedImage.getWidth()/5,bufferedImage.getHeight()/5);
+		bufferedImage = resize(bufferedImage,bufferedImage.getWidth()/2,bufferedImage.getHeight()/2);
 		return bufferedImage;
 	}
 	public static BufferedImage resize(BufferedImage img, int newW, int newH) {
@@ -257,11 +257,11 @@ public class MainController {
 			distance += diff*diff;
 		}
 		distance = (float) Math.sqrt(distance);
-		//if(distance<=1.2f){
+		if(distance<=1.25f){
 			prediction = new Prediction(distance, key, 0,photoName);
 			return prediction;
-		//}
-		//return null;
+		}
+		return null;
 	}
 
 	/*private Prediction matchTwoFeatureArrays(float [] first, float[] second,float percentage_p,String photoName) {
