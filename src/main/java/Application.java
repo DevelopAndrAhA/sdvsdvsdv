@@ -15,6 +15,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import javax.servlet.ServletContext;
 //import javax.sql.DataSource;
 //import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import java.net.URI;
 import java.util.Properties;
 
 
@@ -67,7 +68,7 @@ public class Application {
         }catch (Exception e){e.printStackTrace();}
         return null;
     }*/
-    @Bean //red hat || aws
+    /*@Bean //red hat || aws
      public ComboPooledDataSource dataSource()  {
         try{
             //String dbUrl = "jdbc:postgresql://172.30.193.226:5432/alohadb";
@@ -82,8 +83,7 @@ public class Application {
             return basicDataSource;
         }catch (Exception e){e.printStackTrace();}
         return null;
-    }
-    /*
+    }*/
     @Bean //heroku
     public ComboPooledDataSource dataSource()  {
         try{
@@ -105,7 +105,7 @@ public class Application {
 
         return null;
 
-    }*/
+    }
     private final Properties hibernateProperties() {
         Properties hibernateProperties = new Properties();
         hibernateProperties.setProperty(
