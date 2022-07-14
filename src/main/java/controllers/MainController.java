@@ -43,7 +43,6 @@ public class MainController {
 		Date date = new Date();
 		String [] dateMas =date.toString().split(" ");
 		String dateStr =  dateMas[5];
-		System.out.println(date.toString());
 		int month = date.getMonth()+1;
 		if(month<10){
 			dateStr = dateStr+"-0"+month;
@@ -108,13 +107,10 @@ public class MainController {
 
 			float mas [] = new float[192];
 			String [] cropSplit = crop.split(",");
-			int k=0;
 			for(int i=0;i<cropSplit.length;i++){
 				mas[i] = Float.parseFloat(cropSplit[i]);
-				k=i;
 			}
 
-			System.out.println(k);
 
 			//FaceFeatures faceFeatures = faceRecognizer.addNew(crop);
 			FaceFeatures faceFeatures = new FaceFeatures(mas,1);
@@ -245,6 +241,17 @@ public class MainController {
 		service.deleteAdsStatus();
 		return "deleted";
 	}
+
+	@ResponseBody
+	@RequestMapping(value = "deleteFullFace",method = RequestMethod.GET)
+	public Object deleteFullFace(){
+		List<FullFaceFeatures> fullFaceFeatureses = service.getFullFaceFeatures();
+		for(int i=0;i<fullFaceFeatureses.size();i++){
+			service.delete(fullFaceFeatureses.get(i).getCenter(),fullFaceFeatureses.get(i));
+		}
+		return "deleted";
+	}
+
 	public BufferedImage resize(MultipartFile photo) {
 
 
@@ -278,7 +285,7 @@ public class MainController {
 			distance += diff*diff;
 		}
 		distance = (float) Math.sqrt(distance);
-		if(distance<=1.2f){
+		if(distance<=1.25f){
 			prediction = new Prediction(distance, key, 0,photoName);
 			return prediction;
 		}
