@@ -34,14 +34,34 @@ public class MainController {
 	@Autowired
 	ServletContext servletContext;
 
-	//List<FullFaceFeatures> fullFaceFeatures = new ArrayList<FullFaceFeatures>();
+	List<FullFaceFeatures> fullFaceFeatures = new ArrayList<FullFaceFeatures>();
 	//FaceRecognizer faceRecognizer = new FaceRecognizer();
 
 
-	/*@EventListener(ApplicationReadyEvent.class)
+	@EventListener(ApplicationReadyEvent.class)
 	public void doSomethingAfterStartup() {
-		fullFaceFeatures = service.getFullFeatures();
-	}*/
+		Date date = new Date();
+		String [] dateMas =date.toString().split(" ");
+		String dateStr =  dateMas[5];
+		System.out.println(date.toString());
+		int month = date.getMonth()+1;
+		if(month<10){
+			dateStr = dateStr+"-0"+month;
+		}else{
+			dateStr = dateStr+"-"+month;
+		}
+		if(dateMas[2].length()<2){
+			dateStr = dateStr+"-0"+dateMas[2];
+		}else{
+			dateStr = dateStr+"-"+dateMas[2];
+		}
+		fullFaceFeatures = service.getFullFaceFeatures();
+		/*for(int i=0;i<fullFaceFeatures.size();i++){
+			if(fullFaceFeatures.get(i).getCenter().getFeatures().length<192){
+				service.delete(fullFaceFeatures.get(i).getCenter(),fullFaceFeatures.get(i));
+			}
+		}*/
+	}
 
 	@ResponseBody
 	@RequestMapping(method = RequestMethod.GET)
@@ -107,7 +127,7 @@ public class MainController {
 			faceFeatures.setLat(Double.parseDouble(lat));
 			faceFeatures.setFullFaceFeatures(features);
 
-			//fullFaceFeatures.add(features);
+			fullFaceFeatures.add(features);
 			service.save(features);
 			ResultContainer resultContainer = new ResultContainer();
 			resultContainer.setStatus(200);
@@ -175,7 +195,7 @@ public class MainController {
 	public Object perc(@RequestParam("crop")String crop,@RequestParam("inpDate")String inpDateP,@RequestParam("lat")String lat,@RequestParam("lng")String lng){
 
 		List<Prediction> predictions = new ArrayList<Prediction>();
-		List<ResponseModel> fullFaceFeatures = service.getFullFeatures(inpDateP);
+		//List<ResponseModel> fullFaceFeatures = service.getFullFeatures(inpDateP);
 		float mas [] = new float[192];
 		String [] cropSplit = crop.split(",");
 		if(cropSplit.length!=192){
@@ -185,7 +205,8 @@ public class MainController {
 			mas[i] = Float.parseFloat(cropSplit[i]);
 		}
 		for(int i=0;i<fullFaceFeatures.size();i++){
-			float saved_crop [] = fullFaceFeatures.get(i).getFeatures();
+			float saved_crop [] = fullFaceFeatures.get(i).getFaceFeatures(1).getFeatures();
+			//float saved_crop [] = fullFaceFeatures.get(i).getFeatures();
 			Prediction prediction = searchSim(saved_crop,mas,fullFaceFeatures.get(i).getFaceLabel(),fullFaceFeatures.get(i).getPhotoName());
 			if(prediction!=null){
 				prediction.setInpDate(inpDateP);

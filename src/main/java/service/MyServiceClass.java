@@ -1,10 +1,7 @@
 package service;
 
 
-import neural_network.models.FullFaceFeatures;
-import neural_network.models.GoogleAdsFlag;
-import neural_network.models.ResponseModel;
-import neural_network.models.ResponseModelImg;
+import neural_network.models.*;
 import org.hibernate.Criteria;
 import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
@@ -12,7 +9,6 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -23,30 +19,6 @@ public class MyServiceClass {
 
     @Autowired
     SessionFactory session;
-    /*@Autowired
-    @Qualifier(value = "mySession")
-    LocalSessionFactoryBean sessionFactory;*/
-
-    /*public void saveObjects() throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//172.22.31.55:1515/vabank", "fors", "ABANK_NEW");
-        //Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//127.0.0.1:1521/xe", "altyn", "111");
-        //Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//172.22.31.4:1521/somic", "fors", "somic");
-        //Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//172.22.31.51:1521/abank", "mobin", "mobin");
-        Statement s = connection.createStatement();
-        for (int i = 0; i < entity21And32BList.size(); i++) {
-            Entity21And32B entity21And32B = entity21And32BList.get(i);
-            *//*if(entity21And32B.getNetc().equals("NETC")){
-                String sql = "insert into error_uni_196 (amount,acct,type_netc) VALUES (" + entity21And32B.getSumm() + ",'" + entity21And32B.getUni21() + "','"+entity21And32B.getNetc()+"')";
-                System.out.println(sql);
-                s.execute(sql);
-            }*//*
-            String sql = "insert into error_uni_196 (amount,acct,type_netc) VALUES (" + entity21And32B.getSumm() + ",'" + entity21And32B.getUni21() + "','"+entity21And32B.getNetc()+"')";
-            System.out.println(sql);
-            s.execute(sql);
-        }
-        s.close();
-        connection.close();
-    }*/
     public void save(GoogleAdsFlag googleAdsFlag){
         session.getCurrentSession().save(googleAdsFlag);
     }
@@ -67,7 +39,19 @@ public class MyServiceClass {
         session.getCurrentSession().save(fullFaceFeatures);
     }
 
+    public void delete (FaceFeatures faceFeatures,FullFaceFeatures fullFaceFeatures){
+        session.getCurrentSession().delete(faceFeatures);
+        delete(fullFaceFeatures);
+    }
+    public void delete (FullFaceFeatures fullFaceFeatures){
+        session.getCurrentSession().delete(fullFaceFeatures);
+    }
 
+    public List<FullFaceFeatures> getFullFaceFeatures(){
+        Criteria criteria = session.getCurrentSession().createCriteria(FullFaceFeatures.class);
+        List<FullFaceFeatures> list = criteria.list();
+        return list;
+    }
 
     public List<ResponseModel> getFullFeatures(String inp_date){
         String sql = "select f.fullFaceFeatures_id, f.faceLabel, f.identifier, f.inp_date, f.photoName, f2.facefeatures_id, f2.lat, f2.lng ,f2.features " +
