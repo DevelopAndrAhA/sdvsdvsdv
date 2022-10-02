@@ -31,6 +31,7 @@ public class FullFaceFeatures {
     private String faceLabel;
     private String photoName;
     private int identifier = 0;
+    private int city_id = 0;
 
 
     public FullFaceFeatures(String faceLabel) {
@@ -108,5 +109,13 @@ public class FullFaceFeatures {
 
     public void setInp_date(Date inp_date) {
         this.inp_date = inp_date;
+    }
+
+    public int getCity_id() {
+        return city_id;
+    }
+
+    public void setCity_id(int city_id) {
+        this.city_id = city_id;
     }
 }

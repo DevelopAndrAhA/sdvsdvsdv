@@ -71,10 +71,10 @@ public class MainController {
 	@ResponseBody
 	@RequestMapping(value = "new_face",method = RequestMethod.POST)
 	public Object add(
-			/*@RequestParam("crop") MultipartFile crop,*/
 			@RequestParam("largePohto") MultipartFile largePohto,
 			@RequestParam("username")String username,
 			@RequestParam("crop")String crop,
+			@RequestParam("city_id")String city_id,
 			@RequestParam("lng")String lng,
 			@RequestParam("lat")String lat) {
 		String photoName = null;
@@ -117,6 +117,7 @@ public class MainController {
 
 			FullFaceFeatures features = new FullFaceFeatures(username);
 			features.setFaceFeatures(1,faceFeatures);
+			features.setCity_id(Integer.parseInt(city_id));
 			features.setIdentifier(new Date().getSeconds());
 			features.setPhotoName(currTime+"");
 			faceFeatures.setLng(Double.parseDouble(lng));
@@ -138,21 +139,6 @@ public class MainController {
 
 
 	}
-
-
-	/*@ResponseBody
-	@RequestMapping(value = "search",method = RequestMethod.POST)
-	public Object search(@RequestParam("file") MultipartFile multipartFile,@RequestParam("percent")float percent,@RequestParam("inpDate")String inpDate) {
-		java.sql.Date date = java.sql.Date.valueOf(inpDate);
-		List<Prediction> prediction = faceRecognizer.searchFromPool(multipartFile,fullFaceFeatures,percent,date);
-		if(prediction!=null){
-			return prediction;
-		}
-		ResultContainer resultContainer = new ResultContainer();
-		resultContainer.setStatus(404);
-		resultContainer.setDesc("Нет данных");
-		return resultContainer;
-	}*/
 
 
 	@ResponseBody
@@ -188,8 +174,9 @@ public class MainController {
 
 	@ResponseBody
 	@RequestMapping(value = "search",method = RequestMethod.GET)
-	public Object perc(@RequestParam("crop")String crop,@RequestParam("inpDate")String inpDateP,@RequestParam("lat")String lat,@RequestParam("lng")String lng){
-
+	public Object perc(@RequestParam("crop")String crop,@RequestParam("inpDate")String inpDateP,@RequestParam("city_id")String city_idP){
+		System.out.println("search inpDateP :"+inpDateP);
+		int city_id = Integer.parseInt(city_idP);
 		List<Prediction> predictions = new ArrayList<Prediction>();
 		//List<ResponseModel> fullFaceFeatures = service.getFullFeatures(inpDateP);
 		float mas [] = new float[192];
@@ -201,6 +188,10 @@ public class MainController {
 			mas[i] = Float.parseFloat(cropSplit[i]);
 		}
 		for(int i=0;i<fullFaceFeatures.size();i++){
+			System.out.println("fullFaceFeatures inpDateP :"+fullFaceFeatures.get(i).getInp_date().toString());
+			if(city_id!=fullFaceFeatures.get(i).getCity_id()){
+				continue;
+			}
 			float saved_crop [] = fullFaceFeatures.get(i).getFaceFeatures(1).getFeatures();
 			//float saved_crop [] = fullFaceFeatures.get(i).getFeatures();
 			Prediction prediction = searchSim(saved_crop,mas,fullFaceFeatures.get(i).getFaceLabel(),fullFaceFeatures.get(i).getPhotoName());
@@ -274,8 +265,6 @@ public class MainController {
 		g2d.dispose();
 		return dimg;
 	}
-
-
 
 	public Prediction searchSim(float [] knownEmb,float [] search,String key,String photoName){
 		Prediction prediction = null;
