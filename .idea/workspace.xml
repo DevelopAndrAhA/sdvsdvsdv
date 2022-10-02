@@ -59,11 +59,11 @@
         <option value="$PROJECT_DIR$/src/main/java/neural_network/models/ResponseModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/neural_network/FaceRecognizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Application.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/neural_network/models/FullFaceFeatures.java" />
         <option value="$PROJECT_DIR$/src/main/java/neural_network/models/Prediction.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Application.java" />
       </list>
     </option>
   </component>
@@ -650,12 +650,12 @@
       <workItem from="1658770560833" duration="7000" />
       <workItem from="1659467197445" duration="3000" />
       <workItem from="1659467202310" duration="1000" />
-      <workItem from="1664721402724" duration="1854000" />
+      <workItem from="1664721402724" duration="1929000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132688000" />
+    <option name="totallyTimeSpent" value="132763000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -834,14 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5791583" vertical-offset="340" max-vertical-offset="1887">
-          <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/MyServiceClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.58965516" vertical-offset="14" max-vertical-offset="952">
@@ -922,6 +914,14 @@
             <element signature="method#resize#1;class#MainController#0" expanded="false" />
             <element signature="method#searchSim#0;class#MainController#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6678161" vertical-offset="1017" max-vertical-offset="1887">
+          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
