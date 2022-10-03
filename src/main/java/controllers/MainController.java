@@ -174,7 +174,7 @@ public class MainController {
 
 	@ResponseBody
 	@RequestMapping(value = "search",method = RequestMethod.GET)
-	public Object perc(@RequestParam("crop")String crop,@RequestParam("inpDate")String inpDateP,@RequestParam("city_id")String city_idP){
+	public Object search(@RequestParam("crop")String crop,@RequestParam("inpDate")String inpDateP,@RequestParam("city_id")String city_idP){
 		System.out.println("search inpDateP :"+inpDateP);
 		int city_id = Integer.parseInt(city_idP);
 		List<Prediction> predictions = new ArrayList<Prediction>();
@@ -196,6 +196,7 @@ public class MainController {
 			//float saved_crop [] = fullFaceFeatures.get(i).getFeatures();
 			Prediction prediction = searchSim(saved_crop,mas,fullFaceFeatures.get(i).getFaceLabel(),fullFaceFeatures.get(i).getPhotoName());
 			if(prediction!=null){
+				System.out.println("prediction!=null");
 				prediction.setInpDate(inpDateP);
 				predictions.add(prediction);
 			}
