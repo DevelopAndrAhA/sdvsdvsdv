@@ -199,6 +199,8 @@ public class MainController {
 				System.out.println("prediction!=null");
 				prediction.setInpDate(inpDateP);
 				predictions.add(prediction);
+			}else{
+				System.out.println("prediction==null");
 			}
 		}
 		Collections.sort(predictions);
