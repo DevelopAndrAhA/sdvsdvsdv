@@ -190,6 +190,7 @@ public class MainController {
 		for(int i=0;i<fullFaceFeatures.size();i++){
 			System.out.println("fullFaceFeatures inpDateP :"+fullFaceFeatures.get(i).getInp_date().toString());
 			if(city_id!=fullFaceFeatures.get(i).getCity_id()){
+				System.out.println("city id not "+city_id+" : "+fullFaceFeatures.get(i).getCity_id());
 				continue;
 			}
 			float saved_crop [] = fullFaceFeatures.get(i).getFaceFeatures(1).getFeatures();
