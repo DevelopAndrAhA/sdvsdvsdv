@@ -243,6 +243,7 @@ public class MainController {
 		List<FullFaceFeatures> fullFaceFeatureses = service.getFullFaceFeatures();
 		for(int i=0;i<fullFaceFeatureses.size();i++){
 			service.delete(fullFaceFeatureses.get(i).getCenter(),fullFaceFeatureses.get(i));
+			fullFaceFeatures.remove(i);
 		}
 		return "deleted";
 	}
