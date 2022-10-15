@@ -116,7 +116,6 @@ public class Application {
      public ComboPooledDataSource dataSource()  {
         try{
             String dbUrl = "jdbc:postgresql://10.2.16.129:5432/lesadb";
-
             ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
             basicDataSource.setJdbcUrl(dbUrl);
             basicDataSource.setUser("webadmin");
