@@ -51,16 +51,30 @@ public class Application {
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
-
+    /*@Bean
+    public ComboPooledDataSource dataSource()  {
+       try{
+           String dbUrl = "jdbc:postgresql://localhost:5432/lesadb";
+           ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
+           basicDataSource.setJdbcUrl(dbUrl);
+           basicDataSource.setUser("postgres");
+           basicDataSource.setPassword("123");
+           basicDataSource.setMinPoolSize(0);
+           basicDataSource.setMaxPoolSize(5);
+           basicDataSource.setMaxIdleTime(30000);
+           return basicDataSource;
+       }catch (Exception e){e.printStackTrace();}
+       return null;
+   }*/
+    //Jelastic
     @Bean
-     public ComboPooledDataSource dataSource()  {
+    public ComboPooledDataSource dataSource()  {
         try{
-            String dbUrl = "jdbc:postgresql://localhost:5432/lesadb";
-
+            String dbUrl = "jdbc:postgresql://10.2.16.88:5432/lesadb";
             ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
             basicDataSource.setJdbcUrl(dbUrl);
-            basicDataSource.setUser("postgres");
-            basicDataSource.setPassword("123");
+            basicDataSource.setUser("webadmin");
+            basicDataSource.setPassword("199Jekalt,.");
             basicDataSource.setMinPoolSize(0);
             basicDataSource.setMaxPoolSize(5);
             basicDataSource.setMaxIdleTime(30000);
@@ -68,6 +82,7 @@ public class Application {
         }catch (Exception e){e.printStackTrace();}
         return null;
     }
+
     /*@Bean //red hat || aws
      public ComboPooledDataSource dataSource()  {
         try{
@@ -113,30 +128,6 @@ public class Application {
         return hibernateProperties;
     }
 
-    //Jelastic
-    /*@Bean
-     public ComboPooledDataSource dataSource()  {
-        try{
-            String dbUrl = "jdbc:postgresql://10.2.16.88:5432/lesadb";
-            ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
-            basicDataSource.setJdbcUrl(dbUrl);
-            basicDataSource.setUser("webadmin");
-            basicDataSource.setPassword("199Jekalt,.");
-            basicDataSource.setMinPoolSize(0);
-            basicDataSource.setMaxPoolSize(5);
-            basicDataSource.setMaxIdleTime(30000);
-            return basicDataSource;
-        }catch (Exception e){e.printStackTrace();}
-        return null;
-    }*/
-    /*@Bean
-     public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://172.30.193.226:5432/aloha");
-        dataSource.setUsername("aloha");
-        dataSource.setPassword("123");
-        return dataSource;
-    }*/
+
 }
 
