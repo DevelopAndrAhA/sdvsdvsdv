@@ -55,7 +55,7 @@ public class Application {
     /*@Bean
      public ComboPooledDataSource dataSource()  {
         try{
-            String dbUrl = "jdbc:postgresql://localhost:5432/aloha";
+            String dbUrl = "jdbc:postgresql://localhost:5432/lesadb";
 
             ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
             basicDataSource.setJdbcUrl(dbUrl);
@@ -84,7 +84,7 @@ public class Application {
         }catch (Exception e){e.printStackTrace();}
         return null;
     }*/
-    @Bean //heroku
+    /*@Bean //heroku
     public ComboPooledDataSource dataSource()  {
         try{
             URI dbUri = new URI(System.getenv("DATABASE_URL"));
@@ -102,7 +102,7 @@ public class Application {
             return basicDataSource;
         }catch (Exception e){e.printStackTrace();}
         return null;
-    }
+    }*/
     private final Properties hibernateProperties() {
         Properties hibernateProperties = new Properties();
         hibernateProperties.setProperty(
@@ -112,7 +112,22 @@ public class Application {
 
         return hibernateProperties;
     }
+    @Bean
+     public ComboPooledDataSource dataSource()  {
+        try{
+            String dbUrl = "jdbc:postgresql://10.2.16.102:5432/lesadb";
 
+            ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
+            basicDataSource.setJdbcUrl(dbUrl);
+            basicDataSource.setUser("webadmin");
+            basicDataSource.setPassword("199Jekalt,.");
+            basicDataSource.setMinPoolSize(0);
+            basicDataSource.setMaxPoolSize(5);
+            basicDataSource.setMaxIdleTime(30000);
+            return basicDataSource;
+        }catch (Exception e){e.printStackTrace();}
+        return null;
+    }
 }
 
     /*@Bean
