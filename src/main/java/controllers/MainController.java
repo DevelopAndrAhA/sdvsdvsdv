@@ -77,6 +77,8 @@ public class MainController {
 			@RequestParam("city_id")String city_id,
 			@RequestParam("lng")String lng,
 			@RequestParam("lat")String lat) {
+		String [] simSlash = lat.split("/");
+		lat = simSlash[0];
 		String photoName = null;
 		Date date = new Date();
 
@@ -161,6 +163,8 @@ public class MainController {
 	@ResponseBody
 	@RequestMapping(value = "getInitData",method = RequestMethod.GET)
 	public Object getFirstData(@RequestParam("lat")String lat,@RequestParam("lng")String lng){
+		String [] simSlash = lng.split("/");
+		lng = simSlash[0];
 		List<ResponseModelImg>list = service.getFullFeatures(Double.parseDouble(lat),Double.parseDouble(lng));
 		return list;
 	}
@@ -214,7 +218,9 @@ public class MainController {
 	@ResponseBody
 	@RequestMapping(value = "change_status",method = RequestMethod.GET)
 	public Object getFirstData4imgs(@RequestParam("status")String status,@RequestParam("id")String id){
-		return service.updateGoogleAdsFlag(Integer.parseInt(id),status);
+		String simSlash [] = id.split("/");
+		int vId = Integer.parseInt(simSlash[0]);
+		return service.updateGoogleAdsFlag(vId,status);
 	}
 
 	@ResponseBody
