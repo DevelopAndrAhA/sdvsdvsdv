@@ -39,17 +39,22 @@ public class MyServiceClass {
         session.getCurrentSession().save(fullFaceFeatures);
     }
 
-    public void delete (FaceFeatures faceFeatures,FullFaceFeatures fullFaceFeatures){
-        session.getCurrentSession().delete(faceFeatures);
-        delete(fullFaceFeatures);
+    public void deleteFace (){
+        String sql = "delete from facefeatures";
+        SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql);
+        sqlQuery.executeUpdate();
+        deleteFullFace();
     }
-    public void delete (FullFaceFeatures fullFaceFeatures){
-        session.getCurrentSession().delete(fullFaceFeatures);
+    public void deleteFullFace (){
+        String sql = "delete from fullfacefeatures";
+        SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql);
+        sqlQuery.executeUpdate();
     }
 
     public List<FullFaceFeatures> getFullFaceFeatures(){
-        Criteria criteria = session.getCurrentSession().createCriteria(FullFaceFeatures.class);
-        List<FullFaceFeatures> list = criteria.list();
+        String sql = "SELECT * FROM  fullfacefeatures order by FullFaceFeatures_id desc limit 300";
+        SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql).addEntity(FullFaceFeatures.class);
+        List<FullFaceFeatures> list = sqlQuery.list();
         return list;
     }
 

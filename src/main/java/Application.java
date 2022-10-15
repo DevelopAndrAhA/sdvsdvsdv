@@ -52,7 +52,7 @@ public class Application {
         return sessionFactory;
     }
 
-    /*@Bean
+    @Bean
      public ComboPooledDataSource dataSource()  {
         try{
             String dbUrl = "jdbc:postgresql://localhost:5432/lesadb";
@@ -67,7 +67,7 @@ public class Application {
             return basicDataSource;
         }catch (Exception e){e.printStackTrace();}
         return null;
-    }*/
+    }
     /*@Bean //red hat || aws
      public ComboPooledDataSource dataSource()  {
         try{
@@ -112,7 +112,9 @@ public class Application {
 
         return hibernateProperties;
     }
-    @Bean
+
+    //Jelastic
+    /*@Bean
      public ComboPooledDataSource dataSource()  {
         try{
             String dbUrl = "jdbc:postgresql://10.2.16.88:5432/lesadb";
@@ -126,9 +128,7 @@ public class Application {
             return basicDataSource;
         }catch (Exception e){e.printStackTrace();}
         return null;
-    }
-}
-
+    }*/
     /*@Bean
      public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -138,3 +138,5 @@ public class Application {
         dataSource.setPassword("123");
         return dataSource;
     }*/
+}
+

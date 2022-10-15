@@ -241,11 +241,7 @@ public class MainController {
 	@ResponseBody
 	@RequestMapping(value = "deleteFullFace",method = RequestMethod.GET)
 	public Object deleteFullFace(){
-		List<FullFaceFeatures> fullFaceFeatureses = service.getFullFaceFeatures();
-		for(int i=0;i<fullFaceFeatureses.size();i++){
-			service.delete(fullFaceFeatureses.get(i).getCenter(),fullFaceFeatureses.get(i));
-			fullFaceFeatures.remove(i);
-		}
+		service.deleteFace();
 		return "deleted";
 	}
 
