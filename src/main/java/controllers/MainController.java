@@ -175,8 +175,8 @@ public class MainController {
 	@ResponseBody
 	@RequestMapping(value = "search",method = RequestMethod.GET)
 	public Object search(@RequestParam("crop")String crop,@RequestParam("inpDate")String inpDateP,@RequestParam("city_id")String city_idP){
-		System.out.println("search inpDateP :"+inpDateP);
-		int city_id = Integer.parseInt(city_idP);
+		String simSlash [] = city_idP.split("/");
+		int city_id = Integer.parseInt(simSlash[0]);
 		List<Prediction> predictions = new ArrayList<Prediction>();
 		//List<ResponseModel> fullFaceFeatures = service.getFullFeatures(inpDateP);
 		float mas [] = new float[192];
@@ -188,20 +188,15 @@ public class MainController {
 			mas[i] = Float.parseFloat(cropSplit[i]);
 		}
 		for(int i=0;i<fullFaceFeatures.size();i++){
-			System.out.println("fullFaceFeatures inpDateP :"+fullFaceFeatures.get(i).getInp_date().toString());
 			if(city_id!=fullFaceFeatures.get(i).getCity_id()){
-				System.out.println("city id not "+city_id+" : "+fullFaceFeatures.get(i).getCity_id());
 				continue;
 			}
 			float saved_crop [] = fullFaceFeatures.get(i).getFaceFeatures(1).getFeatures();
 			//float saved_crop [] = fullFaceFeatures.get(i).getFeatures();
 			Prediction prediction = searchSim(saved_crop,mas,fullFaceFeatures.get(i).getFaceLabel(),fullFaceFeatures.get(i).getPhotoName());
 			if(prediction!=null){
-				System.out.println("prediction!=null");
 				prediction.setInpDate(inpDateP);
 				predictions.add(prediction);
-			}else{
-				System.out.println("prediction==null");
 			}
 		}
 		Collections.sort(predictions);
