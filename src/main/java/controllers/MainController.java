@@ -242,6 +242,7 @@ public class MainController {
 	@RequestMapping(value = "deleteFullFace",method = RequestMethod.GET)
 	public Object deleteFullFace(){
 		service.deleteFace();
+		fullFaceFeatures = new ArrayList<FullFaceFeatures>();
 		return "deleted";
 	}
 
