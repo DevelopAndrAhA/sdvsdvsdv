@@ -73,6 +73,7 @@ public class MainController {
 	public Object add(
 			@RequestParam("largePohto") MultipartFile largePohto,
 			@RequestParam("username")String username,
+			@RequestParam("deviceId")String deviceId,
 			@RequestParam("crop")String crop,
 			@RequestParam("city_id")String city_id,
 			@RequestParam("lng")String lng,
@@ -119,9 +120,10 @@ public class MainController {
 
 			FullFaceFeatures features = new FullFaceFeatures(username);
 			features.setFaceFeatures(1,faceFeatures);
+			features.setDeviceId(deviceId);
 			features.setCity_id(Integer.parseInt(city_id));
 			features.setIdentifier(new Date().getSeconds());
-			features.setPhotoName(currTime+"");
+			features.setPhotoName(currTime + "");
 			faceFeatures.setLng(Double.parseDouble(lng));
 			faceFeatures.setLat(Double.parseDouble(lat));
 			faceFeatures.setFullFaceFeatures(features);

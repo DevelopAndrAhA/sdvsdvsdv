@@ -30,6 +30,7 @@ public class FullFaceFeatures {
 
     private String faceLabel;
     private String photoName;
+    private String deviceId;
     private int identifier = 0;
     private int city_id = 0;
 
@@ -117,5 +118,13 @@ public class FullFaceFeatures {
 
     public void setCity_id(int city_id) {
         this.city_id = city_id;
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
     }
 }
