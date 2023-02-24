@@ -74,7 +74,7 @@ public class Application {
             ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
             basicDataSource.setJdbcUrl(dbUrl);
             basicDataSource.setUser("webadmin");
-            basicDataSource.setPassword("199Jekalt,.");
+            basicDataSource.setPassword("IGGgvd53302");
             basicDataSource.setMinPoolSize(0);
             basicDataSource.setMaxPoolSize(5);
             basicDataSource.setMaxIdleTime(30000);
