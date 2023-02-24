@@ -67,7 +67,7 @@ public class Application {
        return null;
    }*/
     //Jelastic
-    /*@Bean
+    @Bean
     public ComboPooledDataSource dataSource()  {
         try{
             String dbUrl = "jdbc:postgresql://10.2.16.88:5432/lesadb";
@@ -81,7 +81,7 @@ public class Application {
             return basicDataSource;
         }catch (Exception e){e.printStackTrace();}
         return null;
-    }*/
+    }
 
     /*@Bean //red hat || aws
      public ComboPooledDataSource dataSource()  {
@@ -99,7 +99,7 @@ public class Application {
         }catch (Exception e){e.printStackTrace();}
         return null;
     }*/
-    @Bean //heroku
+    /*@Bean //heroku
     public ComboPooledDataSource dataSource()  {
         try{
             URI dbUri = new URI(System.getenv("DATABASE_URL"));
@@ -117,7 +117,7 @@ public class Application {
             return basicDataSource;
         }catch (Exception e){e.printStackTrace();}
         return null;
-    }
+    }*/
     private final Properties hibernateProperties() {
         Properties hibernateProperties = new Properties();
         hibernateProperties.setProperty(
