@@ -180,7 +180,7 @@ public class MainController {
 
 	@ResponseBody
 	@RequestMapping(value = "search",method = RequestMethod.GET)
-	public Object search(@RequestParam("crop")String crop,@RequestParam("inpDate")String inpDateP,@RequestParam("city_id")String city_idP){
+	public Object search(@RequestParam("crop")String crop,@RequestParam("fromDate")String fromDate,@RequestParam("toDate")String toDate,@RequestParam("city_id")String city_idP){
 		String simSlash [] = city_idP.split("/");
 		int city_id = Integer.parseInt(simSlash[0]);
 		List<Prediction> predictions = new ArrayList<Prediction>();
@@ -201,7 +201,7 @@ public class MainController {
 			//float saved_crop [] = fullFaceFeatures.get(i).getFeatures();
 			Prediction prediction = searchSim(saved_crop,mas,fullFaceFeatures.get(i).getFaceLabel(),fullFaceFeatures.get(i).getPhotoName());
 			if(prediction!=null){
-				prediction.setInpDate(inpDateP);
+				prediction.setInpDate(fromDate);
 				predictions.add(prediction);
 			}
 		}
