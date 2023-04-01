@@ -8,6 +8,7 @@ import javax.annotation.PostConstruct;*/
 import neural_network.models.*;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
+import org.hibernate.boot.model.source.spi.SingularAttributeSourceToOne;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
@@ -188,7 +189,7 @@ public class MainController {
 		float mas [] = new float[192];
 		String [] cropSplit = crop.split(",");
 		if(cropSplit.length!=192){
-			return "mas.length!=192";
+			return "[{'key':'mas.length!=192["+cropSplit.length+"]'}]";
 		}
 		for(int i=0;i<cropSplit.length;i++){
 			mas[i] = Float.parseFloat(cropSplit[i]);
