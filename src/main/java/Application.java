@@ -70,11 +70,11 @@ public class Application {
     @Bean
     public ComboPooledDataSource dataSource()  {
         try{
-            String dbUrl = "jdbc:postgresql://10.2.4.186:5432/lesadb";
+            String dbUrl = "jdbc:postgresql://10.2.4.219:5432/lesadb";
             ComboPooledDataSource basicDataSource = new ComboPooledDataSource();
             basicDataSource.setJdbcUrl(dbUrl);
             basicDataSource.setUser("webadmin");
-            basicDataSource.setPassword("IGGgvd53302");
+            basicDataSource.setPassword("SQQemf53538");
             basicDataSource.setMinPoolSize(0);
             basicDataSource.setMaxPoolSize(5);
             basicDataSource.setMaxIdleTime(30000);
