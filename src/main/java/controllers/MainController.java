@@ -148,13 +148,16 @@ public class MainController {
 	@ResponseBody
 	@RequestMapping(value = "history",method = RequestMethod.GET)
 	public Object get(@RequestParam("deviceId")String deviceId) {
+
 		List<FullFaceFeatures> features = new ArrayList<FullFaceFeatures>();
+
 		for(int i=0;i<fullFaceFeatures.size();i++){
 
 			if(fullFaceFeatures.get(i).getDeviceId().equals(deviceId)){
 				FullFaceFeatures tmpFullFaceFeatures = new FullFaceFeatures();
 
 				tmpFullFaceFeatures.setFullFaceFeatures_id(fullFaceFeatures.get(i).getFullFaceFeatures_id());
+				tmpFullFaceFeatures.setPhotoName(fullFaceFeatures.get(i).getPhotoName());
 				tmpFullFaceFeatures.setInp_date(fullFaceFeatures.get(i).getInp_date());
 				tmpFullFaceFeatures.setFaceLabel(fullFaceFeatures.get(i).getFaceLabel());
 				tmpFullFaceFeatures.setDeviceId(fullFaceFeatures.get(i).getDeviceId());
