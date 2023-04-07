@@ -51,7 +51,7 @@ public class Application {
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
-    /*@Bean
+   /* @Bean
     public ComboPooledDataSource dataSource()  {
        try{
            String dbUrl = "jdbc:postgresql://localhost:5432/lesadb";

@@ -145,6 +145,20 @@ public class MainController {
 
 	}
 
+	@ResponseBody
+	@RequestMapping(value = "history",method = RequestMethod.POST)
+	public Object get(@RequestParam("deviceId")String deviceId) {
+		List<FullFaceFeatures> features = new ArrayList<FullFaceFeatures>();
+		for(int i=0;i<fullFaceFeatures.size();i++){
+			if(fullFaceFeatures.get(i).getDeviceId().equals(deviceId)){
+				features.add(fullFaceFeatures.get(i));
+			}
+		}
+		return features;
+
+	}
+
+
 
 	@ResponseBody
 	@RequestMapping(value = "image", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
