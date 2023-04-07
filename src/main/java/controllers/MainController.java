@@ -150,6 +150,7 @@ public class MainController {
 	public Object get(@RequestParam("deviceId")String deviceId) {
 		List<FullFaceFeatures> features = new ArrayList<FullFaceFeatures>();
 		for(int i=0;i<fullFaceFeatures.size();i++){
+
 			if(fullFaceFeatures.get(i).getDeviceId().equals(deviceId)){
 				FullFaceFeatures tmpFullFaceFeatures = new FullFaceFeatures();
 
@@ -163,8 +164,8 @@ public class MainController {
 				features.add(tmpFullFaceFeatures);
 			}
 		}
-		return features;
-
+		if (features.size()!=0) return features;
+		else return "{'features':'size==null'}";
 	}
 
 

@@ -132,8 +132,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -742,7 +742,8 @@
       <workItem from="1680627532602" duration="192000" />
       <workItem from="1680857024260" duration="83000" />
       <workItem from="1680873241186" duration="1323000" />
-      <workItem from="1680874680336" duration="305000" />
+      <workItem from="1680874680336" duration="465000" />
+      <workItem from="1680877135207" duration="371000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1664828658490</created>
@@ -936,11 +937,17 @@
       <option name="project" value="LOCAL" />
       <updated>1680874350521</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="4й апрель.История">
+      <created>1680874990861</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1680874990861</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162642000" />
+    <option name="totallyTimeSpent" value="163173000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1181,13 +1188,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76551723" vertical-offset="2020" max-vertical-offset="6035">
-          <caret line="160" column="83" selection-start-line="160" selection-start-column="83" selection-end-line="160" selection-end-column="83" />
+        <state vertical-scroll-proportion="0.22068965" vertical-offset="1202" max-vertical-offset="4318">
+          <caret line="149" column="62" selection-start-line="149" selection-start-column="54" selection-end-line="149" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1168#1186#0" expanded="true" />
+            <element signature="method#add#0;class#MainController#0" expanded="false" />
             <element signature="e#4668#4686#0" expanded="true" />
-            <element signature="e#6839#6851#0" expanded="true" />
+            <element signature="method#getPhoto#0;class#MainController#0" expanded="false" />
+            <element signature="method#search#0;class#MainController#0" expanded="false" />
+            <element signature="e#6906#6918#0" expanded="true" />
           </folding>
         </state>
       </provider>
