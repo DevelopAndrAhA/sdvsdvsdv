@@ -146,7 +146,7 @@ public class MainController {
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "history",method = RequestMethod.POST)
+	@RequestMapping(value = "history",method = RequestMethod.GET)
 	public Object get(@RequestParam("deviceId")String deviceId) {
 		List<FullFaceFeatures> features = new ArrayList<FullFaceFeatures>();
 		for(int i=0;i<fullFaceFeatures.size();i++){
