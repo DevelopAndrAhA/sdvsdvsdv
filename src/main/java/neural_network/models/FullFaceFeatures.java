@@ -33,6 +33,8 @@ public class FullFaceFeatures {
     private String deviceId;
     private int identifier = 0;
     private int city_id = 0;
+    private double lng;
+    private double lat;
 
 
     public FullFaceFeatures(String faceLabel) {
@@ -126,5 +128,21 @@ public class FullFaceFeatures {
 
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
+    }
+
+    public double getLng() {
+        return lng;
+    }
+
+    public void setLng(double lng) {
+        this.lng = lng;
+    }
+
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
     }
 }

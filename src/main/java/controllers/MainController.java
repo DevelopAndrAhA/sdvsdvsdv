@@ -163,6 +163,8 @@ public class MainController {
 				tmpFullFaceFeatures.setDeviceId(fullFaceFeatures.get(i).getDeviceId());
 				tmpFullFaceFeatures.setIdentifier(fullFaceFeatures.get(i).getIdentifier());
 				tmpFullFaceFeatures.setCity_id(fullFaceFeatures.get(i).getCity_id());
+				tmpFullFaceFeatures.setLat(fullFaceFeatures.get(i).getFaceFeatures(1).getLat());
+				tmpFullFaceFeatures.setLng(fullFaceFeatures.get(i).getFaceFeatures(1).getLng());
 
 				features.add(tmpFullFaceFeatures);
 			}
