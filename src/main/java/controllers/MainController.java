@@ -151,7 +151,16 @@ public class MainController {
 		List<FullFaceFeatures> features = new ArrayList<FullFaceFeatures>();
 		for(int i=0;i<fullFaceFeatures.size();i++){
 			if(fullFaceFeatures.get(i).getDeviceId().equals(deviceId)){
-				features.add(fullFaceFeatures.get(i));
+				FullFaceFeatures tmpFullFaceFeatures = new FullFaceFeatures();
+
+				tmpFullFaceFeatures.setFullFaceFeatures_id(fullFaceFeatures.get(i).getFullFaceFeatures_id());
+				tmpFullFaceFeatures.setInp_date(fullFaceFeatures.get(i).getInp_date());
+				tmpFullFaceFeatures.setFaceLabel(fullFaceFeatures.get(i).getFaceLabel());
+				tmpFullFaceFeatures.setDeviceId(fullFaceFeatures.get(i).getDeviceId());
+				tmpFullFaceFeatures.setIdentifier(fullFaceFeatures.get(i).getIdentifier());
+				tmpFullFaceFeatures.setCity_id(fullFaceFeatures.get(i).getCity_id());
+
+				features.add(tmpFullFaceFeatures);
 			}
 		}
 		return features;
