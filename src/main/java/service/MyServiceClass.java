@@ -8,6 +8,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaDelete;
+import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -39,16 +43,20 @@ public class MyServiceClass {
         session.getCurrentSession().save(fullFaceFeatures);
     }
 
-    public void deleteFace (){
-        String sql = "delete from facefeatures";
-        SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql);
-        sqlQuery.executeUpdate();
-        deleteFullFace();
-    }
-    public void deleteFullFace (){
-        String sql = "delete from fullfacefeatures";
-        SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql);
-        sqlQuery.executeUpdate();
+    public void deleteFace (String deviceId,String faceFeatures_id){
+
+        CriteriaBuilder criteriaBuilder = session.getCurrentSession().getCriteriaBuilder();
+        CriteriaDelete<FaceFeatures> deleteQuery1 = criteriaBuilder.createCriteriaDelete(FaceFeatures.class);
+        CriteriaDelete<FullFaceFeatures> deleteQuery2 = criteriaBuilder.createCriteriaDelete(FullFaceFeatures.class);
+
+        Root<FaceFeatures> root1 = deleteQuery1.from(FaceFeatures.class);
+        Root<FullFaceFeatures> root2 = deleteQuery2.from(FullFaceFeatures.class);
+
+        deleteQuery1.where(criteriaBuilder.equal(root1.get("faceFeatures_id"), faceFeatures_id));
+        deleteQuery2.where(criteriaBuilder.equal(root2.get("deviceId"), deviceId));
+
+        session.getCurrentSession().createQuery(deleteQuery1);
+        session.getCurrentSession().createQuery(deleteQuery1);
     }
 
     public List<FullFaceFeatures> getFullFaceFeatures(){
@@ -58,18 +66,9 @@ public class MyServiceClass {
         return list;
     }
 
-    public List<ResponseModel> getFullFeatures(String inp_date){
-        String sql = "select f.fullFaceFeatures_id, f.faceLabel, f.identifier, f.inp_date, f.photoName, f2.facefeatures_id, f2.lat, f2.lng ,f2.features " +
-                "from FullFaceFeatures f inner join FaceFeatures f2 on f2.fullfacefeatures_id = f.fullFaceFeatures_id " +
-                "where to_char(f.inp_date,'yyyy-mm-dd')='"+inp_date+"'  limit 300";
-        SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql).addEntity(ResponseModel.class);
-        List<ResponseModel> list = sqlQuery.list();
-        return list;
-    }
 
-    public List<ResponseModelImg> getFullFeatures(double lat,double lng){
-        double lat_temp = lat+0.001000;
-        double lng_temp = lng+0.001000;
+
+    public List<ResponseModelImg> getFullFeatures(int city_id){
 
         String sql = "select f.fullFaceFeatures_id," +
                     " f.faceLabel," +
@@ -82,7 +81,7 @@ public class MyServiceClass {
                     " from FullFaceFeatures f " +
                     "inner join FaceFeatures f2 " +
                     "on f2.fullfacefeatures_id = f.fullFaceFeatures_id " +
-                    "where (f2.lat between "+lat+" and  " +lat_temp + " or (f2.lng between "+lng+" and "+lng_temp+")) "+
+                    "where city_id = "+city_id +" "+
                     "order by f.fullFaceFeatures_id desc LIMIT 300";
         SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql).addEntity(ResponseModelImg.class);
         List<ResponseModelImg> list = sqlQuery.list();

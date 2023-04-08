@@ -194,11 +194,16 @@ public class MainController {
 
 	@ResponseBody
 	@RequestMapping(value = "getInitData",method = RequestMethod.GET)
-	public Object getFirstData(@RequestParam("lat")String lat,@RequestParam("lng")String lng){
-		String [] simSlash = lng.split("/");
-		lng = simSlash[0];
-		List<ResponseModelImg>list = service.getFullFeatures(Double.parseDouble(lat),Double.parseDouble(lng));
+	public Object getFirstData(@RequestParam("city_id")String city_id){
+		List<ResponseModelImg>list = service.getFullFeatures(Integer.parseInt(city_id));
 		return list;
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "delete",method = RequestMethod.GET)
+	public Object delete(@RequestParam("deviceId")String deviceId,@RequestParam("faceFeatures_id")String faceFeatures_id){
+		service.deleteFace(deviceId,faceFeatures_id);
+		return "{'status':200}";
 	}
 
 	@ResponseBody
@@ -273,7 +278,6 @@ public class MainController {
 	@ResponseBody
 	@RequestMapping(value = "deleteFullFace",method = RequestMethod.GET)
 	public Object deleteFullFace(){
-		service.deleteFace();
 		fullFaceFeatures = new ArrayList<FullFaceFeatures>();
 		return "deleted";
 	}
