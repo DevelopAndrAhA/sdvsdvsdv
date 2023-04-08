@@ -173,7 +173,12 @@ public class MainController {
 		else return "{'features':'size==null'}";
 	}
 
-
+	@ResponseBody
+	@RequestMapping(value = "getFullFaceFeatures",method = RequestMethod.GET)
+	public Object getFullFaceFeatures(@RequestParam("fullFaceFeatures_id")String fullFaceFeatures_id) {
+		FullFaceFeatures fullFaceFeatures1 = service.getFullFaceFeatures(Long.parseLong(fullFaceFeatures_id));
+		return fullFaceFeatures1;
+	}
 
 	@ResponseBody
 	@RequestMapping(value = "image", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
@@ -275,12 +280,6 @@ public class MainController {
 		return "deleted";
 	}
 
-	@ResponseBody
-	@RequestMapping(value = "deleteFullFace",method = RequestMethod.GET)
-	public Object deleteFullFace(){
-		fullFaceFeatures = new ArrayList<FullFaceFeatures>();
-		return "deleted";
-	}
 
 	public BufferedImage resize(MultipartFile photo) {
 

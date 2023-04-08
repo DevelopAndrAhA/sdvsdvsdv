@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="524f2425-aa2a-4c31-9674-1be29b3b0d59" name="Default" comment="8-й апрель.Исправлена карта, добавлено удаление">
-      <change type="DELETED" beforePath="C:\Users\Altynbek\IdeaProjects\SpringExam\src\main\java\controllers\Init.java" afterPath="" />
+    <list default="true" id="524f2425-aa2a-4c31-9674-1be29b3b0d59" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" afterPath="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -134,7 +133,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -307,6 +305,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -748,7 +747,9 @@
       <workItem from="1680877135207" duration="1294000" />
       <workItem from="1680890556331" duration="1978000" />
       <workItem from="1680894025982" duration="291000" />
-      <workItem from="1680983082070" duration="1189000" />
+      <workItem from="1680983082070" duration="1424000" />
+      <workItem from="1680984572529" duration="46000" />
+      <workItem from="1680992085320" duration="429000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1664828658490</created>
@@ -966,11 +967,17 @@
       <option name="project" value="LOCAL" />
       <updated>1680890717347</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="8-й апрель.Исправлена карта, добавлено удаление">
+      <created>1680984285846</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1680984285847</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167554000" />
+    <option name="totallyTimeSpent" value="168264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -979,7 +986,6 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -991,7 +997,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43875277" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18283582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18283582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1003,6 +1009,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.610245" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46993318" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1039,7 +1046,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="25" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1193,23 +1200,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/MyServiceClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27471265" vertical-offset="254" max-vertical-offset="1836">
-          <caret line="45" column="26" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.42988506" vertical-offset="459" max-vertical-offset="1921">
+          <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
           <folding>
-            <marker date="1680984223343" expanded="true" signature="-1:-1" placeholder="update Googl..." />
-            <marker date="1680984223343" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
-            <marker date="1680984223343" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
-            <marker date="1680984223343" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
-            <marker date="1680984223343" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1680992476969" expanded="true" signature="-1:-1" placeholder="update Googl..." />
+            <marker date="1680992476969" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
+            <marker date="1680992476969" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
+            <marker date="1680992476969" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
+            <marker date="1680992476969" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
+            <marker date="1680992476969" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
+            <marker date="1680992476969" expanded="true" signature="-1:-1" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05862069" vertical-offset="3859" max-vertical-offset="5882">
-          <caret line="253" column="0" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.49195403" vertical-offset="711" max-vertical-offset="2805">
+          <caret line="177" column="103" selection-start-line="177" selection-start-column="103" selection-end-line="177" selection-end-column="103" />
+          <folding>
+            <element signature="method#add#0;class#MainController#0" expanded="false" />
+            <element signature="method#get#0;class#MainController#0" expanded="false" />
+            <element signature="e#4669#4687#0" expanded="true" />
+            <element signature="method#getPhoto#0;class#MainController#0" expanded="false" />
+            <element signature="method#getFirstData#0;class#MainController#0" expanded="false" />
+            <element signature="method#delete#0;class#MainController#0" expanded="false" />
+            <element signature="method#getFirstData4imgs#0;class#MainController#0" expanded="false" />
+            <element signature="method#search#0;class#MainController#0" expanded="false" />
+            <element signature="method#getFirstData4imgs#1;class#MainController#0" expanded="false" />
+            <element signature="method#create_ads_obj#0;class#MainController#0" expanded="false" />
+            <element signature="method#deleteAdsStatus#0;class#MainController#0" expanded="false" />
+            <element signature="method#resize#0;class#MainController#0" expanded="false" />
+            <element signature="method#resize#1;class#MainController#0" expanded="false" />
+            <element signature="method#searchSim#0;class#MainController#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

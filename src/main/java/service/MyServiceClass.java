@@ -65,7 +65,12 @@ public class MyServiceClass {
         List<FullFaceFeatures> list = sqlQuery.list();
         return list;
     }
-
+    public FullFaceFeatures getFullFaceFeatures(long fullFaceFeatures_id){
+        String sql = "SELECT * FROM  fullfacefeatures where FullFaceFeatures_id = "+fullFaceFeatures_id;
+        SQLQuery sqlQuery = session.getCurrentSession().createSQLQuery(sql).addEntity(FullFaceFeatures.class);
+        FullFaceFeatures fullFaceFeatures =(FullFaceFeatures) sqlQuery.uniqueResult();
+        return fullFaceFeatures;
+    }
 
 
     public List<ResponseModelImg> getFullFeatures(int city_id){
