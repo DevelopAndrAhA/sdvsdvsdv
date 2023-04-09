@@ -132,8 +132,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -306,6 +304,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -750,7 +750,8 @@
       <workItem from="1680984572529" duration="46000" />
       <workItem from="1680992085320" duration="476000" />
       <workItem from="1681059547739" duration="791000" />
-      <workItem from="1681061462127" duration="42000" />
+      <workItem from="1681061462127" duration="346000" />
+      <workItem from="1681063489433" duration="39000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1664828658490</created>
@@ -998,11 +999,17 @@
       <option name="project" value="LOCAL" />
       <updated>1681060249394</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="8-й апрель.Исправлена карта, добавлено удаление">
+      <created>1681061510529</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1681061510529</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169144000" />
+    <option name="totallyTimeSpent" value="169487000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1232,9 +1239,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26436782" vertical-offset="484" max-vertical-offset="3434">
-          <caret line="149" column="64" selection-start-line="149" selection-start-column="64" selection-end-line="149" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.38045976" vertical-offset="485" max-vertical-offset="3451">
+          <caret line="184" column="49" selection-start-line="184" selection-start-column="49" selection-end-line="184" selection-end-column="49" />
           <folding>
+            <element signature="e#1168#1186#0" expanded="true" />
             <element signature="method#doSomethingAfterStartup#0;class#MainController#0" expanded="false" />
             <element signature="method#add#0;class#MainController#0" expanded="false" />
             <element signature="method#get#0;class#MainController#0" expanded="false" />

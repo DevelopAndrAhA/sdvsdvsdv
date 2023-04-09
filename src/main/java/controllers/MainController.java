@@ -182,6 +182,7 @@ public class MainController {
 	@RequestMapping(value = "getFullFaceFeatures",method = RequestMethod.GET)
 	public Object getFullFaceFeatures(@RequestParam("fullFaceFeatures_id")String fullFaceFeatures_id) {
 		FullFaceFeatures fullFaceFeatures1 = service.getFullFaceFeatures(Long.parseLong(fullFaceFeatures_id));
+		fullFaceFeatures1.setFaceFeatures(1,null);
 		return fullFaceFeatures1;
 	}
 
