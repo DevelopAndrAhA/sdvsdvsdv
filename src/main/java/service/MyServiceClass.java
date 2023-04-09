@@ -45,22 +45,18 @@ public class MyServiceClass {
 
     public boolean deleteFace (String deviceId,String faceFeatures_id){
 
-        CriteriaBuilder criteriaBuilder = session.getCurrentSession().getCriteriaBuilder();
-        CriteriaDelete<FaceFeatures> deleteQuery1 = criteriaBuilder.createCriteriaDelete(FaceFeatures.class);
-        CriteriaDelete<FullFaceFeatures> deleteQuery2 = criteriaBuilder.createCriteriaDelete(FullFaceFeatures.class);
+        FullFaceFeatures fullFaceFeatures = session.getCurrentSession().createQuery(
+                "SELECT f FROM FullFaceFeatures f WHERE f.deviceId = "+deviceId,
+                FullFaceFeatures.class
+        )
+                .setParameter("deviceId", deviceId)
+                .getSingleResult();
 
-        Root<FaceFeatures> root1 = deleteQuery1.from(FaceFeatures.class);
-        Root<FullFaceFeatures> root2 = deleteQuery2.from(FullFaceFeatures.class);
+        // удаляем сущность FaceFeatures из связанной коллекции fullFaceFeatures
+        FaceFeatures faceFeatures = fullFaceFeatures.getFaceFeatures(1);
+        fullFaceFeatures.setFaceFeatures(1,null);
 
-        deleteQuery1.where(criteriaBuilder.equal(root1.get("faceFeatures_id"), faceFeatures_id));
-        deleteQuery2.where(criteriaBuilder.equal(root2.get("deviceId"), deviceId));
-
-        int cnt = session.getCurrentSession().createQuery(deleteQuery1).executeUpdate();
-        int cnt2 = session.getCurrentSession().createQuery(deleteQuery1).executeUpdate();
-
-        if(cnt==1 && cnt2==1){
-            return true;
-        }
+        session.getCurrentSession().delete(fullFaceFeatures);
         return false;
     }
 
