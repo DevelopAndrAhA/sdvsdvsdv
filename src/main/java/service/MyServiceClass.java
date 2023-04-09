@@ -46,7 +46,7 @@ public class MyServiceClass {
     public boolean deleteFace (String deviceId,String faceFeatures_id){
 
         FullFaceFeatures fullFaceFeatures = session.getCurrentSession().createQuery(
-                "SELECT f FROM FullFaceFeatures f WHERE f.deviceId = "+deviceId,
+                "SELECT f FROM FullFaceFeatures f WHERE f.deviceId = :deviceId",
                 FullFaceFeatures.class
         )
                 .setParameter("deviceId", deviceId)
