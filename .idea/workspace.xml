@@ -752,13 +752,7 @@
       <workItem from="1681059547739" duration="791000" />
       <workItem from="1681061462127" duration="346000" />
       <workItem from="1681063489433" duration="137000" />
-      <workItem from="1681064811121" duration="5506000" />
-    </task>
-    <task id="LOCAL-00008" summary="commit">
-      <created>1665841183482</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1665841183482</updated>
+      <workItem from="1681064811121" duration="5831000" />
     </task>
     <task id="LOCAL-00009" summary="commit">
       <created>1665842206268</created>
@@ -1048,11 +1042,17 @@
       <option name="project" value="LOCAL" />
       <updated>1681070073973</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="8-й апрель.Исправлена карта, добавлено удаление">
+      <created>1681070327366</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1681070327366</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175091000" />
+    <option name="totallyTimeSpent" value="175416000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1277,33 +1277,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/neural_network/models/FullFaceFeatures.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/neural_network/models/FaceFeatures.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37126437" vertical-offset="0" max-vertical-offset="1853">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.5862069" vertical-offset="0" max-vertical-offset="1768">
+          <caret line="34" column="45" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/neural_network/models/FaceFeatures.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/neural_network/models/FullFaceFeatures.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56666666" vertical-offset="0" max-vertical-offset="1768">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.254023" vertical-offset="0" max-vertical-offset="1853">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/MyServiceClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47241378" vertical-offset="320" max-vertical-offset="1972">
-          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.5114943" vertical-offset="269" max-vertical-offset="1972">
+          <caret line="58" column="68" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
           <folding>
-            <marker date="1681070323404" expanded="true" signature="-1:-1" placeholder="update Googl..." />
-            <marker date="1681070323404" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
-            <marker date="1681070323404" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
-            <marker date="1681070323404" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
-            <marker date="1681070323404" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
-            <marker date="1681070323404" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1681070638439" expanded="true" signature="-1:-1" placeholder="update Googl..." />
+            <marker date="1681070638439" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
+            <marker date="1681070638439" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
+            <marker date="1681070638439" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
+            <marker date="1681070638439" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
+            <marker date="1681070638439" expanded="true" signature="-1:-1" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>
