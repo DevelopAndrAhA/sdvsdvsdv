@@ -6,6 +6,7 @@ import org.hibernate.Criteria;
 import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -45,25 +46,26 @@ public class MyServiceClass {
     }
 
     public boolean deleteFace(String deviceId, String faceFeaturesId) {
-        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+        Criteria criteria = session.getCurrentSession().createCriteria(FaceFeatures.class);
+        criteria.add(Restrictions.eq("faceFeatures_id",Long.parseLong(faceFeaturesId)));
+        FaceFeatures faceFeatures = (FaceFeatures)criteria.uniqueResult();
 
-        // Удаляем сначала записи из таблицы FaceFeatures, которые ссылаются на удаляемую запись из таблицы FullFaceFeatures
-        CriteriaDelete<FaceFeatures> deleteQuery1 = criteriaBuilder.createCriteriaDelete(FaceFeatures.class);
-        Root<FaceFeatures> root1 = deleteQuery1.from(FaceFeatures.class);
-        Join<FaceFeatures, FullFaceFeatures> join1 = root1.join("fullFaceFeatures");
-        deleteQuery1.where(criteriaBuilder.equal(join1.get("deviceId"), deviceId),
-                criteriaBuilder.equal(join1.get("faceFeatures_id"), faceFeaturesId));
-        int cnt1 = session.getCurrentSession().createQuery(deleteQuery1).executeUpdate();
+        String deleteFaceFeaturesQuery = "DELETE FROM FaceFeatures WHERE fullFaceFeatures_id = (SELECT id FROM FullFaceFeatures WHERE device_id = :deviceId AND FullFaceFeatures_id = :FullFaceFeatures_id)";
+        String deleteFullFaceFeaturesQuery = "DELETE FROM FullFaceFeatures WHERE deviceId = :deviceId AND FullFaceFeatures_id = :faceFeaturesId";
 
-        // Удаляем запись из таблицы FullFaceFeatures
-        CriteriaDelete<FullFaceFeatures> deleteQuery2 = criteriaBuilder.createCriteriaDelete(FullFaceFeatures.class);
-        Root<FullFaceFeatures> root2 = deleteQuery2.from(FullFaceFeatures.class);
-        deleteQuery2.where(criteriaBuilder.equal(root2.get("deviceId"), deviceId),
-                criteriaBuilder.equal(root2.get("faceFeatures_id"), faceFeaturesId));
-        int cnt2 = session.getCurrentSession().createQuery(deleteQuery2).executeUpdate();
+        Query deleteFaceFeatures = session.getCurrentSession().createNativeQuery(deleteFaceFeaturesQuery);
+        deleteFaceFeatures.setParameter("deviceId", deviceId);
+        deleteFaceFeatures.setParameter("faceFeaturesId", faceFeaturesId);
+        int deletedFaceFeatures = deleteFaceFeatures.executeUpdate();
 
-        return cnt1 > 0 && cnt2 > 0;
+        Query deleteFullFaceFeatures = session.getCurrentSession().createNativeQuery(deleteFullFaceFeaturesQuery);
+        deleteFullFaceFeatures.setParameter("deviceId", deviceId);
+        deleteFullFaceFeatures.setParameter("FullFaceFeatures_id", faceFeatures.getFullFaceFeatures().getFullFaceFeatures_id());
+        int deletedFullFaceFeatures = deleteFullFaceFeatures.executeUpdate();
+
+        return deletedFaceFeatures > 0 && deletedFullFaceFeatures > 0;
     }
+
 
 
 

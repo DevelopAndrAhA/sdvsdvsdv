@@ -752,13 +752,7 @@
       <workItem from="1681059547739" duration="791000" />
       <workItem from="1681061462127" duration="346000" />
       <workItem from="1681063489433" duration="137000" />
-      <workItem from="1681064811121" duration="6839000" />
-    </task>
-    <task id="LOCAL-00014" summary="commit">
-      <created>1665852142004</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1665852142004</updated>
+      <workItem from="1681064811121" duration="7323000" />
     </task>
     <task id="LOCAL-00015" summary="commit">
       <created>1665867435096</created>
@@ -1048,11 +1042,17 @@
       <option name="project" value="LOCAL" />
       <updated>1681071369819</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="8-й апрель.Исправлена карта, добавлено удаление">
+      <created>1681071662008</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1681071662008</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176424000" />
+    <option name="totallyTimeSpent" value="176908000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1277,33 +1277,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/neural_network/models/FullFaceFeatures.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/MyServiceClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31264368" vertical-offset="0" max-vertical-offset="1853">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.6184364" vertical-offset="269" max-vertical-offset="2074">
+          <caret line="65" column="70" selection-start-line="65" selection-start-column="70" selection-end-line="65" selection-end-column="70" />
+          <folding>
+            <marker date="1681072140670" expanded="true" signature="-1:-1" placeholder="update Googl..." />
+            <marker date="1681072140670" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
+            <marker date="1681072140670" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
+            <marker date="1681072140670" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
+            <marker date="1681072140670" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
+            <marker date="1681072140670" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/MyServiceClass.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/neural_network/models/FullFaceFeatures.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37471265" vertical-offset="269" max-vertical-offset="2057">
-          <caret line="52" column="81" selection-start-line="52" selection-start-column="65" selection-end-line="52" selection-end-column="81" />
-          <folding>
-            <marker date="1681071657837" expanded="true" signature="-1:-1" placeholder="update Googl..." />
-            <marker date="1681071657837" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
-            <marker date="1681071657837" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
-            <marker date="1681071657837" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
-            <marker date="1681071657837" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
-            <marker date="1681071657837" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-          </folding>
+        <state vertical-scroll-proportion="0.23448277" vertical-offset="0" max-vertical-offset="1853">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/neural_network/models/FaceFeatures.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21494253" vertical-offset="0" max-vertical-offset="1768">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.56666666" vertical-offset="0" max-vertical-offset="1768">
+          <caret line="33" column="43" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="43" />
           <folding />
         </state>
       </provider>
