@@ -165,10 +165,10 @@ public class MainController {
 				tmpFullFaceFeatures.setCity_id(fullFaceFeatures.get(i).getCity_id());
 				try{
 					tmpFullFaceFeatures.setLat(fullFaceFeatures.get(i).getFaceFeatures(1).getLat());
-				}catch (Exception e){e.printStackTrace();}
+				}catch (Exception e){}
 				try{
 					tmpFullFaceFeatures.setLng(fullFaceFeatures.get(i).getFaceFeatures(1).getLng());
-				}catch (Exception e){e.printStackTrace();}
+				}catch (Exception e){}
 
 				features.add(tmpFullFaceFeatures);
 			}
@@ -218,12 +218,12 @@ public class MainController {
 	@RequestMapping(value = "delete",method = RequestMethod.GET)
 	public Object delete(@RequestParam("deviceId")String deviceId,@RequestParam("faceFeatures_id")String faceFeatures_id){
 		boolean res = service.deleteFace(deviceId,faceFeatures_id);
-		int tmpfaceFeatures_id = Integer.parseInt(faceFeatures_id);
+		int tmpFaceFeatures_id = Integer.parseInt(faceFeatures_id);
 		if(res){
 			Iterator<FullFaceFeatures> iterator = fullFaceFeatures.iterator();
 			while (iterator.hasNext()) {
 				FullFaceFeatures fullFaceFeature = iterator.next();
-				if (fullFaceFeature.getDeviceId().equals(deviceId) && fullFaceFeature.getFaceFeatures(1).getFaceFeatures_id()==tmpfaceFeatures_id) {
+				if (fullFaceFeature.getDeviceId().equals(deviceId) && fullFaceFeature.getFaceFeatures(1).getFaceFeatures_id()==tmpFaceFeatures_id) {
 					File file = new File(FileUtils.getUserDirectory()+File.separator+"images"+File.separator+fullFaceFeature.getPhotoName()+".jpg");
 					file.delete();
 					file = new File(FileUtils.getUserDirectory()+File.separator+"images"+File.separator+fullFaceFeature.getPhotoName()+"_SMALL.jpg");
