@@ -151,9 +151,9 @@ public class MainController {
 
 		List<FullFaceFeatures> features = new ArrayList<FullFaceFeatures>();
 
-		for(int i=0;i<fullFaceFeatures.size();i++){
+		for (int i = 0; i < fullFaceFeatures.size(); i++) {
 
-			if(fullFaceFeatures.get(i).getDeviceId().equals(deviceId)){
+			if (fullFaceFeatures.get(i).getDeviceId().equals(deviceId)) {
 				FullFaceFeatures tmpFullFaceFeatures = new FullFaceFeatures();
 
 				tmpFullFaceFeatures.setFullFaceFeatures_id(fullFaceFeatures.get(i).getFullFaceFeatures_id());
@@ -169,8 +169,13 @@ public class MainController {
 				features.add(tmpFullFaceFeatures);
 			}
 		}
-		if (features.size()!=0) return features;
-		else return "{'features':'size==null'}";
+
+		if (features.size() != 0) {
+			Collections.reverse(features);
+			return features;
+		} else {
+			return "{'features':'size==null'}";
+		}
 	}
 
 	@ResponseBody

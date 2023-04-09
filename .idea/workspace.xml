@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="524f2425-aa2a-4c31-9674-1be29b3b0d59" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" afterPath="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SpringExam.iws" />
@@ -47,7 +46,27 @@
     <favorites_list name="SpringExam" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.72988504" vertical-offset="487" max-vertical-offset="3961">
+              <caret line="173" column="42" selection-start-line="173" selection-start-column="42" selection-end-line="173" selection-end-column="42" />
+              <folding>
+                <element signature="method#doSomethingAfterStartup#0;class#MainController#0" expanded="false" />
+                <element signature="method#add#0;class#MainController#0" expanded="false" />
+                <element signature="e#4669#4687#0" expanded="true" />
+                <element signature="e#8732#8733#0" expanded="true" />
+                <element signature="e#8769#8770#0" expanded="true" />
+                <element signature="method#resize#0;class#MainController#0" expanded="false" />
+                <element signature="method#resize#1;class#MainController#0" expanded="false" />
+                <element signature="method#searchSim#0;class#MainController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -133,6 +152,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -305,8 +326,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -749,7 +768,8 @@
       <workItem from="1680894025982" duration="291000" />
       <workItem from="1680983082070" duration="1424000" />
       <workItem from="1680984572529" duration="46000" />
-      <workItem from="1680992085320" duration="429000" />
+      <workItem from="1680992085320" duration="476000" />
+      <workItem from="1681059547739" duration="269000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1664828658490</created>
@@ -973,15 +993,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680984285847</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="8-й апрель.Исправлена карта, добавлено удаление">
+      <created>1680992538538</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1680992538538</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168264000" />
+    <option name="totallyTimeSpent" value="168580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -997,7 +1023,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43875277" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18283582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18283582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1200,11 +1226,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/MyServiceClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42988506" vertical-offset="459" max-vertical-offset="1921">
-          <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.33563218" vertical-offset="1051" max-vertical-offset="1921">
+          <caret line="95" column="34" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
           <folding>
             <marker date="1680992476969" expanded="true" signature="-1:-1" placeholder="update Googl..." />
-            <marker date="1680992476969" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
             <marker date="1680992476969" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
             <marker date="1680992476969" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
             <marker date="1680992476969" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
@@ -1216,20 +1241,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49195403" vertical-offset="711" max-vertical-offset="2805">
-          <caret line="177" column="103" selection-start-line="177" selection-start-column="103" selection-end-line="177" selection-end-column="103" />
+        <state vertical-scroll-proportion="0.72988504" vertical-offset="487" max-vertical-offset="3961">
+          <caret line="173" column="42" selection-start-line="173" selection-start-column="42" selection-end-line="173" selection-end-column="42" />
           <folding>
+            <element signature="method#doSomethingAfterStartup#0;class#MainController#0" expanded="false" />
             <element signature="method#add#0;class#MainController#0" expanded="false" />
-            <element signature="method#get#0;class#MainController#0" expanded="false" />
             <element signature="e#4669#4687#0" expanded="true" />
-            <element signature="method#getPhoto#0;class#MainController#0" expanded="false" />
-            <element signature="method#getFirstData#0;class#MainController#0" expanded="false" />
-            <element signature="method#delete#0;class#MainController#0" expanded="false" />
-            <element signature="method#getFirstData4imgs#0;class#MainController#0" expanded="false" />
-            <element signature="method#search#0;class#MainController#0" expanded="false" />
-            <element signature="method#getFirstData4imgs#1;class#MainController#0" expanded="false" />
-            <element signature="method#create_ads_obj#0;class#MainController#0" expanded="false" />
-            <element signature="method#deleteAdsStatus#0;class#MainController#0" expanded="false" />
+            <element signature="e#8732#8733#0" expanded="true" />
+            <element signature="e#8769#8770#0" expanded="true" />
             <element signature="method#resize#0;class#MainController#0" expanded="false" />
             <element signature="method#resize#1;class#MainController#0" expanded="false" />
             <element signature="method#searchSim#0;class#MainController#0" expanded="false" />
