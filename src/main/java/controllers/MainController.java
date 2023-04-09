@@ -219,7 +219,7 @@ public class MainController {
 	public Object delete(@RequestParam("deviceId")String deviceId,@RequestParam("fullFaceFeatures_id")String fullFaceFeatures_id){
 		int tmpFullFaceFeatures_id = Integer.parseInt(fullFaceFeatures_id);
 		boolean res = service.deleteFace(deviceId, tmpFullFaceFeatures_id);
-		/*if(res){
+		if(res){
 			Iterator<FullFaceFeatures> iterator = fullFaceFeatures.iterator();
 			while (iterator.hasNext()) {
 				FullFaceFeatures fullFaceFeature = iterator.next();
@@ -231,21 +231,7 @@ public class MainController {
 					iterator.remove();
 				}
 			}
-		}*/
-		Iterator<FullFaceFeatures> iterator = fullFaceFeatures.iterator();
-		while (iterator.hasNext()) {
-			FullFaceFeatures fullFaceFeature = iterator.next();
-			if (fullFaceFeature.getDeviceId().equals(deviceId) && fullFaceFeature.getFullFaceFeatures_id()==tmpFullFaceFeatures_id) {
-				File file = new File(FileUtils.getUserDirectory()+File.separator+"images"+File.separator+fullFaceFeature.getPhotoName()+".jpg");
-				file.delete();
-				file = new File(FileUtils.getUserDirectory()+File.separator+"images"+File.separator+fullFaceFeature.getPhotoName()+"_SMALL.jpg");
-				file.delete();
-				iterator.remove();
-			}
 		}
-
-
-
 		return "{'status':200}";
 	}
 

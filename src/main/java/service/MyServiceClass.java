@@ -59,8 +59,7 @@ public class MyServiceClass {
         deleteFullFaceFeatures.setParameter("FullFaceFeatures_id", tmpFullFaceFeatures_id);
         int deletedFullFaceFeatures = deleteFullFaceFeatures.executeUpdate();
 
-        //return deletedFaceFeatures > 0 && deletedFullFaceFeatures > 0;
-        return true;
+        return deletedFaceFeatures > 0 && deletedFullFaceFeatures > 0;
     }
 
 
