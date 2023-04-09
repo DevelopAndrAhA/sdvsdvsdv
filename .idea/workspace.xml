@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="524f2425-aa2a-4c31-9674-1be29b3b0d59" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/neural_network/models/FaceFeatures.java" afterPath="$PROJECT_DIR$/src/main/java/neural_network/models/FaceFeatures.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/neural_network/models/FullFaceFeatures.java" afterPath="$PROJECT_DIR$/src/main/java/neural_network/models/FullFaceFeatures.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SpringExam.iws" />
@@ -46,47 +47,7 @@
     <favorites_list name="SpringExam" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.03448276" vertical-offset="1441" max-vertical-offset="3400">
-              <caret line="212" column="85" selection-start-line="212" selection-start-column="78" selection-end-line="212" selection-end-column="85" />
-              <folding>
-                <element signature="e#1168#1186#0" expanded="true" />
-                <element signature="method#add#0;class#MainController#0" expanded="false" />
-                <element signature="method#get#0;class#MainController#0" expanded="false" />
-                <element signature="e#4669#4687#0" expanded="true" />
-                <element signature="method#getPhoto#0;class#MainController#0" expanded="false" />
-                <element signature="method#search#0;class#MainController#0" expanded="false" />
-                <element signature="e#8627#8639#0" expanded="true" />
-                <element signature="method#deleteAdsStatus#0;class#MainController#0" expanded="false" />
-                <element signature="method#resize#0;class#MainController#0" expanded="false" />
-                <element signature="method#resize#1;class#MainController#0" expanded="false" />
-                <element signature="method#searchSim#0;class#MainController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyServiceClass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/service/MyServiceClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1034" max-vertical-offset="2006">
-              <caret line="110" column="43" selection-start-line="110" selection-start-column="41" selection-end-line="110" selection-end-column="43" />
-              <folding>
-                <marker date="1681064995661" expanded="true" signature="865:923" placeholder="update Googl..." />
-                <marker date="1681064995661" expanded="true" signature="2578:2653" placeholder="SELECT * FRO..fullfacefeatures..." />
-                <marker date="1681064995661" expanded="true" signature="2946:3006" placeholder="SELECT * FRO..fullfacefeatures..." />
-                <marker date="1681064995661" expanded="true" signature="3355:3948" placeholder="select f.ful..FullFaceFeatures..." />
-                <marker date="1681064995661" expanded="true" signature="4225:4720" placeholder="select f.ful..FullFaceFeatures..." />
-                <marker date="1681064995661" expanded="true" signature="5027:5052" placeholder="delete from ..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -113,7 +74,6 @@
         <option value="$PROJECT_DIR$/devfile.yaml" />
         <option value="$PROJECT_DIR$/projyaml.yaml" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/Init.java" />
-        <option value="$PROJECT_DIR$/src/main/java/neural_network/models/FaceFeatures.java" />
         <option value="$PROJECT_DIR$/src/main/java/neural_network/models/GoogleAdsFlag.java" />
         <option value="$PROJECT_DIR$/src/main/java/neural_network/models/ResponseModelImg.java" />
         <option value="$PROJECT_DIR$/src/main/java/neural_network/models/ResponseModel.java" />
@@ -122,9 +82,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/neural_network/models/FullFaceFeatures.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" />
+        <option value="$PROJECT_DIR$/src/main/java/neural_network/models/FullFaceFeatures.java" />
+        <option value="$PROJECT_DIR$/src/main/java/neural_network/models/FaceFeatures.java" />
       </list>
     </option>
   </component>
@@ -792,13 +753,7 @@
       <workItem from="1681059547739" duration="791000" />
       <workItem from="1681061462127" duration="346000" />
       <workItem from="1681063489433" duration="137000" />
-      <workItem from="1681064811121" duration="4059000" />
-    </task>
-    <task id="LOCAL-00003" summary="commit">
-      <created>1664829234408</created>
-      <option name="number" value="00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1664829234408</updated>
+      <workItem from="1681064811121" duration="4398000" />
     </task>
     <task id="LOCAL-00004" summary="commit">
       <created>1664829239740</created>
@@ -1088,15 +1043,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681068110007</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="8-й апрель.Исправлена карта, добавлено удаление">
+      <created>1681068879301</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1681068879301</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173644000" />
+    <option name="totallyTimeSpent" value="173983000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1113,7 +1074,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43875277" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18283582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18283582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1297,37 +1258,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/neural_network/models/FaceFeatures.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21494253" vertical-offset="0" max-vertical-offset="1768">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/neural_network/models/FullFaceFeatures.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19655173" vertical-offset="33" max-vertical-offset="1853">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/MyServiceClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1034" max-vertical-offset="2006">
-          <caret line="110" column="43" selection-start-line="110" selection-start-column="41" selection-end-line="110" selection-end-column="43" />
-          <folding>
-            <marker date="1681064995661" expanded="true" signature="865:923" placeholder="update Googl..." />
-            <marker date="1681064995661" expanded="true" signature="2578:2653" placeholder="SELECT * FRO..fullfacefeatures..." />
-            <marker date="1681064995661" expanded="true" signature="2946:3006" placeholder="SELECT * FRO..fullfacefeatures..." />
-            <marker date="1681064995661" expanded="true" signature="3355:3948" placeholder="select f.ful..FullFaceFeatures..." />
-            <marker date="1681064995661" expanded="true" signature="4225:4720" placeholder="select f.ful..FullFaceFeatures..." />
-            <marker date="1681064995661" expanded="true" signature="5027:5052" placeholder="delete from ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.03448276" vertical-offset="1441" max-vertical-offset="3400">
@@ -1344,6 +1274,37 @@
             <element signature="method#resize#0;class#MainController#0" expanded="false" />
             <element signature="method#resize#1;class#MainController#0" expanded="false" />
             <element signature="method#searchSim#0;class#MainController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/neural_network/models/FullFaceFeatures.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1853">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/neural_network/models/FaceFeatures.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56666666" vertical-offset="0" max-vertical-offset="1768">
+          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/MyServiceClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43333334" vertical-offset="269" max-vertical-offset="2006">
+          <caret line="54" column="75" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
+          <folding>
+            <marker date="1681064995661" expanded="true" signature="-1:-1" placeholder="update Googl..." />
+            <marker date="1681064995661" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
+            <marker date="1681064995661" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
+            <marker date="1681064995661" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
+            <marker date="1681064995661" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
+            <marker date="1681064995661" expanded="true" signature="-1:-1" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>

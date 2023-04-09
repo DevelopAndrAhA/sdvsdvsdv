@@ -18,7 +18,7 @@ public class FullFaceFeatures {
 
 
 
-    @OneToOne(mappedBy = "fullFaceFeatures" ,cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "fullFaceFeatures" ,cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn
     private FaceFeatures center;
 
