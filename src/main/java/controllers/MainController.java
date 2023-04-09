@@ -216,9 +216,9 @@ public class MainController {
 
 	@ResponseBody
 	@RequestMapping(value = "delete",method = RequestMethod.GET)
-	public Object delete(@RequestParam("deviceId")String deviceId,@RequestParam("faceFeatures_id")String faceFeatures_id,@RequestParam("fullFaceFeatures_id")String fullFaceFeatures_id){
-		boolean res = service.deleteFace(deviceId,faceFeatures_id);
+	public Object delete(@RequestParam("deviceId")String deviceId,@RequestParam("fullFaceFeatures_id")String fullFaceFeatures_id){
 		int tmpFullFaceFeatures_id = Integer.parseInt(fullFaceFeatures_id);
+		boolean res = service.deleteFace(deviceId, tmpFullFaceFeatures_id);
 		/*if(res){
 			Iterator<FullFaceFeatures> iterator = fullFaceFeatures.iterator();
 			while (iterator.hasNext()) {
@@ -243,6 +243,7 @@ public class MainController {
 				iterator.remove();
 			}
 		}
+
 
 
 		return "{'status':200}";

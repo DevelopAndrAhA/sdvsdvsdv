@@ -45,24 +45,22 @@ public class MyServiceClass {
         session.getCurrentSession().save(fullFaceFeatures);
     }
 
-    public boolean deleteFace(String deviceId, String faceFeaturesId) {
-        Criteria criteria = session.getCurrentSession().createCriteria(FaceFeatures.class);
-        criteria.add(Restrictions.eq("faceFeatures_id",Long.parseLong(faceFeaturesId)));
-        FaceFeatures faceFeatures = (FaceFeatures)criteria.uniqueResult();
+    public boolean deleteFace(String deviceId, long tmpFullFaceFeatures_id) {
 
         String deleteFaceFeaturesQuery = "DELETE FROM FaceFeatures WHERE fullFaceFeatures_id = (SELECT FullFaceFeatures_id FROM FullFaceFeatures WHERE FullFaceFeatures_id = :FullFaceFeatures_id)";
         String deleteFullFaceFeaturesQuery = "DELETE FROM FullFaceFeatures WHERE deviceId = :deviceId AND FullFaceFeatures_id = :FullFaceFeatures_id";
 
         Query deleteFaceFeatures = session.getCurrentSession().createNativeQuery(deleteFaceFeaturesQuery);
-        deleteFaceFeatures.setParameter("FullFaceFeatures_id", faceFeatures.getFullFaceFeatures().getFullFaceFeatures_id());
+        deleteFaceFeatures.setParameter("FullFaceFeatures_id", tmpFullFaceFeatures_id);
         int deletedFaceFeatures = deleteFaceFeatures.executeUpdate();
 
         Query deleteFullFaceFeatures = session.getCurrentSession().createNativeQuery(deleteFullFaceFeaturesQuery);
         deleteFullFaceFeatures.setParameter("deviceId", deviceId);
-        deleteFullFaceFeatures.setParameter("FullFaceFeatures_id", faceFeatures.getFullFaceFeatures().getFullFaceFeatures_id());
+        deleteFullFaceFeatures.setParameter("FullFaceFeatures_id", tmpFullFaceFeatures_id);
         int deletedFullFaceFeatures = deleteFullFaceFeatures.executeUpdate();
 
-        return deletedFaceFeatures > 0 && deletedFullFaceFeatures > 0;
+        //return deletedFaceFeatures > 0 && deletedFullFaceFeatures > 0;
+        return true;
     }
 
 
