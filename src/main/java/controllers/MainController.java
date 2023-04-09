@@ -163,8 +163,12 @@ public class MainController {
 				tmpFullFaceFeatures.setDeviceId(fullFaceFeatures.get(i).getDeviceId());
 				tmpFullFaceFeatures.setIdentifier(fullFaceFeatures.get(i).getIdentifier());
 				tmpFullFaceFeatures.setCity_id(fullFaceFeatures.get(i).getCity_id());
-				tmpFullFaceFeatures.setLat(fullFaceFeatures.get(i).getFaceFeatures(1).getLat());
-				tmpFullFaceFeatures.setLng(fullFaceFeatures.get(i).getFaceFeatures(1).getLng());
+				try{
+					tmpFullFaceFeatures.setLat(fullFaceFeatures.get(i).getFaceFeatures(1).getLat());
+				}catch (Exception e){e.printStackTrace();}
+				try{
+					tmpFullFaceFeatures.setLng(fullFaceFeatures.get(i).getFaceFeatures(1).getLng());
+				}catch (Exception e){e.printStackTrace();}
 
 				features.add(tmpFullFaceFeatures);
 			}
@@ -220,11 +224,10 @@ public class MainController {
 			while (iterator.hasNext()) {
 				FullFaceFeatures fullFaceFeature = iterator.next();
 				if (fullFaceFeature.getDeviceId().equals(deviceId) && fullFaceFeature.getFaceFeatures(1).getFaceFeatures_id()==tmpfaceFeatures_id) {
-					File file = new File(fullFaceFeature.getPhotoName()+".jpg");
+					File file = new File(FileUtils.getUserDirectory()+File.separator+"images"+File.separator+fullFaceFeature.getPhotoName()+".jpg");
 					file.delete();
-					file = new File(fullFaceFeature.getPhotoName()+"_SMALL.jpg");
-					boolean bool = file.delete();
-					System.out.println(fullFaceFeature.getPhotoName() +" DELETED "+bool);
+					file = new File(FileUtils.getUserDirectory()+File.separator+"images"+File.separator+fullFaceFeature.getPhotoName()+"_SMALL.jpg");
+					file.delete();
 					iterator.remove();
 				}
 			}
