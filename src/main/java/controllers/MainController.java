@@ -171,7 +171,6 @@ public class MainController {
 		}
 
 		if (features.size() != 0) {
-			Collections.reverse(features);
 			return features;
 		} else {
 			return "{'features':'size==null'}";
