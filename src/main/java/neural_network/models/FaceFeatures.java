@@ -30,8 +30,8 @@ public class FaceFeatures {
     private Date inp_date;
 
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "FullFaceFeatures_id")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "fullFaceFeatures_id")
     private FullFaceFeatures fullFaceFeatures;
 
 

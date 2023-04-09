@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaDelete;
+import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 import java.util.List;
@@ -43,26 +44,28 @@ public class MyServiceClass {
         session.getCurrentSession().save(fullFaceFeatures);
     }
 
-    public boolean deleteFace (String deviceId,String faceFeatures_id){
-// удаляем сначала записи из таблицы facefeatures, которые ссылаются на удаляемую запись из таблицы fullfacefeatures
+    public boolean deleteFace(String deviceId, String faceFeatures_id) {
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+
+        // удаляем сначала записи из таблицы FaceFeatures, которые ссылаются на удаляемую запись из таблицы FullFaceFeatures
         CriteriaDelete<FaceFeatures> deleteQuery1 = criteriaBuilder.createCriteriaDelete(FaceFeatures.class);
         Root<FaceFeatures> root1 = deleteQuery1.from(FaceFeatures.class);
-        deleteQuery1.where(criteriaBuilder.and(
-                criteriaBuilder.equal(root1.get("fullFaceFeatures").get("deviceId"), deviceId),
-                criteriaBuilder.equal(root1.get("fullFaceFeatures").get("fullFaceFeatures_id"), faceFeatures_id)));
+        Join<FaceFeatures, FullFaceFeatures> join1 = root1.join("fullFaceFeatures");
+        deleteQuery1.where(criteriaBuilder.equal(join1.get("deviceId"), deviceId),
+                criteriaBuilder.equal(join1.get("fullFaceFeatures_id"), faceFeatures_id));
         int cnt = session.getCurrentSession().createQuery(deleteQuery1).executeUpdate();
 
+        // удаляем записи из таблицы FullFaceFeatures
         CriteriaDelete<FullFaceFeatures> deleteQuery2 = criteriaBuilder.createCriteriaDelete(FullFaceFeatures.class);
         Root<FullFaceFeatures> root2 = deleteQuery2.from(FullFaceFeatures.class);
-        deleteQuery2.where(criteriaBuilder.and(
-                criteriaBuilder.equal(root2.get("deviceId"), deviceId),
-                criteriaBuilder.equal(root2.get("fullFaceFeatures_id"), faceFeatures_id)));
+        deleteQuery2.where(criteriaBuilder.equal(root2.get("deviceId"), deviceId),
+                criteriaBuilder.equal(root2.get("fullFaceFeatures_id"), faceFeatures_id));
         int cnt2 = session.getCurrentSession().createQuery(deleteQuery2).executeUpdate();
 
         return cnt > 0 && cnt2 > 0;
-
     }
+
+
 
     public List<FullFaceFeatures> getFullFaceFeatures(){
         String sql = "SELECT * FROM  fullfacefeatures order by FullFaceFeatures_id desc limit 300";
