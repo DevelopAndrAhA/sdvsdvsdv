@@ -220,7 +220,11 @@ public class MainController {
 			while (iterator.hasNext()) {
 				FullFaceFeatures fullFaceFeature = iterator.next();
 				if (fullFaceFeature.getDeviceId().equals(deviceId) && fullFaceFeature.getFaceFeatures(1).getFaceFeatures_id()==tmpfaceFeatures_id) {
-					System.out.println(fullFaceFeature.getPhotoName());
+					File file = new File(fullFaceFeature.getPhotoName()+".jpg");
+					file.delete();
+					file = new File(fullFaceFeature.getPhotoName()+"_SMALL.jpg");
+					boolean bool = file.delete();
+					System.out.println(fullFaceFeature.getPhotoName() +" DELETED "+bool);
 					iterator.remove();
 				}
 			}
