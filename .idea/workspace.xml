@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="524f2425-aa2a-4c31-9674-1be29b3b0d59" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" afterPath="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SpringExam.iws" />
@@ -751,13 +752,7 @@
       <workItem from="1681059547739" duration="791000" />
       <workItem from="1681061462127" duration="346000" />
       <workItem from="1681063489433" duration="137000" />
-      <workItem from="1681064811121" duration="5841000" />
-    </task>
-    <task id="LOCAL-00011" summary="commit">
-      <created>1665843729820</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1665843729820</updated>
+      <workItem from="1681064811121" duration="6005000" />
     </task>
     <task id="LOCAL-00012" summary="commit">
       <created>1665843735334</created>
@@ -1047,11 +1042,17 @@
       <option name="project" value="LOCAL" />
       <updated>1681070657703</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="8-й апрель.Исправлена карта, добавлено удаление">
+      <created>1681070661760</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1681070661760</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175426000" />
+    <option name="totallyTimeSpent" value="175590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1294,15 +1295,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/MyServiceClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5114943" vertical-offset="269" max-vertical-offset="1972">
-          <caret line="58" column="68" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
+        <state vertical-scroll-proportion="0.6091954" vertical-offset="269" max-vertical-offset="2006">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
-            <marker date="1681070638439" expanded="true" signature="-1:-1" placeholder="update Googl..." />
-            <marker date="1681070638439" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
-            <marker date="1681070638439" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
-            <marker date="1681070638439" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
-            <marker date="1681070638439" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
-            <marker date="1681070638439" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1681070822813" expanded="true" signature="-1:-1" placeholder="update Googl..." />
+            <marker date="1681070822813" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
+            <marker date="1681070822813" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
+            <marker date="1681070822813" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
+            <marker date="1681070822813" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
+            <marker date="1681070822813" expanded="true" signature="-1:-1" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>

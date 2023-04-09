@@ -48,18 +48,20 @@ public class MyServiceClass {
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaDelete<FaceFeatures> deleteQuery1 = criteriaBuilder.createCriteriaDelete(FaceFeatures.class);
         Root<FaceFeatures> root1 = deleteQuery1.from(FaceFeatures.class);
-        deleteQuery1.where(criteriaBuilder.equal(root1.get("fullFaceFeatures").get("deviceId"), deviceId),
-                criteriaBuilder.equal(root1.get("fullFaceFeatures").get("fullFaceFeatures_id"), faceFeatures_id));
+        deleteQuery1.where(criteriaBuilder.and(
+                criteriaBuilder.equal(root1.get("fullFaceFeatures").get("deviceId"), deviceId),
+                criteriaBuilder.equal(root1.get("fullFaceFeatures").get("fullFaceFeatures_id"), faceFeatures_id)));
         int cnt = session.getCurrentSession().createQuery(deleteQuery1).executeUpdate();
 
-        // удаляем записи из таблицы fullfacefeatures
         CriteriaDelete<FullFaceFeatures> deleteQuery2 = criteriaBuilder.createCriteriaDelete(FullFaceFeatures.class);
         Root<FullFaceFeatures> root2 = deleteQuery2.from(FullFaceFeatures.class);
-        deleteQuery2.where(criteriaBuilder.equal(root2.get("deviceId"), deviceId),
-                criteriaBuilder.equal(root2.get("fullFaceFeatures_id"), faceFeatures_id));
+        deleteQuery2.where(criteriaBuilder.and(
+                criteriaBuilder.equal(root2.get("deviceId"), deviceId),
+                criteriaBuilder.equal(root2.get("fullFaceFeatures_id"), faceFeatures_id)));
         int cnt2 = session.getCurrentSession().createQuery(deleteQuery2).executeUpdate();
 
         return cnt > 0 && cnt2 > 0;
+
     }
 
     public List<FullFaceFeatures> getFullFaceFeatures(){
