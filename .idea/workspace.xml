@@ -50,21 +50,37 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41379312" vertical-offset="830" max-vertical-offset="3213">
-              <caret line="220" column="34" selection-start-line="220" selection-start-column="12" selection-end-line="220" selection-end-column="34" />
+            <state vertical-scroll-proportion="-0.03448276" vertical-offset="1441" max-vertical-offset="3400">
+              <caret line="212" column="85" selection-start-line="212" selection-start-column="78" selection-end-line="212" selection-end-column="85" />
               <folding>
                 <element signature="e#1168#1186#0" expanded="true" />
-                <element signature="method#doSomethingAfterStartup#0;class#MainController#0" expanded="false" />
                 <element signature="method#add#0;class#MainController#0" expanded="false" />
                 <element signature="method#get#0;class#MainController#0" expanded="false" />
                 <element signature="e#4669#4687#0" expanded="true" />
                 <element signature="method#getPhoto#0;class#MainController#0" expanded="false" />
                 <element signature="method#search#0;class#MainController#0" expanded="false" />
-                <element signature="e#9247#9259#0" expanded="true" />
+                <element signature="e#8627#8639#0" expanded="true" />
                 <element signature="method#deleteAdsStatus#0;class#MainController#0" expanded="false" />
                 <element signature="method#resize#0;class#MainController#0" expanded="false" />
                 <element signature="method#resize#1;class#MainController#0" expanded="false" />
                 <element signature="method#searchSim#0;class#MainController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyServiceClass.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/MyServiceClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1034" max-vertical-offset="2006">
+              <caret line="110" column="43" selection-start-line="110" selection-start-column="41" selection-end-line="110" selection-end-column="43" />
+              <folding>
+                <marker date="1681064995661" expanded="true" signature="865:923" placeholder="update Googl..." />
+                <marker date="1681064995661" expanded="true" signature="2578:2653" placeholder="SELECT * FRO..fullfacefeatures..." />
+                <marker date="1681064995661" expanded="true" signature="2946:3006" placeholder="SELECT * FRO..fullfacefeatures..." />
+                <marker date="1681064995661" expanded="true" signature="3355:3948" placeholder="select f.ful..FullFaceFeatures..." />
+                <marker date="1681064995661" expanded="true" signature="4225:4720" placeholder="select f.ful..FullFaceFeatures..." />
+                <marker date="1681064995661" expanded="true" signature="5027:5052" placeholder="delete from ..." />
               </folding>
             </state>
           </provider>
@@ -776,13 +792,7 @@
       <workItem from="1681059547739" duration="791000" />
       <workItem from="1681061462127" duration="346000" />
       <workItem from="1681063489433" duration="137000" />
-      <workItem from="1681064811121" duration="3291000" />
-    </task>
-    <task id="LOCAL-00002" summary="commit">
-      <created>1664828906897</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1664828906897</updated>
+      <workItem from="1681064811121" duration="4059000" />
     </task>
     <task id="LOCAL-00003" summary="commit">
       <created>1664829234408</created>
@@ -1072,11 +1082,17 @@
       <option name="project" value="LOCAL" />
       <updated>1681067889051</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="8-й апрель.Исправлена карта, добавлено удаление">
+      <created>1681068110007</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1681068110007</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172876000" />
+    <option name="totallyTimeSpent" value="173644000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1299,32 +1315,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/MyServiceClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07931034" vertical-offset="203" max-vertical-offset="2006">
-          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1034" max-vertical-offset="2006">
+          <caret line="110" column="43" selection-start-line="110" selection-start-column="41" selection-end-line="110" selection-end-column="43" />
           <folding>
-            <marker date="1681064995661" expanded="true" signature="-1:-1" placeholder="update Googl..." />
-            <marker date="1681064995661" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
-            <marker date="1681064995661" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..fullfacefeatures..." />
-            <marker date="1681064995661" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
-            <marker date="1681064995661" expanded="true" signature="-1:-1" placeholder="select f.ful..FullFaceFeatures..." />
-            <marker date="1681064995661" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1681064995661" expanded="true" signature="865:923" placeholder="update Googl..." />
+            <marker date="1681064995661" expanded="true" signature="2578:2653" placeholder="SELECT * FRO..fullfacefeatures..." />
+            <marker date="1681064995661" expanded="true" signature="2946:3006" placeholder="SELECT * FRO..fullfacefeatures..." />
+            <marker date="1681064995661" expanded="true" signature="3355:3948" placeholder="select f.ful..FullFaceFeatures..." />
+            <marker date="1681064995661" expanded="true" signature="4225:4720" placeholder="select f.ful..FullFaceFeatures..." />
+            <marker date="1681064995661" expanded="true" signature="5027:5052" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41379312" vertical-offset="830" max-vertical-offset="3213">
-          <caret line="220" column="34" selection-start-line="220" selection-start-column="12" selection-end-line="220" selection-end-column="34" />
+        <state vertical-scroll-proportion="-0.03448276" vertical-offset="1441" max-vertical-offset="3400">
+          <caret line="212" column="85" selection-start-line="212" selection-start-column="78" selection-end-line="212" selection-end-column="85" />
           <folding>
             <element signature="e#1168#1186#0" expanded="true" />
-            <element signature="method#doSomethingAfterStartup#0;class#MainController#0" expanded="false" />
             <element signature="method#add#0;class#MainController#0" expanded="false" />
             <element signature="method#get#0;class#MainController#0" expanded="false" />
             <element signature="e#4669#4687#0" expanded="true" />
             <element signature="method#getPhoto#0;class#MainController#0" expanded="false" />
             <element signature="method#search#0;class#MainController#0" expanded="false" />
-            <element signature="e#9247#9259#0" expanded="true" />
+            <element signature="e#8627#8639#0" expanded="true" />
             <element signature="method#deleteAdsStatus#0;class#MainController#0" expanded="false" />
             <element signature="method#resize#0;class#MainController#0" expanded="false" />
             <element signature="method#resize#1;class#MainController#0" expanded="false" />
