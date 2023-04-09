@@ -55,7 +55,7 @@ public class MyServiceClass {
 
         Query deleteFaceFeatures = session.getCurrentSession().createNativeQuery(deleteFaceFeaturesQuery);
         deleteFaceFeatures.setParameter("deviceId", deviceId);
-        deleteFaceFeatures.setParameter("faceFeaturesId", faceFeaturesId);
+        deleteFaceFeatures.setParameter("faceFeatures_id", faceFeaturesId);
         int deletedFaceFeatures = deleteFaceFeatures.executeUpdate();
 
         Query deleteFullFaceFeatures = session.getCurrentSession().createNativeQuery(deleteFullFaceFeaturesQuery);
