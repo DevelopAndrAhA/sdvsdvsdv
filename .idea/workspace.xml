@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="524f2425-aa2a-4c31-9674-1be29b3b0d59" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" afterPath="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SpringExam.iws" />
@@ -752,13 +751,7 @@
       <workItem from="1681059547739" duration="791000" />
       <workItem from="1681061462127" duration="346000" />
       <workItem from="1681063489433" duration="137000" />
-      <workItem from="1681064811121" duration="5831000" />
-    </task>
-    <task id="LOCAL-00009" summary="commit">
-      <created>1665842206268</created>
-      <option name="number" value="00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1665842206268</updated>
+      <workItem from="1681064811121" duration="5837000" />
     </task>
     <task id="LOCAL-00010" summary="commit">
       <created>1665842709189</created>
@@ -1048,11 +1041,17 @@
       <option name="project" value="LOCAL" />
       <updated>1681070327366</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="8-й апрель.Исправлена карта, добавлено удаление">
+      <created>1681070653441</created>
+      <option name="number" value="00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1681070653441</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175416000" />
+    <option name="totallyTimeSpent" value="175422000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
