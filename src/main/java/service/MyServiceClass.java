@@ -44,26 +44,27 @@ public class MyServiceClass {
         session.getCurrentSession().save(fullFaceFeatures);
     }
 
-    public boolean deleteFace(String deviceId, String faceFeatures_id) {
+    public boolean deleteFace(String deviceId, String faceFeaturesId) {
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
 
-        // удаляем сначала записи из таблицы FaceFeatures, которые ссылаются на удаляемую запись из таблицы FullFaceFeatures
+        // Удаляем сначала записи из таблицы FaceFeatures, которые ссылаются на удаляемую запись из таблицы FullFaceFeatures
         CriteriaDelete<FaceFeatures> deleteQuery1 = criteriaBuilder.createCriteriaDelete(FaceFeatures.class);
         Root<FaceFeatures> root1 = deleteQuery1.from(FaceFeatures.class);
         Join<FaceFeatures, FullFaceFeatures> join1 = root1.join("fullFaceFeatures");
         deleteQuery1.where(criteriaBuilder.equal(join1.get("deviceId"), deviceId),
-                criteriaBuilder.equal(join1.get("fullFaceFeatures_id"), faceFeatures_id));
-        int cnt = session.getCurrentSession().createQuery(deleteQuery1).executeUpdate();
+                criteriaBuilder.equal(join1.get("faceFeatures_id"), faceFeaturesId));
+        int cnt1 = session.getCurrentSession().createQuery(deleteQuery1).executeUpdate();
 
-        // удаляем записи из таблицы FullFaceFeatures
+        // Удаляем запись из таблицы FullFaceFeatures
         CriteriaDelete<FullFaceFeatures> deleteQuery2 = criteriaBuilder.createCriteriaDelete(FullFaceFeatures.class);
         Root<FullFaceFeatures> root2 = deleteQuery2.from(FullFaceFeatures.class);
         deleteQuery2.where(criteriaBuilder.equal(root2.get("deviceId"), deviceId),
-                criteriaBuilder.equal(root2.get("fullFaceFeatures_id"), faceFeatures_id));
+                criteriaBuilder.equal(root2.get("faceFeatures_id"), faceFeaturesId));
         int cnt2 = session.getCurrentSession().createQuery(deleteQuery2).executeUpdate();
 
-        return cnt > 0 && cnt2 > 0;
+        return cnt1 > 0 && cnt2 > 0;
     }
+
 
 
 
