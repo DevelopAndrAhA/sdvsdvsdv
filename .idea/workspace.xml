@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="524f2425-aa2a-4c31-9674-1be29b3b0d59" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" afterPath="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SpringExam.iws" />
@@ -84,8 +83,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/neural_network/models/FullFaceFeatures.java" />
         <option value="$PROJECT_DIR$/src/main/java/neural_network/models/FaceFeatures.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/MyServiceClass.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
       </list>
     </option>
   </component>
@@ -753,13 +752,7 @@
       <workItem from="1681059547739" duration="791000" />
       <workItem from="1681061462127" duration="346000" />
       <workItem from="1681063489433" duration="137000" />
-      <workItem from="1681064811121" duration="8560000" />
-    </task>
-    <task id="LOCAL-00020" summary="commit">
-      <created>1665913737941</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1665913737941</updated>
+      <workItem from="1681064811121" duration="8897000" />
     </task>
     <task id="LOCAL-00021" summary="commit">
       <created>1665913772992</created>
@@ -1049,11 +1042,17 @@
       <option name="project" value="LOCAL" />
       <updated>1681073118866</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="8-й апрель.Исправлена карта, добавлено удаление">
+      <created>1681073385426</created>
+      <option name="number" value="00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1681073385426</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178145000" />
+    <option name="totallyTimeSpent" value="178482000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1291,17 +1290,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55172414" vertical-offset="1288" max-vertical-offset="4471">
-          <caret line="233" column="9" selection-start-line="233" selection-start-column="9" selection-end-line="233" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.5321839" vertical-offset="1084" max-vertical-offset="4403">
+          <caret line="220" column="8" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="8" />
           <folding>
             <element signature="e#1168#1186#0" expanded="true" />
             <element signature="method#add#0;class#MainController#0" expanded="false" />
             <element signature="method#get#0;class#MainController#0" expanded="false" />
             <element signature="e#4669#4687#0" expanded="true" />
             <element signature="method#getPhoto#0;class#MainController#0" expanded="false" />
-            <element signature="e#8578#8590#0" expanded="true" />
-            <element signature="e#9594#9595#0" expanded="true" />
-            <element signature="e#9631#9632#0" expanded="true" />
+            <element signature="e#8538#8550#0" expanded="true" />
           </folding>
         </state>
       </provider>
