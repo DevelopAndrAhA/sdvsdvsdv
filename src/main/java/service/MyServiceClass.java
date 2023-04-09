@@ -50,12 +50,11 @@ public class MyServiceClass {
         criteria.add(Restrictions.eq("faceFeatures_id",Long.parseLong(faceFeaturesId)));
         FaceFeatures faceFeatures = (FaceFeatures)criteria.uniqueResult();
 
-        String deleteFaceFeaturesQuery = "DELETE FROM FaceFeatures WHERE fullFaceFeatures_id = (SELECT id FROM FullFaceFeatures WHERE device_id = :deviceId AND FullFaceFeatures_id = :FullFaceFeatures_id)";
-        String deleteFullFaceFeaturesQuery = "DELETE FROM FullFaceFeatures WHERE deviceId = :deviceId AND FullFaceFeatures_id = :faceFeaturesId";
+        String deleteFaceFeaturesQuery = "DELETE FROM FaceFeatures WHERE fullFaceFeatures_id = (SELECT id FROM FullFaceFeatures WHERE FullFaceFeatures_id = :FullFaceFeatures_id)";
+        String deleteFullFaceFeaturesQuery = "DELETE FROM FullFaceFeatures WHERE deviceId = :deviceId AND FullFaceFeatures_id = :FullFaceFeatures_id";
 
         Query deleteFaceFeatures = session.getCurrentSession().createNativeQuery(deleteFaceFeaturesQuery);
-        deleteFaceFeatures.setParameter("deviceId", deviceId);
-        deleteFaceFeatures.setParameter("faceFeatures_id", faceFeaturesId);
+        deleteFaceFeatures.setParameter("FullFaceFeatures_id", faceFeatures.getFullFaceFeatures().getFullFaceFeatures_id());
         int deletedFaceFeatures = deleteFaceFeatures.executeUpdate();
 
         Query deleteFullFaceFeatures = session.getCurrentSession().createNativeQuery(deleteFullFaceFeaturesQuery);
