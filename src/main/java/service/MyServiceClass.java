@@ -44,34 +44,22 @@ public class MyServiceClass {
     }
 
     public boolean deleteFace (String deviceId,String faceFeatures_id){
-
-
-        // загружаем список FullFaceFeatures из базы данных по deviceId
-        List<FullFaceFeatures> fullFaceFeaturesList = session.getCurrentSession().createQuery(
-                "SELECT f FROM FullFaceFeatures f WHERE f.deviceId = :deviceId",
-                FullFaceFeatures.class
-        )
-                .setParameter("deviceId", deviceId)
-                .getResultList();
-
-        if (fullFaceFeaturesList.isEmpty()) {
-            return false;
-        }
-
-        // удаляем сущности FaceFeatures по faceFeatures_id
+// удаляем сначала записи из таблицы facefeatures, которые ссылаются на удаляемую запись из таблицы fullfacefeatures
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaDelete<FaceFeatures> deleteQuery1 = criteriaBuilder.createCriteriaDelete(FaceFeatures.class);
         Root<FaceFeatures> root1 = deleteQuery1.from(FaceFeatures.class);
-        deleteQuery1.where(criteriaBuilder.equal(root1.get("faceFeatures_id"), faceFeatures_id));
+        deleteQuery1.where(criteriaBuilder.equal(root1.get("fullFaceFeatures").get("deviceId"), deviceId),
+                criteriaBuilder.equal(root1.get("fullFaceFeatures").get("fullfacefeatures_id"), faceFeatures_id));
         int cnt = session.getCurrentSession().createQuery(deleteQuery1).executeUpdate();
 
-        // удаляем сущности FullFaceFeatures по deviceId
+        // удаляем записи из таблицы fullfacefeatures
         CriteriaDelete<FullFaceFeatures> deleteQuery2 = criteriaBuilder.createCriteriaDelete(FullFaceFeatures.class);
         Root<FullFaceFeatures> root2 = deleteQuery2.from(FullFaceFeatures.class);
-        deleteQuery2.where(criteriaBuilder.equal(root2.get("deviceId"), deviceId));
+        deleteQuery2.where(criteriaBuilder.equal(root2.get("deviceId"), deviceId),
+                criteriaBuilder.equal(root2.get("fullfacefeatures_id"), faceFeatures_id));
         int cnt2 = session.getCurrentSession().createQuery(deleteQuery2).executeUpdate();
 
-        return cnt == 1 && cnt2 == 1;
+        return cnt > 0 && cnt2 > 0;
     }
 
     public List<FullFaceFeatures> getFullFaceFeatures(){
