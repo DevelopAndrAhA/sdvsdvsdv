@@ -224,12 +224,15 @@ public class MainController {
 		Iterator<FullFaceFeatures> iterator = fullFaceFeatures.iterator();
 		while (iterator.hasNext()) {
 			FullFaceFeatures fullFaceFeature = iterator.next();
+
 			if (fullFaceFeature.getDeviceId().equals(deviceId) && fullFaceFeature.getFullFaceFeatures_id()==tmpFullFaceFeatures_id) {
-				File file = new File(FileUtils.getUserDirectory()+File.separator+"images"+File.separator+fullFaceFeature.getPhotoName()+".jpg");
-				file.delete();
-				file = new File(FileUtils.getUserDirectory()+File.separator+"images"+File.separator+fullFaceFeature.getPhotoName()+"_SMALL.jpg");
-				file.delete();
 				iterator.remove();
+				try{
+					File file = new File(FileUtils.getUserDirectory()+File.separator+"images"+File.separator+fullFaceFeature.getPhotoName()+".jpg");
+					file.delete();
+					file = new File(FileUtils.getUserDirectory()+File.separator+"images"+File.separator+fullFaceFeature.getPhotoName()+"_SMALL.jpg");
+					file.delete();
+				}catch (Exception e){}
 			}
 		}
 		return "{'status':200}";
@@ -261,13 +264,15 @@ public class MainController {
 			if(city_id!=fullFaceFeatures.get(i).getCity_id()){
 				continue;
 			}
-			float saved_crop [] = fullFaceFeatures.get(i).getFaceFeatures(1).getFeatures();
-			//float saved_crop [] = fullFaceFeatures.get(i).getFeatures();
-			Prediction prediction = searchSim(saved_crop,mas,fullFaceFeatures.get(i).getFaceLabel(),fullFaceFeatures.get(i).getPhotoName());
-			if(prediction!=null){
-				prediction.setInpDate(fromDate);
-				predictions.add(prediction);
-			}
+			try{
+				float saved_crop [] = fullFaceFeatures.get(i).getFaceFeatures(1).getFeatures();
+				//float saved_crop [] = fullFaceFeatures.get(i).getFeatures();
+				Prediction prediction = searchSim(saved_crop,mas,fullFaceFeatures.get(i).getFaceLabel(),fullFaceFeatures.get(i).getPhotoName());
+				if(prediction!=null){
+					prediction.setInpDate(fromDate);
+					predictions.add(prediction);
+				}
+			}catch (Exception e){}
 		}
 		Collections.sort(predictions);
 		return predictions;
