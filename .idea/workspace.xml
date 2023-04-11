@@ -46,7 +46,29 @@
     <favorites_list name="SpringExam" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.64827585" vertical-offset="2598" max-vertical-offset="4148">
+              <caret line="361" column="33" selection-start-line="361" selection-start-column="33" selection-end-line="361" selection-end-column="33" />
+              <folding>
+                <element signature="e#1168#1186#0" expanded="true" />
+                <element signature="method#add#0;class#MainController#0" expanded="false" />
+                <element signature="method#get#0;class#MainController#0" expanded="false" />
+                <element signature="e#4672#4690#0" expanded="true" />
+                <element signature="method#getFullFaceFeatures#0;class#MainController#0" expanded="false" />
+                <element signature="method#getPhoto#0;class#MainController#0" expanded="false" />
+                <element signature="method#delete#0;class#MainController#0" expanded="false" />
+                <element signature="e#8609#8621#0" expanded="true" />
+                <element signature="method#resize#0;class#MainController#0" expanded="false" />
+                <element signature="method#resize#1;class#MainController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -754,13 +776,7 @@
       <workItem from="1681063489433" duration="137000" />
       <workItem from="1681064811121" duration="9443000" />
       <workItem from="1681153716034" duration="1754000" />
-      <workItem from="1681231211720" duration="1489000" />
-    </task>
-    <task id="LOCAL-00026" summary="Февраль 1-й комит">
-      <created>1677249762134</created>
-      <option name="number" value="00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1677249762134</updated>
+      <workItem from="1681231211720" duration="1708000" />
     </task>
     <task id="LOCAL-00027" summary="Февраль 1-й комит">
       <created>1677250859688</created>
@@ -1050,15 +1066,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681231278090</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="8-й апрель.Исправлена карта, добавлено удаление.Добавлен поиск по Косинусу">
+      <created>1681236706652</created>
+      <option name="number" value="00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1681236706652</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182271000" />
+    <option name="totallyTimeSpent" value="182490000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1075,7 +1097,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43875277" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18283582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18283582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1119,7 +1141,8 @@
     <MESSAGE value="Апрель 2-й комит" />
     <MESSAGE value="4й апрель.История" />
     <MESSAGE value="8-й апрель.Исправлена карта, добавлено удаление" />
-    <option name="LAST_COMMIT_MESSAGE" value="8-й апрель.Исправлена карта, добавлено удаление" />
+    <MESSAGE value="8-й апрель.Исправлена карта, добавлено удаление.Добавлен поиск по Косинусу" />
+    <option name="LAST_COMMIT_MESSAGE" value="8-й апрель.Исправлена карта, добавлено удаление.Добавлен поиск по Косинусу" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1285,8 +1308,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62873566" vertical-offset="2649" max-vertical-offset="4148">
-          <caret line="363" column="0" selection-start-line="363" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.64827585" vertical-offset="2598" max-vertical-offset="4148">
+          <caret line="361" column="33" selection-start-line="361" selection-start-column="33" selection-end-line="361" selection-end-column="33" />
           <folding>
             <element signature="e#1168#1186#0" expanded="true" />
             <element signature="method#add#0;class#MainController#0" expanded="false" />
