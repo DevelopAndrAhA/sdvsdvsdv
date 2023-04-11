@@ -270,6 +270,8 @@ public class MainController {
 				Prediction prediction = searchSimEuklid(saved_crop, mas, fullFaceFeatures.get(i).getFaceLabel(), fullFaceFeatures.get(i).getPhotoName());
 				if(prediction!=null){
 					prediction.setInpDate(fromDate);
+					prediction.setLat(fullFaceFeatures.get(i).getLat());
+					prediction.setLng(fullFaceFeatures.get(i).getLng());
 					predictions.add(prediction);
 				}
 			}catch (Exception e){}
