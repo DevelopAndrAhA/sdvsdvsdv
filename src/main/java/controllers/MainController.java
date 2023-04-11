@@ -343,7 +343,7 @@ public class MainController {
 			distance += diff*diff;
 		}
 		distance = (float) Math.sqrt(distance);
-		if(distance<=1.15f){
+		if(distance<=1.10f){
 			prediction = new Prediction(distance, key, 0,photoName);
 			return prediction;
 		}
@@ -386,6 +386,8 @@ public class MainController {
 		}
 		return null;
 	}*/
+
+
 	/*private Prediction matchTwoFeatureArrays(float [] first, float[] second,float percentage_p,String photoName) {
 
 		float distance = euclidDistance(first, second);
