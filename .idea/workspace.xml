@@ -756,13 +756,7 @@
       <workItem from="1681153716034" duration="1754000" />
       <workItem from="1681231211720" duration="2832000" />
       <workItem from="1681241771028" duration="1913000" />
-      <workItem from="1681248649067" duration="988000" />
-    </task>
-    <task id="LOCAL-00035" summary="4й апрель.История">
-      <created>1680878043742</created>
-      <option name="number" value="00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1680878043742</updated>
+      <workItem from="1681248649067" duration="1135000" />
     </task>
     <task id="LOCAL-00036" summary="4й апрель.История">
       <created>1680890717347</created>
@@ -1052,11 +1046,17 @@
       <option name="project" value="LOCAL" />
       <updated>1681248875393</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="8-й апрель.Исправлена карта, добавлено удаление.Добавлен поиск по Косинусу">
+      <created>1681249671115</created>
+      <option name="number" value="00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1681249671115</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186515000" />
+    <option name="totallyTimeSpent" value="186662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1295,8 +1295,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37339556" vertical-offset="2145" max-vertical-offset="4726">
-          <caret line="269" column="56" selection-start-line="269" selection-start-column="56" selection-end-line="269" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.6907818" vertical-offset="3165" max-vertical-offset="4726">
+          <caret line="367" column="30" selection-start-line="367" selection-start-column="30" selection-end-line="367" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1095#1113#0" expanded="true" />

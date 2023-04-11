@@ -365,7 +365,7 @@ public class MainController {
 		norm2 = Math.sqrt(norm2);
 		cosDistance = cosDistance / (norm1 * norm2);
 
-		if (cosDistance >= 0.9) {
+		if (cosDistance <= 1.0) {
 			prediction = new Prediction((float) cosDistance, key, 0, photoName);
 			return prediction;
 		}
