@@ -149,7 +149,7 @@ public class MainController {
 	@RequestMapping(value = "history",method = RequestMethod.GET)
 	public Object get(@RequestParam("deviceId")String deviceId) {
 
-		List<FullFaceFeatures> features = new ArrayList<FullFaceFeatures>();
+		List<FullFaceFeatures> featuresTmp = new ArrayList<FullFaceFeatures>();
 
 		for (int i = 0; i < fullFaceFeatures.size(); i++) {
 
@@ -170,12 +170,12 @@ public class MainController {
 					tmpFullFaceFeatures.setLng(fullFaceFeatures.get(i).getFaceFeatures(1).getLng());
 				}catch (Exception e){}
 
-				features.add(tmpFullFaceFeatures);
+				featuresTmp.add(tmpFullFaceFeatures);
 			}
 		}
 
-		if (features.size() != 0) {
-			return features;
+		if (featuresTmp.size() != 0) {
+			return featuresTmp;
 		} else {
 			return "{'features':'size==null'}";
 		}
@@ -266,7 +266,6 @@ public class MainController {
 			}
 			try{
 				float saved_crop [] = fullFaceFeatures.get(i).getFaceFeatures(1).getFeatures();
-				//float saved_crop [] = fullFaceFeatures.get(i).getFeatures();
 				Prediction prediction = searchSim(saved_crop,mas,fullFaceFeatures.get(i).getFaceLabel(),fullFaceFeatures.get(i).getPhotoName());
 				if(prediction!=null){
 					prediction.setInpDate(fromDate);
