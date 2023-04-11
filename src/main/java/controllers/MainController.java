@@ -266,7 +266,7 @@ public class MainController {
 			}
 			try{
 				float saved_crop [] = fullFaceFeatures.get(i).getFaceFeatures(1).getFeatures();
-				Prediction prediction = searchSim(saved_crop,mas,fullFaceFeatures.get(i).getFaceLabel(),fullFaceFeatures.get(i).getPhotoName());
+				Prediction prediction = searchSimCosinus(saved_crop, mas, fullFaceFeatures.get(i).getFaceLabel(), fullFaceFeatures.get(i).getPhotoName());
 				if(prediction!=null){
 					prediction.setInpDate(fromDate);
 					predictions.add(prediction);
@@ -332,7 +332,7 @@ public class MainController {
 		return dimg;
 	}
 
-	public Prediction searchSim(float [] knownEmb,float [] search,String key,String photoName){
+	public Prediction searchSimEuklid(float [] knownEmb,float [] search,String key,String photoName){
 		Prediction prediction = null;
 		float distance=0;
 		for (int i = 0; i < search.length; i++) {
@@ -344,6 +344,29 @@ public class MainController {
 			prediction = new Prediction(distance, key, 0,photoName);
 			return prediction;
 		}
+		return null;
+	}
+	public Prediction searchSimCosinus(float[] knownEmb, float[] search, String key, String photoName) {
+		Prediction prediction = null;
+		double cosDistance = 0;
+		double norm1 = 0;
+		double norm2 = 0;
+
+		for (int i = 0; i < search.length; i++) {
+			cosDistance += knownEmb[i] * search[i];
+			norm1 += knownEmb[i] * knownEmb[i];
+			norm2 += search[i] * search[i];
+		}
+
+		norm1 = Math.sqrt(norm1);
+		norm2 = Math.sqrt(norm2);
+		cosDistance = cosDistance / (norm1 * norm2);
+
+		if (cosDistance >= 0.9) {
+			prediction = new Prediction((float) cosDistance, key, 0, photoName);
+			return prediction;
+		}
+
 		return null;
 	}
 
