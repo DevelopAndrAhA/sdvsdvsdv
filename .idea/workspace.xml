@@ -50,8 +50,8 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64827585" vertical-offset="2598" max-vertical-offset="4148">
-              <caret line="361" column="33" selection-start-line="361" selection-start-column="33" selection-end-line="361" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.53103447" vertical-offset="2343" max-vertical-offset="4148">
+              <caret line="340" column="9" selection-start-line="340" selection-start-column="9" selection-end-line="340" selection-end-column="9" />
               <folding>
                 <element signature="e#1168#1186#0" expanded="true" />
                 <element signature="method#add#0;class#MainController#0" expanded="false" />
@@ -776,13 +776,7 @@
       <workItem from="1681063489433" duration="137000" />
       <workItem from="1681064811121" duration="9443000" />
       <workItem from="1681153716034" duration="1754000" />
-      <workItem from="1681231211720" duration="1708000" />
-    </task>
-    <task id="LOCAL-00027" summary="Февраль 1-й комит">
-      <created>1677250859688</created>
-      <option name="number" value="00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1677250859688</updated>
+      <workItem from="1681231211720" duration="1970000" />
     </task>
     <task id="LOCAL-00028" summary="Март 1-й комит">
       <created>1678031846559</created>
@@ -1072,11 +1066,17 @@
       <option name="project" value="LOCAL" />
       <updated>1681236706652</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="8-й апрель.Исправлена карта, добавлено удаление.Добавлен поиск по Косинусу">
+      <created>1681236912875</created>
+      <option name="number" value="00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1681236912875</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182490000" />
+    <option name="totallyTimeSpent" value="182752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1308,8 +1308,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64827585" vertical-offset="2598" max-vertical-offset="4148">
-          <caret line="361" column="33" selection-start-line="361" selection-start-column="33" selection-end-line="361" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.53103447" vertical-offset="2343" max-vertical-offset="4148">
+          <caret line="340" column="9" selection-start-line="340" selection-start-column="9" selection-end-line="340" selection-end-column="9" />
           <folding>
             <element signature="e#1168#1186#0" expanded="true" />
             <element signature="method#add#0;class#MainController#0" expanded="false" />
