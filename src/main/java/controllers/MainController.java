@@ -267,7 +267,7 @@ public class MainController {
 			}
 			try{
 				float saved_crop [] = fullFaceFeatures.get(i).getFaceFeatures(1).getFeatures();
-				Prediction prediction = searchSimEuklid(saved_crop, mas, fullFaceFeatures.get(i).getFaceLabel(), fullFaceFeatures.get(i).getPhotoName());
+				Prediction prediction = searchSimCosinus(saved_crop, mas, fullFaceFeatures.get(i).getFaceLabel(), fullFaceFeatures.get(i).getPhotoName());
 				if(prediction!=null){
 					prediction.setInpDate(fromDate);
 					prediction.setLat(fullFaceFeatures.get(i).getLat());
@@ -343,7 +343,7 @@ public class MainController {
 			distance += diff*diff;
 		}
 		distance = (float) Math.sqrt(distance);
-		if(distance<=1.10f){
+		if(distance<=1.25f){
 			prediction = new Prediction(distance, key, 0,photoName);
 			return prediction;
 		}
@@ -365,7 +365,7 @@ public class MainController {
 		norm2 = Math.sqrt(norm2);
 		cosDistance = cosDistance / (norm1 * norm2);
 
-		if (cosDistance >= 0.5) {
+		if (cosDistance >= 0.9) {
 			prediction = new Prediction((float) cosDistance, key, 0, photoName);
 			return prediction;
 		}
