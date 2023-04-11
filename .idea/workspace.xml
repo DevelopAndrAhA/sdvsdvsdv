@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="524f2425-aa2a-4c31-9674-1be29b3b0d59" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SpringExam.iws" />
@@ -756,13 +755,7 @@
       <workItem from="1681153716034" duration="1754000" />
       <workItem from="1681231211720" duration="2832000" />
       <workItem from="1681241771028" duration="1913000" />
-      <workItem from="1681248649067" duration="1135000" />
-    </task>
-    <task id="LOCAL-00036" summary="4й апрель.История">
-      <created>1680890717347</created>
-      <option name="number" value="00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1680890717347</updated>
+      <workItem from="1681248649067" duration="1156000" />
     </task>
     <task id="LOCAL-00037" summary="8-й апрель.Исправлена карта, добавлено удаление">
       <created>1680984285846</created>
@@ -1052,11 +1045,17 @@
       <option name="project" value="LOCAL" />
       <updated>1681249671115</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="8-й апрель.Исправлена карта, добавлено удаление.Добавлен поиск по Косинусу">
+      <created>1681249818652</created>
+      <option name="number" value="00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1681249818652</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186662000" />
+    <option name="totallyTimeSpent" value="186683000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
