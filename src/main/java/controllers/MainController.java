@@ -5,13 +5,9 @@ package controllers;
 import org.springframework.context.event.ContextRefreshedEvent;
 import neural_network.FaceRecognizer;
 import javax.annotation.PostConstruct;*/
-import com.drew.imaging.ImageMetadataReader;
-import com.drew.metadata.Directory;
-import com.drew.metadata.Metadata;
-import com.drew.metadata.Tag;
-import com.drew.metadata.exif.ExifIFD0Directory;
 import neural_network.models.*;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
@@ -24,8 +20,6 @@ import service.MyServiceClass;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletContext;
 import java.awt.*;
-import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
@@ -197,7 +191,7 @@ public class MainController {
 		return null;
 	}
 
-	/*@ResponseBody
+	@ResponseBody
 	@RequestMapping(value = "image", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
 	public  byte[]  getPhoto(@RequestParam("imgname")String imgname){
 		try {
@@ -208,53 +202,8 @@ public class MainController {
 			return IOUtils.toByteArray(in);
 		}catch (Exception e){}
 		return null;
-	}*/
-	@ResponseBody
-	@RequestMapping(value = "image", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
-	public byte[] getPhoto(@RequestParam("imgname") String imgname) {
-		try {
-			String rootPath = FileUtils.getUserDirectory() + File.separator + "images" + File.separator + imgname;
-			File file = new File(rootPath);
-			BufferedImage image = ImageIO.read(file);
-
-			// Проверяем ориентацию изображения
-			int orientation = 1;
-			try {
-				Metadata metadata = ImageMetadataReader.readMetadata(file);
-				for (Directory directory : metadata.getDirectories()) {
-					if (directory.getName().equals("Exif IFD0")) {
-						for (Tag tag : directory.getTags()) {
-							if (tag.getTagType() == ExifIFD0Directory.TAG_ORIENTATION) {
-								orientation = tag.getTagType();
-								break;
-							}
-						}
-						break;
-					}
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
-			// Поворачиваем изображение, если оно перевернуто на 180 градусов
-			if (orientation == 3) {
-				AffineTransform transform = new AffineTransform();
-				transform.translate(image.getWidth() / 2.0, image.getHeight() / 2.0);
-				transform.rotate(Math.PI);
-				transform.translate(-image.getWidth() / 2.0, -image.getHeight() / 2.0);
-
-				AffineTransformOp op = new AffineTransformOp(transform, AffineTransformOp.TYPE_BILINEAR);
-				image = op.filter(image, null);
-			}
-
-			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			ImageIO.write(image, "jpg", baos);
-			return baos.toByteArray();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
 	}
+
 
 
 
