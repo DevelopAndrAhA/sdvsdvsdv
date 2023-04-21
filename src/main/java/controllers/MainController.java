@@ -267,7 +267,8 @@ public class MainController {
 			}
 			try{
 				float saved_crop [] = fullFaceFeatures.get(i).getFaceFeatures(1).getFeatures();
-				Prediction prediction = searchSimEuklid(saved_crop, mas, fullFaceFeatures.get(i).getFaceLabel(), fullFaceFeatures.get(i).getPhotoName());
+				//Prediction prediction = searchSimEuklid(saved_crop, mas, fullFaceFeatures.get(i).getFaceLabel(), fullFaceFeatures.get(i).getPhotoName());
+				Prediction prediction = calculateDistance(saved_crop, mas, fullFaceFeatures.get(i).getFaceLabel(), fullFaceFeatures.get(i).getPhotoName());
 				if(prediction!=null){
 					prediction.setInpDate(fromDate);
 					prediction.setLat(fullFaceFeatures.get(i).getFaceFeatures(1).getLat());
@@ -335,7 +336,71 @@ public class MainController {
 		return dimg;
 	}
 
-	public Prediction searchSimEuklid(float [] knownEmb,float [] search,String key,String photoName){
+	public Prediction searchSimEuklid(float[] knownEmb, float[] search, String key, String photoName) {
+		Prediction prediction = null;
+		float distance = 0;
+		float squaredDiffSum = 0;
+		for (int i = 0; i < knownEmb.length; i++) {
+			float diff = knownEmb[i] - search[i];
+			squaredDiffSum += diff * diff;
+		}
+		distance = (float) Math.sqrt(squaredDiffSum);
+		if (distance <= 0.6f) {
+			prediction = new Prediction(distance, key, 0, photoName);
+			return prediction;
+		}
+		return null;
+	}
+
+	private Prediction calculateDistance(float[] emb1, float[] emb2, String key, String photoName) {
+		Prediction prediction = null;
+		float squaredDiffSum = 0;
+		for (int i = 0; i < emb1.length; i++) {
+			float diff = emb1[i] - emb2[i];
+			squaredDiffSum += diff * diff;
+		}
+		float distance = (float) Math.sqrt(squaredDiffSum);
+		if (distance <= 0.6f) {
+			prediction = new Prediction(distance, key, 0, photoName);
+			return prediction;
+		}
+		return null;
+	}
+
+	public Prediction searchSimCosinus(float[] knownEmb, float[] search, String key, String photoName) {
+		Prediction prediction = null;
+		double cosDistance = 0;
+		double norm1 = 0;
+		double norm2 = 0;
+
+		for (int i = 0; i < search.length; i++) {
+			cosDistance += knownEmb[i] * search[i];
+			norm1 += knownEmb[i] * knownEmb[i];
+			norm2 += search[i] * search[i];
+		}
+
+		// Избегаем деления на 0 при нормализации векторов
+		if (norm1 == 0 || norm2 == 0) {
+			return null;
+		}
+
+		// Нормализуем векторы
+		norm1 = Math.sqrt(norm1);
+		norm2 = Math.sqrt(norm2);
+
+		// Вычисляем косинус угла между векторами
+		cosDistance = cosDistance / (norm1 * norm2);
+
+		// Если косинус угла больше или равен 0.9, то считаем, что найдено совпадение
+		if (cosDistance >= 0.9) {
+			prediction = new Prediction((float) cosDistance, key, 0, photoName);
+		}
+
+		return prediction;
+	}
+
+
+/*	public Prediction searchSimEuklid(float [] knownEmb,float [] search,String key,String photoName){
 		Prediction prediction = null;
 		float distance=0;
 		for (int i = 0; i < search.length; i++) {
@@ -371,7 +436,7 @@ public class MainController {
 		}
 
 		return null;
-	}
+	}*/
 
 	/*private Prediction matchTwoFeatureArrays(float [] first, float[] second,float percentage_p,String photoName) {
 
