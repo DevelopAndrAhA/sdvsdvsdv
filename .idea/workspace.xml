@@ -757,13 +757,7 @@
       <workItem from="1681231211720" duration="2832000" />
       <workItem from="1681241771028" duration="1913000" />
       <workItem from="1681248649067" duration="1728000" />
-      <workItem from="1682101323146" duration="5792000" />
-    </task>
-    <task id="LOCAL-00041" summary="8-й апрель.Исправлена карта, добавлено удаление">
-      <created>1681060249394</created>
-      <option name="number" value="00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1681060249394</updated>
+      <workItem from="1682101323146" duration="5952000" />
     </task>
     <task id="LOCAL-00042" summary="8-й апрель.Исправлена карта, добавлено удаление">
       <created>1681061510529</created>
@@ -1053,11 +1047,17 @@
       <option name="project" value="LOCAL" />
       <updated>1682106785399</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="8-й апрель.Исправлена карта, добавлено удаление.Добавлен поиск по Косинусу">
+      <created>1682107141693</created>
+      <option name="number" value="00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1682107141693</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193047000" />
+    <option name="totallyTimeSpent" value="193207000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
