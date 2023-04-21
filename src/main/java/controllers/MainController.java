@@ -360,7 +360,7 @@ public class MainController {
 			squaredDiffSum += diff * diff;
 		}
 		float distance = (float) Math.sqrt(squaredDiffSum);
-		if (distance <= 1.5f) {
+		if (distance <= 1.2f) {
 			prediction = new Prediction(distance, key, 0, photoName);
 			return prediction;
 		}

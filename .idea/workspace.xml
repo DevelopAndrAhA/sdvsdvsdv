@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="524f2425-aa2a-4c31-9674-1be29b3b0d59" name="Default" comment="">
+    <list default="true" id="524f2425-aa2a-4c31-9674-1be29b3b0d59" name="Default" comment="21.04.2023">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -757,13 +757,7 @@
       <workItem from="1681231211720" duration="2832000" />
       <workItem from="1681241771028" duration="1913000" />
       <workItem from="1681248649067" duration="1728000" />
-      <workItem from="1682101323146" duration="5952000" />
-    </task>
-    <task id="LOCAL-00042" summary="8-й апрель.Исправлена карта, добавлено удаление">
-      <created>1681061510529</created>
-      <option name="number" value="00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1681061510529</updated>
+      <workItem from="1682101323146" duration="6086000" />
     </task>
     <task id="LOCAL-00043" summary="8-й апрель.Исправлена карта, добавлено удаление">
       <created>1681063534618</created>
@@ -1053,11 +1047,17 @@
       <option name="project" value="LOCAL" />
       <updated>1682107141693</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="21.04.2023">
+      <created>1682107312819</created>
+      <option name="number" value="00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1682107312819</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193207000" />
+    <option name="totallyTimeSpent" value="193341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1123,7 +1123,8 @@
     <MESSAGE value="4й апрель.История" />
     <MESSAGE value="8-й апрель.Исправлена карта, добавлено удаление" />
     <MESSAGE value="8-й апрель.Исправлена карта, добавлено удаление.Добавлен поиск по Косинусу" />
-    <option name="LAST_COMMIT_MESSAGE" value="8-й апрель.Исправлена карта, добавлено удаление.Добавлен поиск по Косинусу" />
+    <MESSAGE value="21.04.2023" />
+    <option name="LAST_COMMIT_MESSAGE" value="21.04.2023" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1298,7 +1299,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.57409567" vertical-offset="3180" max-vertical-offset="5831">
-          <caret line="362" column="27" selection-start-line="362" selection-start-column="27" selection-end-line="362" selection-end-column="27" />
+          <caret line="362" column="28" selection-start-line="362" selection-start-column="12" selection-end-line="362" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1095#1113#0" expanded="true" />
