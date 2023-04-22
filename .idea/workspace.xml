@@ -762,13 +762,7 @@
       <workItem from="1682118883240" duration="576000" />
       <workItem from="1682159755311" duration="1521000" />
       <workItem from="1682165765598" duration="486000" />
-      <workItem from="1682167899065" duration="923000" />
-    </task>
-    <task id="LOCAL-00049" summary="8-й апрель.Исправлена карта, добавлено удаление">
-      <created>1681067393262</created>
-      <option name="number" value="00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1681067393262</updated>
+      <workItem from="1682167899065" duration="1140000" />
     </task>
     <task id="LOCAL-00050" summary="8-й апрель.Исправлена карта, добавлено удаление">
       <created>1681067889051</created>
@@ -1058,11 +1052,17 @@
       <option name="project" value="LOCAL" />
       <updated>1682168389623</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="22.04.2023 Исправлен поиск на андроиде">
+      <created>1682168828651</created>
+      <option name="number" value="00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1682168828651</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204390000" />
+    <option name="totallyTimeSpent" value="204607000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1284,10 +1284,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76551723" vertical-offset="1663" max-vertical-offset="3281">
-          <caret line="279" column="9" selection-start-line="279" selection-start-column="9" selection-end-line="279" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.41724136" vertical-offset="1507" max-vertical-offset="4403">
+          <caret line="130" column="41" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="41" />
           <folding>
-            <element signature="method#add#0;class#MainController#0" expanded="false" />
             <element signature="method#get#0;class#MainController#0" expanded="false" />
             <element signature="method#getFullFaceFeatures#0;class#MainController#0" expanded="false" />
             <element signature="method#delete#0;class#MainController#0" expanded="false" />

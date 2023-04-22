@@ -278,6 +278,7 @@ public class MainController {
 				e.printStackTrace();
 			}
 		}
+		Collections.sort(predictions);
 		return predictions;
 	}
 
