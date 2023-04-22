@@ -274,9 +274,7 @@ public class MainController {
 					prediction.setLng(fullFaceFeatures.get(i).getFaceFeatures(1).getLng());
 					predictions.add(prediction);
 				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			} catch (Exception e) {}
 		}
 		Collections.sort(predictions);
 		return predictions;
