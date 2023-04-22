@@ -268,7 +268,7 @@ public class MainController {
 			try{
 				float saved_crop [] = fullFaceFeatures.get(i).getFaceFeatures(1).getFeatures();
 				//Prediction prediction = searchSimEuklid(saved_crop, mas, fullFaceFeatures.get(i).getFaceLabel(), fullFaceFeatures.get(i).getPhotoName());
-				Prediction prediction = searchSimEuklid(saved_crop, mas, fullFaceFeatures.get(i).getFaceLabel(), fullFaceFeatures.get(i).getPhotoName());
+				Prediction prediction = calculateDistance(saved_crop, mas, fullFaceFeatures.get(i).getFaceLabel(), fullFaceFeatures.get(i).getPhotoName());
 				if(prediction!=null){
 					prediction.setInpDate(fromDate);
 					prediction.setLat(fullFaceFeatures.get(i).getFaceFeatures(1).getLat());
