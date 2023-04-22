@@ -261,7 +261,7 @@ public class MainController {
 		for(int i=0;i<cropSplit.length;i++){
 			mas[i] = Float.parseFloat(cropSplit[i]);
 		}
-		for(int i=fullFaceFeatures.size();i>0;i--){
+		for(int i=fullFaceFeatures.size()-1;i>0;i--){
 			if(city_id!=fullFaceFeatures.get(i).getCity_id()){
 				continue;
 			}
@@ -275,7 +275,7 @@ public class MainController {
 					prediction.setLng(fullFaceFeatures.get(i).getFaceFeatures(1).getLng());
 					predictions.add(prediction);
 				}
-			}catch (Exception e){}
+			}catch (Exception e){e.printStackTrace();}
 		}
 		Collections.sort(predictions);
 		return predictions;
