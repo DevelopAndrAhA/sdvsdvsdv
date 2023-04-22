@@ -261,7 +261,7 @@ public class MainController {
 		for(int i=0;i<cropSplit.length;i++){
 			mas[i] = Float.parseFloat(cropSplit[i]);
 		}
-		for(int i=0;i<fullFaceFeatures.size();i++){
+		for(int i=fullFaceFeatures.size();i>0;i--){
 			if(city_id!=fullFaceFeatures.get(i).getCity_id()){
 				continue;
 			}
@@ -400,82 +400,6 @@ public class MainController {
 	}
 
 
-/*	public Prediction searchSimEuklid(float [] knownEmb,float [] search,String key,String photoName){
-		Prediction prediction = null;
-		float distance=0;
-		for (int i = 0; i < search.length; i++) {
-			float diff = search[i] - knownEmb[i];
-			distance += diff*diff;
-		}
-		distance = (float) Math.sqrt(distance);
-		if(distance<=1.25f){
-			prediction = new Prediction(distance, key, 0,photoName);
-			return prediction;
-		}
-		return null;
-	}
-	public Prediction searchSimCosinus(float[] knownEmb, float[] search, String key, String photoName) {
-		Prediction prediction = null;
-		double cosDistance = 0;
-		double norm1 = 0;
-		double norm2 = 0;
-
-		for (int i = 0; i < search.length; i++) {
-			cosDistance += knownEmb[i] * search[i];
-			norm1 += knownEmb[i] * knownEmb[i];
-			norm2 += search[i] * search[i];
-		}
-
-		norm1 = Math.sqrt(norm1);
-		norm2 = Math.sqrt(norm2);
-		cosDistance = cosDistance / (norm1 * norm2);
-
-		if (cosDistance >= 0.9) {
-			prediction = new Prediction((float) cosDistance, key, 0, photoName);
-			return prediction;
-		}
-
-		return null;
-	}*/
-
-	/*private Prediction matchTwoFeatureArrays(float [] first, float[] second,float percentage_p,String photoName) {
-
-		float distance = euclidDistance(first, second);
-		final float distanceThreshold = 0.6f;
-		float percentage = Math.min(100, 100 * distanceThreshold / distance);
-		final float percentageThreshold = 70.0f;
-
-		Prediction prediction = new Prediction(percentage, percentage >= percentageThreshold, "0", 0,photoName);
-		if(prediction.getPercentage()>=percentage_p){
-			return prediction;
-		}
-		return null;
-	}*/
-
-
-	/*private Prediction matchTwoFeatureArrays(float [] first, float[] second,float percentage_p,String photoName) {
-
-		float distance = euclidDistance(first, second);
-		final float distanceThreshold = 0.6f;
-		float percentage = Math.min(100, 100 * distanceThreshold / distance);
-		final float percentageThreshold = 70.0f;
-
-		Prediction prediction = new Prediction(percentage, percentage >= percentageThreshold, "0", 0,photoName);
-		if(prediction.getPercentage()>=percentage_p){
-			return prediction;
-		}
-		return null;
-	}
-
-
-	private float euclidDistance(float[] first, float[] second) {
-		float sum = 0;
-		for (int i = 0; i < first.length; i++) {
-			sum += Math.abs(first[i] - second[i]);
-		}
-		return (float) Math.sqrt(sum);
-	}
-*/
 
 
 
