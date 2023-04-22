@@ -268,7 +268,7 @@ public class MainController {
 			try{
 				float saved_crop [] = fullFaceFeatures.get(i).getFaceFeatures(1).getFeatures();
 				//Prediction prediction = searchSimEuklid(saved_crop, mas, fullFaceFeatures.get(i).getFaceLabel(), fullFaceFeatures.get(i).getPhotoName());
-				Prediction prediction = calculateDistance(saved_crop, mas, fullFaceFeatures.get(i).getFaceLabel(), fullFaceFeatures.get(i).getPhotoName());
+				Prediction prediction = searchSimEuklid(saved_crop, mas, fullFaceFeatures.get(i).getFaceLabel(), fullFaceFeatures.get(i).getPhotoName());
 				if(prediction!=null){
 					prediction.setInpDate(fromDate);
 					prediction.setLat(fullFaceFeatures.get(i).getFaceFeatures(1).getLat());
@@ -336,17 +336,17 @@ public class MainController {
 		return dimg;
 	}
 
-	public Prediction searchSimEuklid(float[] knownEmb, float[] search, String key, String photoName) {
+
+	public Prediction searchSimEuklid(float [] knownEmb,float [] search,String key,String photoName){
 		Prediction prediction = null;
-		float distance = 0;
-		float squaredDiffSum = 0;
-		for (int i = 0; i < knownEmb.length; i++) {
-			float diff = knownEmb[i] - search[i];
-			squaredDiffSum += diff * diff;
+		float distance=0;
+		for (int i = 0; i < search.length; i++) {
+			float diff = search[i] - knownEmb[i];
+			distance += diff*diff;
 		}
-		distance = (float) Math.sqrt(squaredDiffSum);
-		if (distance <= 0.6f) {
-			prediction = new Prediction(distance, key, 0, photoName);
+		distance = (float) Math.sqrt(distance);
+		if(distance<=1.15f){
+			prediction = new Prediction(distance, key, 0,photoName);
 			return prediction;
 		}
 		return null;
