@@ -6,8 +6,15 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import neural_network.FaceRecognizer;
 import javax.annotation.PostConstruct;*/
 import neural_network.models.*;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
@@ -22,6 +29,8 @@ import javax.servlet.ServletContext;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.*;
 import java.util.List;
 
@@ -276,7 +285,7 @@ public class MainController {
 				}
 			} catch (Exception e) {}
 		}
-		Collections.sort(predictions);
+		//Collections.sort(predictions);
 		return predictions;
 	}
 
@@ -310,7 +319,15 @@ public class MainController {
 		service.deleteAdsStatus();
 		return "deleted";
 	}
-
+	@ResponseBody
+	@RequestMapping(value = "getToken",method = RequestMethod.GET)
+	public Object getTokenController(@RequestParam("mod")String mod){
+		//String MODEL_ID = getModel();
+		//if(MODEL_ID!=null){
+			getToken(mod);
+		//}
+		return "deleted";
+	}
 
 	public BufferedImage resize(MultipartFile photo) {
 
@@ -399,8 +416,64 @@ public class MainController {
 	}
 
 
+	String token = "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";
+	public String  getModel(){
+		String MODEL_ID=null;
+		try{
+			OkHttpClient client = new OkHttpClient();
+			Request request = new Request.Builder()
+					.url("https://api.openai.com/v1/models")
+					.header("Authorization", "Bearer " + token)
+					.build();
+			try (Response response = client.newCall(request).execute()) {
+				JSONObject root = new JSONObject(response.body().string());
+				JSONArray gpt3Id = root.getJSONArray("data");
+				for (int i = 0; i < gpt3Id.length(); i++) {
+					JSONObject model = gpt3Id.getJSONObject(i);
+					if (model.getString("id").equals("davinci")) {
+						MODEL_ID = model.getString("id");
+						break;
+					}
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}catch (Exception e){e.printStackTrace();}
+		if(MODEL_ID!=null){
+			return MODEL_ID;
+		}
+		return null;
+	}
+
+	public void getToken(String MODEL_ID){
+		try {
+			OkHttpClient client = new OkHttpClient();
+
+			okhttp3.MediaType mediaType = okhttp3.MediaType.parse("application/json");
+			okhttp3.RequestBody body = okhttp3.RequestBody.create(mediaType, "{{\n" +
+					"  \"model\": \"davinci\",\n" +
+					"  \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\n" +
+					"}\n");
+
+			Request request = new Request.Builder()
+					.url("https://api.openai.com/v1/chat/completions")
+					.post(body)
+					.addHeader("Content-Type", "application/json")
+					.addHeader("Authorization", "Bearer "+token)
+					.build();
+
+			Response response = client.newCall(request).execute();
+			if (!response.isSuccessful()) {
+				throw new RuntimeException("Failed to get response: " + response.code() + " " + response.message());
+			}
+
+			String responseBody = response.body().string();
+			System.out.println(responseBody);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 
-
+	}
 
 }

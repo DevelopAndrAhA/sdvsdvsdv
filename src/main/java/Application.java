@@ -51,7 +51,7 @@ public class Application {
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
-   /* @Bean
+    @Bean
     public ComboPooledDataSource dataSource()  {
        try{
            String dbUrl = "jdbc:postgresql://localhost:5432/lesadb";
@@ -65,9 +65,9 @@ public class Application {
            return basicDataSource;
        }catch (Exception e){e.printStackTrace();}
        return null;
-   }*/
+   }
     //Jelastic
-    @Bean
+    /*@Bean
     public ComboPooledDataSource dataSource()  {
         try{
             String dbUrl = "jdbc:postgresql://10.2.4.219:5432/lesadb";
@@ -81,7 +81,7 @@ public class Application {
             return basicDataSource;
         }catch (Exception e){e.printStackTrace();}
         return null;
-    }
+    }*/
 
     /*@Bean //red hat || aws
      public ComboPooledDataSource dataSource()  {
